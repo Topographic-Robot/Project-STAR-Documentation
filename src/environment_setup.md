@@ -2,15 +2,17 @@
 
 The first thing we need to do is setup your environemnt.
 
-1. Clone the [SIMPLELINK-MSP432-SDK Repo](https://github.com/Topographic-Robot/SIMPLELINK-MSP432-SDK)
+1. Clone the [SIMPLELINK-SDK Repo](https://github.com/Topographic-Robot/SIMPLELINK-SDK)
 2. Install the correct instance for your OS
 3. Link the install path of the files to your system.
 	1. In your `~/.bashrc` add the following:
 
 ```sh
-export MSP432_HEADERS=/path/to/headers/
+export SIMPLELINK_MSP432P4_SDK=/path/to/headers/
+export SIMPLELINK_CC32XX_SDK=/path/to/headers/
 # for example
-export MSP432_HEADERS=/home/brighton/Documents/SDK/ti/msp432/simplelink_msp432p4_sdk_3_40_01_02/
+export SIMPLELINK_MSP432P4_SDK=/home/brighton/Documents/SDK/ti/msp432/simplelink_msp432p4_sdk_3_40_01_02/
+export SIMPLELINK_CC32XX_SDK=/home/brighton/Documents/SDK/ti/msp432/simplelink_cc32xx_sdk_7_10_00_13/
 ```
 
 4. Source: `source ~/.bashrc`

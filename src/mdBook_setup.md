@@ -29,9 +29,9 @@ cargo install mdbook
 All of the offical documentation for mdBook can be found on the [official mdBook docs](https://rust-lang.github.io/mdBook/).
 However some good commands are:
 
-- mdbook build --- Renders the book.
-- mdbook watch --- Rebuilds the book any time a source file changes.
-- mdbook serve --- Runs a web server to view the book, and rebuilds on changes.
-- mdbook test --- Tests Rust code samples.
-- mdbook clean --- Deletes the rendered output.
-- mdbook completions --- Support for shell auto-completion.
+- `mdbook build` --- Renders the book.
+- `mdbook watch` --- Rebuilds the book any time a source file changes.
+- `mdbook serve` --- Runs a web server to view the book, and rebuilds on changes.
+- `mdbook test` --- Tests Rust code samples.
+- `mdbook clean` --- Deletes the rendered output.
+- `mdbook completions` --- Support for shell auto-completion.

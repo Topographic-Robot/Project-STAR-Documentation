@@ -4,3 +4,7 @@
 - [Installation](./installation.md)
 	- [Installing mdBook](./mdBook_setup.md)
 	- [Environment Setup](./environment_setup.md)
+
+-----------
+
+[Contributors](./contributors.md)
