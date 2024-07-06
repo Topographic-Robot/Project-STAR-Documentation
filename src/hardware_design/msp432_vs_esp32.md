@@ -6,7 +6,7 @@ When designing a robot for topographical mapping, selecting the appropriate micr
 
 ## Considered Microcontrollers
 
-### ESP32
+### ESP32 (esp-wroom-32 dev-kit-v1)
 
 The ESP32 is a powerful and versatile microcontroller known for its integrated Wi-Fi and Bluetooth capabilities. It features a dual-core processor, ample GPIO pins, and extensive support for various networking protocols.
 

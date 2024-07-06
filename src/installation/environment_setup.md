@@ -54,9 +54,10 @@ Homebrew clang-format version 18.1.8
    4. `echo 'export PATH="$PATH:$HOME/go/bin"' >> ~/.zshrc`
    5. `source ~/.zshrc`
 
-5. (Optional) Install VS Code Plugin
-   1. [VS Code Plugin](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md)
-   2. ![vscode-esp-idf-extension](vscode-esp-idf-extension-macos.png)
+5. (Optional) Install [VS Code Plugin](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md)
+
+You will need to configure this in VS Code, put the install paths correctly
+![vscode-esp-idf-extension](vscode-esp-idf-extension-macos.png)
 
 ## Windows Environment (tested on Windows 11 23H2)
 
@@ -64,8 +65,7 @@ The first thing we need to do is setup your environment.
 
 1. Install esp-idf
    1. Follow and run: [esp-idf Windows setup](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html)
-2. (Optional) Install VS Code Plugin
-   1. [VS Code Plugin](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md)
+2. (Optional) Install [VS Code Plugin](https://github.com/espressif/vscode-esp-idf-extension/blob/master/docs/tutorial/install.md)
 3. Install clang-format
    1. Download, Run, and Install [LLVM](https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/LLVM-18.1.8-win64.exe)
    2. Verify download worked
