@@ -6,7 +6,6 @@
   - [Why the MSP](./hardware_design/reasoning_msp432.md)
 - [Software Design]()
 - [Installation](./installation/readme.md)
-  - [Installing mdBook](./installation/mdBook_setup.md)
   - [Environment Setup](./installation/environment_setup.md)
 - [Basic Examples](./basics/readme.md)
   - [Movement Makefile](./basics/movement/makefile.md)
