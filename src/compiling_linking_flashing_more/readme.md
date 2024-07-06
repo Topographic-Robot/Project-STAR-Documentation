@@ -1,3 +1,0 @@
-# Compiling, Linking, Flashing, ...
-
-With the many different ways to compile, link, flash, debug, and more. There are also lots of things to know about each step.

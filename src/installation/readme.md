@@ -36,7 +36,7 @@ cargo install mdbook
 
 #### mdBook documentation
 
-All of the offical documentation for mdBook can be found on the [official mdBook docs](https://rust-lang.github.io/mdBook/).
+All of the official documentation for mdBook can be found on the [official mdBook docs](https://rust-lang.github.io/mdBook/).
 However some good commands are:
 
 - `mdbook build` --- Renders the book.
@@ -49,16 +49,7 @@ However some good commands are:
 
 ### Windows
 
-####  Installation of Visual Studio
-
-#### Installation of Rust
-
-#### Installation of mdBook
-
-#### mdBook documentation
-
-
-To install RUST for windows follow the following link provided
+To install Rust for windows follow the following link provided
 [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
 Download the 64 bit .exe and run the file.
 Your command prompt should open once the file is ran.
