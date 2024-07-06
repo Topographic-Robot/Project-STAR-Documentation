@@ -36,7 +36,7 @@ cargo install mdbook
 
 #### mdBook documentation
 
-All of the offical documentation for mdBook can be found on the [official mdBook docs](https://rust-lang.github.io/mdBook/).
+All of the official documentation for mdBook can be found on the [official mdBook docs](https://rust-lang.github.io/mdBook/).
 However some good commands are:
 
 - `mdbook build` --- Renders the book.

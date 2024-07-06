@@ -1,7 +1,7 @@
 [book]
 title = "Topographic Robot Documentation"
 description = "An advanced terrain-mapping robot designed to traverse various landscapes"
-authors = ["Brighton Sikarskie", "Matthew Manginelli"]
+authors = ["Brighton Sikarskie", "Matthew Manginelli", "Jeremie Hews"]
 language = "en"
 multilingual = false
 

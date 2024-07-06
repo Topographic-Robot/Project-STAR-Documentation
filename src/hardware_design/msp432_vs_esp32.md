@@ -1,15 +1,17 @@
-
 # Microcontroller Decision for Topographical Mapping Robot
 
 ## Introduction
+
 When designing a robot for topographical mapping, selecting the appropriate microcontroller is crucial. This document outlines the decision-making process for choosing between the MSP432 and the ESP32, detailing the benefits and drawbacks of each, and explaining the final choice to use the ESP32.
 
 ## Considered Microcontrollers
 
 ### ESP32
+
 The ESP32 is a powerful and versatile microcontroller known for its integrated Wi-Fi and Bluetooth capabilities. It features a dual-core processor, ample GPIO pins, and extensive support for various networking protocols.
 
 #### Advantages
+
 - **Integrated Features**: Built-in Wi-Fi and Bluetooth simplify development and reduce the need for additional modules.
 - **Community Support**: Extensive libraries, documentation, and community resources facilitate the development process.
 - **Cost-Effective**: At approximately $9, the ESP32 is an affordable option.
@@ -17,23 +19,28 @@ The ESP32 is a powerful and versatile microcontroller known for its integrated W
 - **Performance**: Dual-core processor with a clock speed of up to 240 MHz offers robust performance for complex tasks.
 
 #### Disadvantages
+
 - **Power Consumption**: Higher power consumption compared to some low-power microcontrollers.
 - **Complexity**: May be overkill for simpler applications due to its extensive features.
 
 ### MSP432 (Replaced by ESP32)
+
 The MSP432, previously considered, is a microcontroller from Texas Instruments designed for low-power applications with a strong focus on energy efficiency and performance.
 
 #### Advantages
+
 - **Low Power Consumption**: Designed to operate efficiently with minimal power.
 - **High Precision**: Offers high precision in analog measurements with its integrated ADC.
 - **Ease of Use**: Simplified development environment with support from Texas Instruments.
 
 #### Disadvantages
+
 - **Limited Connectivity**: Lacks built-in Wi-Fi and Bluetooth, requiring additional modules for connectivity.
 - **Cost**: Slightly more expensive compared to the ESP32.
 - **Community Support**: Less extensive community support and fewer libraries compared to the ESP32.
 
 ## Decision Rationale
+
 The final decision to use the ESP32 was based on several key factors:
 
 1. **Integrated Connectivity**: The ESP32's built-in Wi-Fi and Bluetooth are essential for the topographical mapping robot, allowing for seamless data transmission and remote control capabilities without needing additional hardware.
@@ -43,5 +50,5 @@ The final decision to use the ESP32 was based on several key factors:
 5. **Flexibility and Scalability**: The ESP32 offers flexibility in programming and the ability to scale the project with additional features without significant changes to the hardware platform.
 
 ## Conclusion
-After a thorough evaluation of the MSP432 and ESP32, the ESP32 has been chosen as the microcontroller for the topographical mapping robot. Its integrated features, strong community support, cost efficiency, and robust performance make it the ideal choice to meet the project's requirements.
 
+After a thorough evaluation of the MSP432 and ESP32, the ESP32 has been chosen as the microcontroller for the topographical mapping robot. Its integrated features, strong community support, cost efficiency, and robust performance make it the ideal choice to meet the project's requirements.

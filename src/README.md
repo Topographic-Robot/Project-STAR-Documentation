@@ -21,13 +21,13 @@ All of the docs can be found here including the installation and dependencies.
 
 Anything inside of the Topographic-Robot is free and open source. 
 You can find the source code in various repos on the [organization](https://github.com/orgs/Topographic-Robot/repositories).
-Any issue or feature request can be posted on the GitHub issue tracker for their coresponding repository. Internally Jira
+Any issue or feature request can be posted on the GitHub issue tracker for their corresponding repository. Internally Jira
 is used to manage features, issues, sprints, the backlog and many other things. This means not everything on Jira will be
 attached to GitHub. However, all of the code documentation, and the progression of development will be shown.
 
 ## License
 
 Everything within the organization is released under the [MIT License](https://github.com/Topographic-Robot/Documentation/blob/main/LICENSE).
-If there is a repository that includes a different license such as a library thats not internaly made by us then that license takes precedence.
-If there is ever a repository that is made by us and doesn't explicitly include a licenese then know it is still released under the MIT License.
+If there is a repository that includes a different license such as a library thats not internally made by us then that license takes precedence.
+If there is ever a repository that is made by us and doesn't explicitly include a license then know it is still released under the MIT License.
 
