@@ -49,16 +49,7 @@ However some good commands are:
 
 ### Windows
 
-####  Installation of Visual Studio
-
-#### Installation of Rust
-
-#### Installation of mdBook
-
-#### mdBook documentation
-
-
-To install RUST for windows follow the following link provided
+To install Rust for windows follow the following link provided
 [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
 Download the 64 bit .exe and run the file.
 Your command prompt should open once the file is ran.
