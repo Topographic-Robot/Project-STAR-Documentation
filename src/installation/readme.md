@@ -8,6 +8,8 @@ The section below can most likely be skipped unless you plan on making changes t
 
 ## mdBook setup
 
+### Linux
+
 If you are going to do development for the documentation of this project, this is for you. Otherwise, continue to the next pages.
 
 ### Installation of Rust
@@ -43,3 +45,23 @@ However some good commands are:
 - `mdbook test` --- Tests Rust code samples.
 - `mdbook clean` --- Deletes the rendered output.
 - `mdbook completions` --- Support for shell auto-completion.
+
+
+### Windows
+
+To install RUST for windows follow the following link provided
+https://www.rust-lang.org/tools/install
+Download the 64 bit .exe and run the file
+Your command prompt should open once the file is ran. 
+1."Rust requires a linker and Windows API libraries but they don't seem to be available." The following prompt should appear; select the 1st optiobn by typing the number 1, This should be the free version. Selecting this will prompt windows to install Visual Studio. 
+2.When prompted click continue and install both packages displayed. 
+3.Once completed the command propmt should update. Reboot your computer to continue. 
+4.Once your computer has rebooted open reopen your command prompt by reopening the rustup-init file previously downloaded. 3 options should appear.
+    1. Proceed with standard installation (default - just press enter)
+    2. Customize installation
+    3. Cancel installation
+Select the 1st option.
+5.Once install close the command prompt and reopen.This would reload its PATH environment variable to include Cargo's bin directory 
+(%USERPROFILE%\.cargo\bin).
+6.Next reopen the command prompt and rust should be properly installed.
+
