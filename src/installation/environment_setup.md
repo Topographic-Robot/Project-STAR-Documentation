@@ -75,11 +75,45 @@ brew install gcc make pkg-config arm-none-eabi-gcc openocd bear screen qemu
 Keep in mind
 > GNU "make" has been installed as "gmake".
 > If you need to use it as "make", you can add a "gnubin" directory
-> to your PATH from your bashrc like:
+> to your PATH from your zshrc like:
 > 
->     ``PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"``
+>   ``export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"``
 
-6. Install clang-format
+6. Install clang-format v17+
+
+```sh
+brew update
+brew install llvm
+```
+
+> If you need to have llvm first in your PATH, run:
+>   ``export PATH="/opt/homebrew/opt/llvm/bin:$PATH"``
+> 
+> For compilers to find llvm you may need to set:
+>   ``export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"``
+>   ``export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"``
+>
+> To avoide clobbering:
+>   ``export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/llvm/lib"``
+>   ``export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/llvm/include"``
+
+When I did this, I got 
+```sh
+source ~/.zshrc 
+clang-format --version
+
+Homebrew clang-format version 18.1.8
+```
+
+7. Install asmfmt
+
+```sh
+brew update
+brew install go
+go install github.com/klauspost/asmfmt/cmd/asmfmt@latest
+echo 'export PATH="$PATH:$HOME/go/bin"' >> ~/.zshrc
+source ~/.zshrc
+```
 
 ## Common Issues
 1. MacOS: "“simplelink_sdk_wifi_plugin_4_20_00_10” can’t be opened because Apple cannot check it for malicious software."
