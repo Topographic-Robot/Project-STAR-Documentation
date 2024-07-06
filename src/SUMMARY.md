@@ -3,7 +3,7 @@
 - [Introduction](./readme.md)
 - [Project Overview]()
 - [Hardware Design]()
-  - [Why the MSP](./hardware_design/reasoning_msp432.md)
+  - [Why the MSP](./hardware_design/msp432_vs_esp32.md)
 - [Software Design]()
 - [Installation](./installation/readme.md)
   - [Environment Setup](./installation/environment_setup.md)
