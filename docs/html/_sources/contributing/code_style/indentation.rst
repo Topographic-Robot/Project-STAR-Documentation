@@ -15,11 +15,11 @@ Bad Example
   
   static void process_input(int input_value)
   {    
-      if (input_value > 0) {
-          s_threshold = 10;
-      } else {
-          s_threshold = -1;
-      }
+    if (input_value > 0) {
+      s_threshold = 10;
+    } else {
+      s_threshold = -1;
+    }
   }
 
 ---

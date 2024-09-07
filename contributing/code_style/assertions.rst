@@ -16,8 +16,8 @@ Example of Using `assert`:
 
     void process_data(int *data)
     {
-        assert(data != NULL);  /* Assert that data is not NULL */
-        /* Continue processing */
+      assert(data != NULL);  /* Assert that data is not NULL */
+      /* Continue processing */
     }
 
 - **Avoid Assertions in Production Code**: Assertions should not be used for handling expected runtime errors or conditions that might naturally occur in a program's lifecycle. Instead, use proper error handling techniques like `if` statements or return codes.
@@ -28,8 +28,8 @@ Bad Example:
 
     void read_file(FILE *fp)
     {
-        assert(fp != NULL);  /* INCORRECT: This could be a valid runtime error */
-        /* Reading file logic */
+      assert(fp != NULL);  /* INCORRECT: This could be a valid runtime error */
+      /* Reading file logic */
     }
 
 Good Example:
@@ -38,11 +38,11 @@ Good Example:
 
     void read_file(FILE *fp)
     {
-        if (fp == NULL) {
-            /* Handle the error, perhaps by returning an error code */
-            return;
-        }
-        /* Reading file logic */
+      if (fp == NULL) {
+        /* Handle the error, perhaps by returning an error code */
+        return;
+      }
+      /* Reading file logic */
     }
 
 - **Avoid Side Effects in Assertions**: Assertions should not contain side effects, as the code inside the `assert` macro will be removed in non-debug builds (e.g., when `NDEBUG` is defined). Ensure that assertions only check conditions without altering the program state.

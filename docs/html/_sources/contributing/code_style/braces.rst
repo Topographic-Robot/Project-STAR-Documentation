@@ -18,7 +18,7 @@ Good Example:
 .. code-block:: c
 
     if (foo) {
-        bar();       /* Correct: Braces added */
+      bar();       /* Correct: Braces added */
     }
 
 - **Same Line for Control Structures and Blocks**: For control structures like `if`, `for`, `while`, and blocks like structs and enums, always place the opening brace `{` on the same line as the statement. This rule applies unless the line is excessively long, in which case you may split it, but still aim to keep the brace near the closing parenthesis.
@@ -76,18 +76,6 @@ Good Example:
     static void my_function(void)
     {
       /* Function logic */
-    }
-
-- **Long Statements or Complex Logic**: If a control structure or block has a very long or complex statement that requires multiple lines, you may split the statement but keep the brace close to the ending parenthesis `)` for readability.
-
-Example 3:
-----------
-
-.. code-block:: c
-
-    if (my_long_condition && another_condition &&
-        some_more_complex_logic()) {
-      /* Split statement, brace close to ')' */
     }
 
 General Guidelines

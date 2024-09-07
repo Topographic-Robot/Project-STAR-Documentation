@@ -375,8 +375,8 @@ document.write(`
 <li><p><strong>Enum Names Should End in `_t`</strong>: All enum types should end with <cite>_t</cite> to indicate that they are typedefs, ensuring consistency across the project.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">status_success_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">status_failure_e</span>
+<span class="w">  </span><span class="n">status_success_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">status_failure_e</span>
 <span class="p">}</span><span class="w"> </span><span class="n">status_t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -384,9 +384,9 @@ document.write(`
 <li><p><strong>Use Snake Case for Enum Values</strong>: All enum values should follow snake_case naming conventions, just like variables and function names.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">connection_open_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">connection_closed_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">connection_failed_e</span>
+<span class="w">  </span><span class="n">connection_open_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">connection_closed_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">connection_failed_e</span>
 <span class="p">}</span><span class="w"> </span><span class="n">connection_status_t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -394,9 +394,9 @@ document.write(`
 <li><p><strong>Use Descriptive Names for Enum Members</strong>: Enum members should have descriptive names that convey their meaning. Avoid abbreviations or ambiguous terms.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">color_red_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">color_green_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">color_blue_e</span>
+<span class="w">  </span><span class="n">color_red_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">color_green_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">color_blue_e</span>
 <span class="p">}</span><span class="w"> </span><span class="n">color_t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -404,9 +404,9 @@ document.write(`
 <li><p><strong>Enum Values Should End with `_e`</strong>: To distinguish enum members from other constants or variables, enum values should end with <cite>_e</cite>. This helps with consistency and clarity in the code.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">log_error_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">log_warning_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">log_info_e</span>
+<span class="w">  </span><span class="n">log_error_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">log_warning_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">log_info_e</span>
 <span class="p">}</span><span class="w"> </span><span class="n">log_level_t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -414,9 +414,9 @@ document.write(`
 <li><p><strong>Assign Specific Values Only When Necessary</strong>: Enum members are automatically assigned incremental values starting from <cite>0</cite>. Only assign specific values if they are necessary, such as for protocol definitions or when compatibility is required.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">error_none_e</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">    </span><span class="n">error_minor_e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">    </span><span class="n">error_major_e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">  </span><span class="n">error_none_e</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="n">error_minor_e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="n">error_major_e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
 <span class="p">}</span><span class="w"> </span><span class="n">error_level_t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -427,15 +427,15 @@ document.write(`
 <h2>Example 1:<a class="headerlink" href="#example-1" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">SUCCESS</span><span class="p">,</span>
-<span class="w">    </span><span class="n">FAILURE</span>
+<span class="w">  </span><span class="n">SUCCESS</span><span class="p">,</span>
+<span class="w">  </span><span class="n">FAILURE</span>
 <span class="p">}</span><span class="w"> </span><span class="n">STATUS</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Not using snake_case, enum name not ending with _t */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">status_success_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">status_failure_e</span>
+<span class="w">  </span><span class="n">status_success_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">status_failure_e</span>
 <span class="p">}</span><span class="w"> </span><span class="n">status_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Using snake_case and _t suffix */</span>
 </pre></div>
 </div>
@@ -444,15 +444,15 @@ document.write(`
 <h2>Example 2:<a class="headerlink" href="#example-2" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">SUCCESS</span><span class="p">,</span>
-<span class="w">    </span><span class="n">FAILURE</span>
+<span class="w">  </span><span class="n">SUCCESS</span><span class="p">,</span>
+<span class="w">  </span><span class="n">FAILURE</span>
 <span class="p">}</span><span class="w"> </span><span class="n">result_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Enum members not following snake_case */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">result_success_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">result_failure_e</span>
+<span class="w">  </span><span class="n">result_success_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">result_failure_e</span>
 <span class="p">}</span><span class="w"> </span><span class="n">result_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Enum members following snake_case and ending with _e */</span>
 </pre></div>
 </div>
@@ -461,15 +461,15 @@ document.write(`
 <h2>Example 3:<a class="headerlink" href="#example-3" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">OPEN</span><span class="p">,</span>
-<span class="w">    </span><span class="n">CLOSED</span>
+<span class="w">  </span><span class="n">OPEN</span><span class="p">,</span>
+<span class="w">  </span><span class="n">CLOSED</span>
 <span class="p">}</span><span class="w"> </span><span class="n">door_state_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Enum values not descriptive and not following snake_case */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">door_open_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">door_closed_e</span>
+<span class="w">  </span><span class="n">door_open_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">door_closed_e</span>
 <span class="p">}</span><span class="w"> </span><span class="n">door_state_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Enum members are descriptive, follow snake_case, and end with _e */</span>
 </pre></div>
 </div>

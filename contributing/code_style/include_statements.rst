@@ -67,8 +67,8 @@ In the source file (or another header file), the full definition of the struct c
 .. code-block:: c
 
     struct device_t {
-        int id;
-        int status;
+      int id;
+      int status;
     };
 
 Benefits of Forward Declarations
@@ -101,7 +101,7 @@ Example:
 
     void print_device_info(device_t *device)
     {
-        printf("Device ID: %d\n", device->id);
+      printf("Device ID: %d\n", device->id);
     }
 
 Order of Includes

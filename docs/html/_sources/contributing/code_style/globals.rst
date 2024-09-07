@@ -51,9 +51,9 @@ Correct Example (Avoiding Globals)
     /* Prefer passing arguments or using static variables instead of global variables */
 
     void process_data(int input) {
-        static int s_data_count = 0;  /* Limited to this file */
-        s_data_count += input;
-        /* ... */
+      static int s_data_count = 0;  /* Limited to this file */
+      s_data_count += input;
+      /* ... */
     }
 
 Incorrect Example (Using Globals)
@@ -64,7 +64,7 @@ Incorrect Example (Using Globals)
     int g_data_count = 0;  /* Global variable, avoid this */
 
     void process_data(int input) {
-        g_data_count += input;  /* Global access, can cause side effects */
+      g_data_count += input;  /* Global access, can cause side effects */
     }
 
 General Guidelines

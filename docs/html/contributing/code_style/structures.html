@@ -377,8 +377,8 @@ document.write(`
 <li><p><strong>Use Structs to Group Related Data</strong>: Structs should be used to encapsulate related variables into a single entity, rather than passing around or managing multiple separate variables.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">point_t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -386,8 +386,8 @@ document.write(`
 <li><p><strong>Struct Names Should End in `_t`</strong>: All struct types should end with <cite>_t</cite> to indicate that they are typedefs, ensuring consistency across the project.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">rectangle_t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -395,8 +395,8 @@ document.write(`
 <li><p><strong>Use Snake Case for Struct Members</strong>: All member variables inside a struct should follow snake_case naming conventions. This ensures uniformity across the project and improves readability.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x_position</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y_position</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x_position</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y_position</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">position_t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -407,8 +407,8 @@ document.write(`
 <span class="cm"> * @brief Struct representing a 2D point.</span>
 <span class="cm"> */</span>
 <span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x_position</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; X-coordinate of the point */</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y_position</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; Y-coordinate of the point */</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x_position</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; X-coordinate of the point */</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y_position</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; Y-coordinate of the point */</span>
 <span class="p">}</span><span class="w"> </span><span class="n">point_t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -416,8 +416,8 @@ document.write(`
 <li><p><strong>Use Pointers for Large Structs</strong>: When passing large structs around, use pointers instead of passing by value. This avoids the overhead of copying the entire struct and improves performance.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">move_point</span><span class="p">(</span><span class="n">point_t</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">x_position</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">y_position</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">x_position</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">y_position</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -435,7 +435,7 @@ document.write(`
 <li><p><strong>Use `const` with Struct Pointers When Data Shouldn’t Change</strong>: If a function should not modify the data inside a struct, mark the pointer as <cite>const</cite> to enforce this behavior.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">print_point</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">point_t</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;X: %d, Y: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">x_position</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">y_position</span><span class="p">);</span>
+<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;X: %d, Y: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">x_position</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">y_position</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -448,15 +448,15 @@ document.write(`
 <li><p><strong>Minimize Padding and Align Struct Members</strong>: Struct members should be ordered to minimize padding and ensure proper alignment. This improves performance and reduces memory overhead.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="cm">/* Aligns with the int size */</span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Padding added here */</span>
+<span class="w">  </span><span class="kt">int</span><span class="w">  </span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="cm">/* Aligns with the int size */</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Padding added here */</span>
 <span class="p">}</span><span class="w"> </span><span class="n">aligned_struct_t</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Rearranged for better alignment:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Now placed before the int */</span>
-<span class="w">    </span><span class="kt">int</span><span class="w">  </span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="cm">/* Padding removed */</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Now placed before the int */</span>
+<span class="w">  </span><span class="kt">int</span><span class="w">  </span><span class="n">a</span><span class="p">;</span><span class="w">   </span><span class="cm">/* Padding removed */</span>
 <span class="p">}</span><span class="w"> </span><span class="n">aligned_struct_t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -470,11 +470,11 @@ document.write(`
 <li><p><strong>Use Accessor Functions to Modify Struct Members</strong>: When appropriate, use getter and setter functions to modify struct members. This allows for better encapsulation and flexibility, especially if the struct implementation changes over time.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">set_point_x</span><span class="p">(</span><span class="n">point_t</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">x_position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">  </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">x_position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">get_point_x</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">point_t</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">x_position</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="o">-&gt;</span><span class="n">x_position</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -505,15 +505,15 @@ document.write(`
 <h2>Example 1:<a class="headerlink" href="#example-1" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">rect</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Non-descriptive name, does not end with _t */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">rectangle_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Descriptive name and follows naming convention */</span>
 </pre></div>
 </div>
@@ -522,8 +522,8 @@ document.write(`
 <h2>Example 2:<a class="headerlink" href="#example-2" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">position_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Poor documentation and lacks meaningful member names */</span>
 </pre></div>
 </div>
@@ -532,8 +532,8 @@ document.write(`
 <span class="cm"> * @brief 2D position in space.</span>
 <span class="cm"> */</span>
 <span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x_position</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; X-coordinate */</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y_position</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; Y-coordinate */</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x_position</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; X-coordinate */</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y_position</span><span class="p">;</span><span class="w">  </span><span class="cm">/**&lt; Y-coordinate */</span>
 <span class="p">}</span><span class="w"> </span><span class="n">position_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Proper documentation and meaningful member names */</span>
 </pre></div>
 </div>

@@ -27,7 +27,7 @@ Example:
 
     void set_flag(void)
     {
-        asm volatile("mov r0, #1" : : : "r0");  /* Set flag in register r0 */
+      asm volatile("mov r0, #1" : : : "r0");  /* Set flag in register r0 */
     }
 
 - **Always Use `volatile` for Inline ASM**: Inline assembly should be marked as `volatile` to prevent the compiler from optimizing it out.
@@ -42,13 +42,13 @@ Example:
 
     int add(int a, int b)
     {
-        int result;
-        asm volatile(
-            "add %[r], %[a], %[b]"
-            : [r] "=r" (result)    /* Output */
-            : [a] "r" (a), [b] "r" (b) /* Inputs */
-        );
-        return result;
+      int result;
+      asm volatile(
+        "add %[r], %[a], %[b]"
+        : [r] "=r" (result)    /* Output */
+        : [a] "r" (a), [b] "r" (b) /* Inputs */
+      );
+      return result;
     }
 
 - **Prefer Named Registers**: Always use named registers or C variable references in inline ASM instead of hardcoding register names. This improves portability and makes it easier to understand how the assembly interacts with C.
@@ -69,13 +69,13 @@ Good Example:
 
     int set_register(int value)
     {
-        asm volatile(
-            "mov r0, %[val]"
-            :
-            : [val] "r" (value)
-            : "r0"   /* CORRECT: Specifying the register and constraint */
-        );
-        return value;
+      asm volatile(
+        "mov r0, %[val]"
+        :
+        : [val] "r" (value)
+        : "r0"   /* CORRECT: Specifying the register and constraint */
+      );
+      return value;
     }
 
 When to Use ASM and Inline ASM

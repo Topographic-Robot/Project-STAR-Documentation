@@ -382,15 +382,15 @@ document.write(`
 <h2>Example 1:<a class="headerlink" href="#example-1" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">Point</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Missing &#39;_t&#39; suffix */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">point_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: &#39;_t&#39; suffix added */</span>
 </pre></div>
 </div>
@@ -402,15 +402,15 @@ document.write(`
 <h2>Example 2:<a class="headerlink" href="#example-2" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">W_H</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Non-descriptive type name */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">dimensions_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Descriptive type name */</span>
 </pre></div>
 </div>
@@ -450,8 +450,8 @@ document.write(`
 <h2>Example 5:<a class="headerlink" href="#example-5" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="n">john</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Repeated &#39;struct&#39; keyword */</span>
@@ -459,8 +459,8 @@ document.write(`
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">person_t</span><span class="p">;</span>
 
 <span class="n">person_t</span><span class="w"> </span><span class="n">john</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Typedef used to avoid repeated &#39;struct&#39; keyword */</span>
@@ -474,17 +474,17 @@ document.write(`
 <h2>Example 6:<a class="headerlink" href="#example-6" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">RED</span><span class="p">,</span>
-<span class="w">    </span><span class="n">BLUE</span><span class="p">,</span>
-<span class="w">    </span><span class="n">GREEN</span>
+<span class="w">  </span><span class="n">RED</span><span class="p">,</span>
+<span class="w">  </span><span class="n">BLUE</span><span class="p">,</span>
+<span class="w">  </span><span class="n">GREEN</span>
 <span class="p">};</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">red_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">blue_e</span><span class="p">,</span>
-<span class="w">    </span><span class="n">green_e</span>
+<span class="w">  </span><span class="n">red_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">blue_e</span><span class="p">,</span>
+<span class="w">  </span><span class="n">green_e</span>
 <span class="p">}</span><span class="w"> </span><span class="n">color_t</span><span class="p">;</span>
 </pre></div>
 </div>

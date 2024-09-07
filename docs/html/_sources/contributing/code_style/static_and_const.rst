@@ -48,7 +48,7 @@ Bad Example:
     int internal_counter = 0;   /* INCORRECT, lacks static for internal use */
 
     void increment_counter(void) {
-        internal_counter++;
+      internal_counter++;
     }
 
 Good Example:
@@ -58,7 +58,7 @@ Good Example:
     static int s_internal_counter = 0;   /* Correct, using static for internal use */
 
     static void increment_counter(void) {
-        s_internal_counter++;
+      s_internal_counter++;
     }
 
 **General Guidelines**:

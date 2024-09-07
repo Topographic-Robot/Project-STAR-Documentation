@@ -13,7 +13,7 @@ Example of `const` and Pass-by-Reference:
 
     void process_data(const int *data)
     {
-        /* Function logic */
+      /* Function logic */
     }
 
 Return Value Conventions
@@ -41,8 +41,8 @@ If the function name is an action, return an error-code integer:
 
     int add_work(void)
     {
-        return 0;        /* Success */
-        return -EBUSY;   /* Failure */
+      return 0;        /* Success */
+      return -EBUSY;   /* Failure */
     }
 
 If the function name is a predicate, return a succeeded boolean:
@@ -51,8 +51,8 @@ If the function name is a predicate, return a succeeded boolean:
 
     int pci_dev_present(void)
     {
-        return 1;        /* Success */
-        return 0;        /* Failure */
+      return 1;        /* Success */
+      return 0;        /* Failure */
     }
 
 All exported functions must respect this convention, and all public functions should as well. Private (static) functions are not required to follow this convention, but it is recommended.
@@ -68,7 +68,7 @@ Example:
 
     static int calculate_internal_value(int input)
     {
-        return input * 2;
+      return input * 2;
     }
 
 - **Exposed Private Functions**: If a function cannot be `static` and must be exposed, prefix its name with `priv_` to clearly indicate that it is meant for internal use and should not be accessed by users of the API.
@@ -79,7 +79,7 @@ Example:
 
     int priv_process_data(int data)
     {
-        return data + 10;
+      return data + 10;
     }
 
 General Function Guidelines
@@ -95,7 +95,7 @@ Example of `const` and Passing by Reference:
 
     void update_values(const int *values)
     {
-        /* Function logic */
+      /* Function logic */
     }
 
 - **Clear Names**: Function names should describe what the function does, and the return type should match the behavior of the function name (e.g., use a boolean return type for predicate functions).
@@ -112,11 +112,11 @@ Example:
 
     void *get_buffer(void)
     {
-        void *buffer = malloc(1024);
-        if (!buffer) {
-            return NULL;  /* Return NULL on failure */
-        }
-        return buffer;
+      void *buffer = malloc(1024);
+      if (!buffer) {
+        return NULL;  /* Return NULL on failure */
+      }
+      return buffer;
     }
 
 - **Prefer Early Exits**: Use early `return` statements to handle errors and avoid deeply nested control structures.
@@ -127,11 +127,11 @@ Example:
 
     int process_input(int input_value)
     {
-        if (input_value < 0) {
-            return -EINVAL;  /* Early exit on invalid input */
-        }
-        /* Continue processing */
-        return 0;
+      if (input_value < 0) {
+        return -EINVAL;  /* Early exit on invalid input */
+      }
+      /* Continue processing */
+      return 0;
     }
 
 - **Always Use Braces for Functions on New Line**: For all function definitions, the opening brace must be on the next line.
@@ -141,7 +141,7 @@ Bad Example:
 .. code-block:: c
 
     static void my_function(void) {
-        /* INCORRECT: Function braces on the same line */
+      /* INCORRECT: Function braces on the same line */
     }
 
 Good Example:
@@ -150,7 +150,7 @@ Good Example:
 
     static void my_function(void)
     {
-        /* CORRECT: Function braces on the next line */
+      /* CORRECT: Function braces on the next line */
     }
 
 - **Always Use Braces for Control Structures on Same Line**: For control structures like `if`, `for`, and `while`, the opening brace should be on the same line as the statement.
@@ -161,7 +161,7 @@ Bad Example:
 
     if (foo)
     {
-        bar();  /* INCORRECT: Braces on the next line */
+      bar();  /* INCORRECT: Braces on the next line */
     }
 
 Good Example:
@@ -169,7 +169,7 @@ Good Example:
 .. code-block:: c
 
     if (foo) {
-        bar();  /* CORRECT: Braces on the same line */
+      bar();  /* CORRECT: Braces on the same line */
     }
 
 **Exported Functions**

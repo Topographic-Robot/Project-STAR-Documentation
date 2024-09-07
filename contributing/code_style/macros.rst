@@ -67,7 +67,7 @@ Correct Example:
     /* Good inline example: Small and simple function */
     inline int square(int x)
     {
-        return x * x;
+      return x * x;
     }
 
 Incorrect Example:
@@ -77,11 +77,11 @@ Incorrect Example:
     /* Bad inline example: Larger function, should not be inlined */
     inline int process_data(int data[], int length)
     {
-        int result = 0;
-        for (int i = 0; i < length; ++i) {
-            result += data[i];
-        }
-        return result;
+      int result = 0;
+      for (int i = 0; i < length; ++i) {
+        result += data[i];
+      }
+      return result;
     }
 
 - **Enclose Macro Definitions in Blocks**: If the macro body contains more than one statement, enclose the macro body in a `do { ... } while(0)` block to ensure it behaves like a single statement and can be used safely in conditional logic.

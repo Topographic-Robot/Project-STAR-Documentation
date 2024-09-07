@@ -42,18 +42,18 @@ Bad Example
 
     void doSomething(int a)
     {  
-        if (a > 0) {
-            temp = 10;
-        } else {
-            temp = -1;
-        }
+      if (a > 0) {
+        temp = 10;
+      } else {
+        temp = -1;
+      }
     }
 
     int foo;  /* Global variable without a clear prefix or name */
 
     void function(void)
     {
-        foo = temp + 1;  /* Vague variable usage */
+      foo = temp + 1;  /* Vague variable usage */
     }
 
 
@@ -81,26 +81,26 @@ Good Example
     static bool s_invert;  /* Static variable with s_ prefix to indicate file scope */
 
     typedef enum status_t {  /* Enum with snake_case and _t suffix */
-        success_e,
-        failure_e
+      success_e,
+      failure_e
     } status_t;
 
     static int s_threshold = 0;  /* Declare static threshold at file scope */
 
     static void process_input(int input_value)
     {  
-        /* Clear variable name and static scope for file use */
-        if (input_value > 0) {
-            s_threshold = 10;
-        } else {
-            s_threshold = -1;
-        }
+      /* Clear variable name and static scope for file use */
+      if (input_value > 0) {
+        s_threshold = 10;
+      } else {
+        s_threshold = -1;
+      }
     }
 
     static void calculate_output(void)
     {  
-        int result = 0;  /* Clear, descriptive variable usage */
-        result = s_threshold + 1;
+      int result = 0;  /* Clear, descriptive variable usage */
+      result = s_threshold + 1;
     }
 
 

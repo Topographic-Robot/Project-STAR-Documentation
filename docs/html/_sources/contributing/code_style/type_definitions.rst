@@ -16,8 +16,8 @@ Bad Example:
 .. code-block:: c
 
     typedef struct {
-        int x;
-        int y;
+      int x;
+      int y;
     } Point;  /* INCORRECT: Missing '_t' suffix */
 
 Good Example:
@@ -25,8 +25,8 @@ Good Example:
 .. code-block:: c
 
     typedef struct {
-        int x;
-        int y;
+      int x;
+      int y;
     } point_t;  /* CORRECT: '_t' suffix added */
 
 - **Use Meaningful Type Names**: Always use descriptive and meaningful names for `typedef` types to make the code more readable and easier to understand.
@@ -39,8 +39,8 @@ Bad Example:
 .. code-block:: c
 
     typedef struct {
-        int width;
-        int height;
+      int width;
+      int height;
     } W_H;  /* INCORRECT: Non-descriptive type name */
 
 Good Example:
@@ -48,8 +48,8 @@ Good Example:
 .. code-block:: c
 
     typedef struct {
-        int width;
-        int height;
+      int width;
+      int height;
     } dimensions_t;  /* CORRECT: Descriptive type name */
 
 - **Use `typedef` to Simplify Complex Types**: Use `typedef` to simplify the declaration of complex types, such as function pointers, or to make the code more consistent and readable.
@@ -96,8 +96,8 @@ Bad Example:
 .. code-block:: c
 
     struct person {
-        char *name;
-        int age;
+      char *name;
+      int age;
     };
 
     struct person john;  /* INCORRECT: Repeated 'struct' keyword */
@@ -107,8 +107,8 @@ Good Example:
 .. code-block:: c
 
     typedef struct {
-        char *name;
-        int age;
+      char *name;
+      int age;
     } person_t;
 
     person_t john;  /* CORRECT: Typedef used to avoid repeated 'struct' keyword */
@@ -123,9 +123,9 @@ Bad Example:
 .. code-block:: c
 
     enum color {
-        RED,
-        BLUE,
-        GREEN
+      RED,
+      BLUE,
+      GREEN
     };
 
 Good Example:
@@ -133,9 +133,9 @@ Good Example:
 .. code-block:: c
 
     typedef enum {
-        red_e,
-        blue_e,
-        green_e
+      red_e,
+      blue_e,
+      green_e
     } color_t;
 
 General Guidelines

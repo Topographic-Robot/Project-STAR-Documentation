@@ -13,8 +13,8 @@ General Guidelines for Structures
   .. code-block:: c
 
     typedef struct {
-        int x;
-        int y;
+      int x;
+      int y;
     } point_t;
 
 - **Struct Names Should End in `_t`**: All struct types should end with `_t` to indicate that they are typedefs, ensuring consistency across the project.
@@ -24,8 +24,8 @@ General Guidelines for Structures
   .. code-block:: c
 
     typedef struct {
-        int width;
-        int height;
+      int width;
+      int height;
     } rectangle_t;
 
 - **Use Snake Case for Struct Members**: All member variables inside a struct should follow snake_case naming conventions. This ensures uniformity across the project and improves readability.
@@ -35,8 +35,8 @@ General Guidelines for Structures
   .. code-block:: c
 
     typedef struct {
-        int x_position;
-        int y_position;
+      int x_position;
+      int y_position;
     } position_t;
 
 - **Always Document Each Member of the Struct**: Every struct member should be clearly documented with a comment, providing a short description of its purpose or role within the structure.
@@ -49,8 +49,8 @@ General Guidelines for Structures
      * @brief Struct representing a 2D point.
      */
     typedef struct {
-        int x_position;  /**< X-coordinate of the point */
-        int y_position;  /**< Y-coordinate of the point */
+      int x_position;  /**< X-coordinate of the point */
+      int y_position;  /**< Y-coordinate of the point */
     } point_t;
 
 - **Use Pointers for Large Structs**: When passing large structs around, use pointers instead of passing by value. This avoids the overhead of copying the entire struct and improves performance.
@@ -60,8 +60,8 @@ General Guidelines for Structures
   .. code-block:: c
 
     void move_point(point_t *p) {
-        p->x_position += 1;
-        p->y_position += 1;
+      p->x_position += 1;
+      p->y_position += 1;
     }
 
 - **Initialize Structs to Zero or Default Values**: Always ensure that structs are initialized properly, either with zero or appropriate default values. This avoids potential bugs caused by uninitialized data.
@@ -85,7 +85,7 @@ General Guidelines for Structures
   .. code-block:: c
 
     void print_point(const point_t *p) {
-        printf("X: %d, Y: %d\n", p->x_position, p->y_position);
+      printf("X: %d, Y: %d\n", p->x_position, p->y_position);
     }
 
 Struct Alignment and Padding
@@ -98,8 +98,8 @@ Struct Alignment and Padding
   .. code-block:: c
 
     typedef struct {
-        int  a;   /* Aligns with the int size */
-        char b;  /* Padding added here */
+      int  a;   /* Aligns with the int size */
+      char b;  /* Padding added here */
     } aligned_struct_t;
 
   Rearranged for better alignment:
@@ -107,8 +107,8 @@ Struct Alignment and Padding
   .. code-block:: c
 
     typedef struct {
-        char b;  /* Now placed before the int */
-        int  a;   /* Padding removed */
+      char b;  /* Now placed before the int */
+      int  a;   /* Padding removed */
     } aligned_struct_t;
 
 - **Consider Memory Layout for Large Structs**: For larger structs, consider the memory layout and how the data will be accessed. Group similar data types together to minimize cache misses and improve access speed.
@@ -123,11 +123,11 @@ Encapsulation and Struct Access
   .. code-block:: c
 
     void set_point_x(point_t *p, int x) {
-        p->x_position = x;
+      p->x_position = x;
     }
 
     int get_point_x(const point_t *p) {
-        return p->x_position;
+      return p->x_position;
     }
 
 - **Avoid Exposing Internal Structs in Public APIs**: In public APIs, avoid directly exposing the internal structure of a struct. Instead, use opaque types or provide accessor functions to interact with the struct, ensuring that internal implementation details can change without breaking API contracts.
@@ -161,8 +161,8 @@ Bad Example:
 .. code-block:: c
 
     typedef struct {
-        int width;
-        int height;
+      int width;
+      int height;
     } rect;  /* INCORRECT: Non-descriptive name, does not end with _t */
 
 Good Example:
@@ -170,8 +170,8 @@ Good Example:
 .. code-block:: c
 
     typedef struct {
-        int width;
-        int height;
+      int width;
+      int height;
     } rectangle_t;  /* CORRECT: Descriptive name and follows naming convention */
 
 Example 2:
@@ -182,8 +182,8 @@ Bad Example:
 .. code-block:: c
 
     typedef struct {
-        int x;
-        int y;
+      int x;
+      int y;
     } position_t;  /* INCORRECT: Poor documentation and lacks meaningful member names */
 
 Good Example:
@@ -194,8 +194,8 @@ Good Example:
      * @brief 2D position in space.
      */
     typedef struct {
-        int x_position;  /**< X-coordinate */
-        int y_position;  /**< Y-coordinate */
+      int x_position;  /**< X-coordinate */
+      int y_position;  /**< Y-coordinate */
     } position_t;  /* CORRECT: Proper documentation and meaningful member names */
 
 General Guidelines

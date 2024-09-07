@@ -114,7 +114,7 @@ Good Example:
 .. code-block:: c
 
     if (ptr != NULL) {
-        *ptr = 42;  /* CORRECT: Safe dereferencing */
+      *ptr = 42;  /* CORRECT: Safe dereferencing */
     }
 
 General Guidelines
