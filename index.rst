@@ -1,22 +1,19 @@
-Summary
-=======
+Topographic Robot Documentation
+================================
 
--  `Introduction <./readme.md>`__
--  `Project Overview <>`__
--  `Hardware Design <>`__
+Welcome to the documentation for the Topographic Robot. Below you will find sections covering all aspects of the project.
 
-   -  `Why the ESP32 <./hardware_design/msp432_vs_esp32.md>`__
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
 
--  `Software Design <>`__
--  `Installation <./installation/readme.md>`__
+   project_overview
+   hardware_design/index
+   software_design
+   installation/index
+   basic_examples
+   compiling_linking_flashing
+   testing_validation
+   future_work_improvements
+   contributors
 
-   -  `Environment Setup <./installation/environment_setup.md>`__
-
--  `Basic Examples <>`__
--  `Compiling, Linking, Flashing, … <>`__
--  `Testing and Validation <>`__
--  `Future Work and Improvements <>`__
-
---------------
-
-`Contributors <./contributors.md>`__

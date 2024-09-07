@@ -1,6 +1,10 @@
 Contributors
-============
+=============
 
--  `Brighton Sikarskie <https://github.com/bsikar>`__
--  `Matthew Manginelli <https://github.com/Mattinelli>`__
--  `Jeremie Hews <https://github.com/Jhews6>`__
+We would like to acknowledge the efforts of the following individuals who contributed to this project.
+
+- Brighton Sikarskie: https://github.com/bsikar
+- Matthew Manginelli: https://github.com/Mattinelli
+- Jeremie Hews: https://github.com/Jhews6
+- Cesar Magana De Leon: https://github.com/IMMZEK
+
