@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Enums &#8212; Topographic-Robot 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing/code_style/enums';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Functions" href="functions.html" />
+    <link rel="prev" title="Structures" href="structures.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Topographic-Robot 0.1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../project_overview.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../hardware_design/index.html">Hardware Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_design/why_esp32.html">Why the ESP32?</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_design.html">Software Design</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/index.html">Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_linux.html">Linux Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_macos.html">MacOS Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_windows.html">Windows Installation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic_examples.html">Basic Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compiling_linking_flashing.html">Compiling, Linking, Flashing</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Contributing Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Coding Style</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="reasoning.html">Why Having a Coding Style is Important</a></li>
+<li class="toctree-l3"><a class="reference internal" href="naming.html">Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indentation.html">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="horizontal_space.html">Horizontal Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertical_space.html">Vertical Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line_endings.html">Line Endings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="breaking_long_lines.html">Breaking Long Lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="braces.html">Braces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="static_and_const.html">Static and Const</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comments.html">Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pointers.html">Pointers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_definitions.html">Type Definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types.html">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structures.html">Structures</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html">Assertions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macros.html">Macros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="centralized_exiting.html">Centralized Exiting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="globals.html">Globals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="register_transfer_level.html">Register Transfer Level (RTL)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asm_inline_asm.html">ASM and Inline ASM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header_files.html">Header Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="include_statements.html">Include Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concurrency_and_parllelism.html">Concurrency and Parallelism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="memory_management.html">Memory Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project_structure.html">Project Structure</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing_validation.html">Testing and Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../future_work_improvements.html">Future Work and Improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contributing/code_style/enums.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Enums</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines-for-enums">General Guidelines for Enums</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3">Example 3:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="enums">
+<h1>Enums<a class="headerlink" href="#enums" title="Link to this heading">#</a></h1>
+<p>Enums (enumerations) should be used to define a set of named integer constants, improving code readability and maintainability. Enums group related constants and make the code more self-explanatory. Follow these guidelines for using enums in this project.</p>
+<section id="general-guidelines-for-enums">
+<h2>General Guidelines for Enums<a class="headerlink" href="#general-guidelines-for-enums" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Enum Names Should End in `_t`</strong>: All enum types should end with <cite>_t</cite> to indicate that they are typedefs, ensuring consistency across the project.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">status_success_e</span><span class="p">,</span>
+<span class="w">    </span><span class="n">status_failure_e</span>
+<span class="p">}</span><span class="w"> </span><span class="n">status_t</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Use Snake Case for Enum Values</strong>: All enum values should follow snake_case naming conventions, just like variables and function names.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">connection_open_e</span><span class="p">,</span>
+<span class="w">    </span><span class="n">connection_closed_e</span><span class="p">,</span>
+<span class="w">    </span><span class="n">connection_failed_e</span>
+<span class="p">}</span><span class="w"> </span><span class="n">connection_status_t</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Use Descriptive Names for Enum Members</strong>: Enum members should have descriptive names that convey their meaning. Avoid abbreviations or ambiguous terms.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">color_red_e</span><span class="p">,</span>
+<span class="w">    </span><span class="n">color_green_e</span><span class="p">,</span>
+<span class="w">    </span><span class="n">color_blue_e</span>
+<span class="p">}</span><span class="w"> </span><span class="n">color_t</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Enum Values Should End with `_e`</strong>: To distinguish enum members from other constants or variables, enum values should end with <cite>_e</cite>. This helps with consistency and clarity in the code.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">log_error_e</span><span class="p">,</span>
+<span class="w">    </span><span class="n">log_warning_e</span><span class="p">,</span>
+<span class="w">    </span><span class="n">log_info_e</span>
+<span class="p">}</span><span class="w"> </span><span class="n">log_level_t</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Assign Specific Values Only When Necessary</strong>: Enum members are automatically assigned incremental values starting from <cite>0</cite>. Only assign specific values if they are necessary, such as for protocol definitions or when compatibility is required.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">error_none_e</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">error_minor_e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="n">error_major_e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span><span class="w"> </span><span class="n">error_level_t</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="example-1">
+<h2>Example 1:<a class="headerlink" href="#example-1" title="Link to this heading">#</a></h2>
+<p>Bad Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">SUCCESS</span><span class="p">,</span>
+<span class="w">    </span><span class="n">FAILURE</span>
+<span class="p">}</span><span class="w"> </span><span class="n">STATUS</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Not using snake_case, enum name not ending with _t */</span>
+</pre></div>
+</div>
+<p>Good Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">status_success_e</span><span class="p">,</span>
+<span class="w">    </span><span class="n">status_failure_e</span>
+<span class="p">}</span><span class="w"> </span><span class="n">status_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Using snake_case and _t suffix */</span>
+</pre></div>
+</div>
+</section>
+<section id="example-2">
+<h2>Example 2:<a class="headerlink" href="#example-2" title="Link to this heading">#</a></h2>
+<p>Bad Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">SUCCESS</span><span class="p">,</span>
+<span class="w">    </span><span class="n">FAILURE</span>
+<span class="p">}</span><span class="w"> </span><span class="n">result_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Enum members not following snake_case */</span>
+</pre></div>
+</div>
+<p>Good Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">result_success_e</span><span class="p">,</span>
+<span class="w">    </span><span class="n">result_failure_e</span>
+<span class="p">}</span><span class="w"> </span><span class="n">result_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Enum members following snake_case and ending with _e */</span>
+</pre></div>
+</div>
+</section>
+<section id="example-3">
+<h2>Example 3:<a class="headerlink" href="#example-3" title="Link to this heading">#</a></h2>
+<p>Bad Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">OPEN</span><span class="p">,</span>
+<span class="w">    </span><span class="n">CLOSED</span>
+<span class="p">}</span><span class="w"> </span><span class="n">door_state_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Enum values not descriptive and not following snake_case */</span>
+</pre></div>
+</div>
+<p>Good Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">door_open_e</span><span class="p">,</span>
+<span class="w">    </span><span class="n">door_closed_e</span>
+<span class="p">}</span><span class="w"> </span><span class="n">door_state_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Enum members are descriptive, follow snake_case, and end with _e */</span>
+</pre></div>
+</div>
+</section>
+<section id="general-guidelines">
+<h2>General Guidelines<a class="headerlink" href="#general-guidelines" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Always use snake_case for both enum names and members.</p></li>
+<li><p>Enum types should end with <cite>_t</cite> and values with <cite>_e</cite> for clarity and consistency.</p></li>
+<li><p>Use descriptive names for enum members to improve readability.</p></li>
+<li><p>Only assign specific values to enum members when necessary.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="structures.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Structures</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="functions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Functions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines-for-enums">General Guidelines for Enums</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3">Example 3:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brighton Sikarskie, Matthew Manginelli, Jeremie Hews, Cesar Magana De Leon
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Topographic-Robot.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

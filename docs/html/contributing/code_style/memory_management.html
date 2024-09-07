@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Memory Management &#8212; Topographic-Robot 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing/code_style/memory_management';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Project Structure" href="project_structure.html" />
+    <link rel="prev" title="Concurrency and Parallelism" href="concurrency_and_parllelism.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Topographic-Robot 0.1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../project_overview.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../hardware_design/index.html">Hardware Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_design/why_esp32.html">Why the ESP32?</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_design.html">Software Design</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/index.html">Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_linux.html">Linux Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_macos.html">MacOS Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_windows.html">Windows Installation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic_examples.html">Basic Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compiling_linking_flashing.html">Compiling, Linking, Flashing</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Contributing Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Coding Style</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="reasoning.html">Why Having a Coding Style is Important</a></li>
+<li class="toctree-l3"><a class="reference internal" href="naming.html">Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indentation.html">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="horizontal_space.html">Horizontal Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertical_space.html">Vertical Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line_endings.html">Line Endings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="breaking_long_lines.html">Breaking Long Lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="braces.html">Braces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="static_and_const.html">Static and Const</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comments.html">Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pointers.html">Pointers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_definitions.html">Type Definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types.html">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structures.html">Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enums.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html">Assertions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macros.html">Macros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="centralized_exiting.html">Centralized Exiting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="globals.html">Globals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="register_transfer_level.html">Register Transfer Level (RTL)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asm_inline_asm.html">ASM and Inline ASM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header_files.html">Header Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="include_statements.html">Include Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concurrency_and_parllelism.html">Concurrency and Parallelism</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Memory Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project_structure.html">Project Structure</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing_validation.html">Testing and Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../future_work_improvements.html">Future Work and Improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contributing/code_style/memory_management.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Memory Management</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-vs-heap">Stack vs. Heap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management-in-freertos-esp32">Memory Management in FreeRTOS (ESP32)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-leaks-and-debugging">Memory Leaks and Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="memory-management">
+<h1>Memory Management<a class="headerlink" href="#memory-management" title="Link to this heading">#</a></h1>
+<p>Proper memory management is essential in any software project, but it becomes even more critical in embedded systems like the ESP32, where memory is a limited resource. This section outlines the best practices for managing memory efficiently and avoiding common pitfalls such as memory leaks, heap fragmentation, and stack overflows.</p>
+<section id="general-guidelines">
+<h2>General Guidelines<a class="headerlink" href="#general-guidelines" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Prefer Static Allocation</strong>: Whenever possible, use static memory allocation instead of dynamic allocation (e.g., <cite>malloc</cite>/<cite>free</cite>) to prevent heap fragmentation and improve performance.</p>
+<ul class="simple">
+<li><p><strong>Static Memory</strong>: This memory is allocated at compile time and persists throughout the program’s lifetime. It’s ideal for variables that need to exist for the entire duration of the program.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Dynamic Memory</strong>: This memory is allocated at runtime using functions like <cite>malloc</cite> and <cite>free</cite>. While flexible, dynamic memory can lead to fragmentation over time, particularly in long-running applications.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">buffer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* Handle allocation failure */</span>
+<span class="p">}</span>
+<span class="n">free</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Use Dynamic Memory Sparingly</strong>: In memory-constrained environments, minimize the use of dynamic memory. If dynamic memory must be used, ensure that all allocations are matched with corresponding deallocations to prevent memory leaks.</p></li>
+<li><p><strong>Avoid Heap Fragmentation</strong>: Fragmentation occurs when free memory is divided into small, non-contiguous blocks, making it difficult to allocate larger blocks of memory. Use dynamic memory only for objects with well-defined lifetimes, and consider static allocation for long-lived data.</p></li>
+<li><p><strong>Check for Memory Allocation Failures</strong>: Always check the return value of <cite>malloc</cite>, <cite>calloc</cite>, or <cite>realloc</cite> to ensure that memory was successfully allocated. If memory allocation fails, handle the failure gracefully.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">buffer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="cm">/* Handle allocation failure */</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">ENOMEM</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Free Dynamically Allocated Memory</strong>: Ensure that all dynamically allocated memory is properly deallocated using <cite>free</cite>. Failing to do so will lead to memory leaks.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">free</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="stack-vs-heap">
+<h2>Stack vs. Heap<a class="headerlink" href="#stack-vs-heap" title="Link to this heading">#</a></h2>
+<p>In embedded systems, memory is divided into the <strong>stack</strong> and the <strong>heap</strong>. Understanding the differences and when to use each is critical for efficient memory management.</p>
+<ul>
+<li><p><strong>Stack</strong>: The stack is a region of memory used for local variables and function calls. It is fast, but limited in size. Exceeding the stack size can lead to stack overflows, which are difficult to debug.</p>
+<ul class="simple">
+<li><p>Use the stack for small, short-lived variables (e.g., local variables in a function).</p></li>
+<li><p>Be mindful of recursive functions or deep call chains, which can consume a lot of stack space.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">local_array</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span><span class="w">  </span><span class="cm">/* Stored on the stack */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Heap</strong>: The heap is used for dynamically allocated memory (e.g., <cite>malloc</cite>). The heap offers more flexibility but is prone to fragmentation over time.</p>
+<ul class="simple">
+<li><p>Use the heap for large or variable-sized data that needs to persist across function calls.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w">  </span><span class="cm">/* Stored on the heap */</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">free</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Free the memory when no longer needed */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Stack Size</strong>: Pay attention to the stack size of each task in an embedded system. Underestimating the required stack size can lead to stack overflows, while overestimating it wastes valuable memory.</p></li>
+</ul>
+</section>
+<section id="memory-management-in-freertos-esp32">
+<h2>Memory Management in FreeRTOS (ESP32)<a class="headerlink" href="#memory-management-in-freertos-esp32" title="Link to this heading">#</a></h2>
+<p>FreeRTOS provides flexible memory management for tasks, queues, and semaphores. Follow these best practices when using FreeRTOS:</p>
+<ul>
+<li><p><strong>Static vs. Dynamic Task Allocation</strong>: FreeRTOS allows tasks to be created either with dynamic or static memory allocation. Use <strong>static allocation</strong> (<cite>xTaskCreateStatic()</cite>) for long-lived tasks to avoid heap fragmentation.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="n">StackType_t</span><span class="w">  </span><span class="n">task_stack</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+<span class="k">static</span><span class="w"> </span><span class="n">StaticTask_t</span><span class="w"> </span><span class="n">task_buffer</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">task1</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">pvParameters</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Task code */</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">app_main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">xTaskCreateStatic</span><span class="p">(</span><span class="n">task1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Task 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">task_stack</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">task_buffer</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Use Heap Memory Efficiently</strong>: FreeRTOS has multiple heap allocation schemes (e.g., heap_1, heap_2, heap_3, heap_4). Choose the heap memory management scheme that best fits your project’s needs. For projects with long runtimes, consider using <cite>heap_4</cite> for its ability to handle fragmentation better.</p></li>
+</ul>
+</section>
+<section id="memory-leaks-and-debugging">
+<h2>Memory Leaks and Debugging<a class="headerlink" href="#memory-leaks-and-debugging" title="Link to this heading">#</a></h2>
+<p>Memory leaks occur when dynamically allocated memory is not properly freed. Over time, memory leaks can deplete available memory, causing the system to crash or behave unpredictably. Follow these guidelines to prevent and detect memory leaks:</p>
+<ul class="simple">
+<li><p><strong>Ensure Balanced Allocation and Deallocation</strong>: Every call to <cite>malloc</cite>, <cite>calloc</cite>, or <cite>realloc</cite> should have a corresponding call to <cite>free</cite>. Keep track of dynamically allocated memory, especially in complex systems.</p></li>
+<li><p><strong>Use Debugging Tools</strong>: Use memory debugging tools like Valgrind, AddressSanitizer, or built-in logging mechanisms in ESP-IDF to detect memory leaks and improper memory usage.</p>
+<ul>
+<li><p>In ESP-IDF, you can use <cite>heap_caps_print_heap_info()</cite> to get information on the state of the heap and detect potential memory issues.</p></li>
+</ul>
+</li>
+<li><p><strong>Memory Leak Debugging in FreeRTOS</strong>: FreeRTOS provides built-in mechanisms to help track memory usage, such as the <cite>vTaskGetRunTimeStats()</cite> function and FreeRTOS trace capabilities, which can help track down memory leaks and stack overflows.</p></li>
+</ul>
+</section>
+<section id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Prefer Static Allocation</strong>: Use static allocation for global or long-lived data to prevent heap fragmentation.</p></li>
+<li><p><strong>Use Dynamic Allocation Sparingly</strong>: If dynamic memory must be used, ensure proper deallocation and avoid using dynamic memory for long-lived objects.</p></li>
+<li><p><strong>Check for Memory Allocation Failures</strong>: Always verify that memory allocation was successful, and handle allocation failures gracefully.</p></li>
+<li><p><strong>Avoid Memory Leaks</strong>: Track all memory allocations and ensure that every allocation has a corresponding deallocation.</p></li>
+<li><p><strong>Manage Stack Size</strong>: Ensure that each task or function has enough stack space to avoid stack overflows.</p></li>
+<li><p><strong>Use FreeRTOS Static Allocation</strong>: For FreeRTOS tasks, use static allocation where possible to avoid heap fragmentation in long-running tasks.</p></li>
+<li><p><strong>Monitor and Debug Memory Usage</strong>: Use tools like Valgrind or ESP-IDF’s heap monitoring functions to track memory usage and detect leaks or stack overflows.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="concurrency_and_parllelism.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Concurrency and Parallelism</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="project_structure.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Project Structure</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stack-vs-heap">Stack vs. Heap</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management-in-freertos-esp32">Memory Management in FreeRTOS (ESP32)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-leaks-and-debugging">Memory Leaks and Debugging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brighton Sikarskie, Matthew Manginelli, Jeremie Hews, Cesar Magana De Leon
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Topographic-Robot.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

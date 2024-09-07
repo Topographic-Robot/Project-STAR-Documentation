@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Logging &#8212; Topographic-Robot 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing/code_style/logging';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ASM and Inline ASM" href="asm_inline_asm.html" />
+    <link rel="prev" title="Register Transfer Level (RTL)" href="register_transfer_level.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Topographic-Robot 0.1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../project_overview.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../hardware_design/index.html">Hardware Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_design/why_esp32.html">Why the ESP32?</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_design.html">Software Design</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/index.html">Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_linux.html">Linux Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_macos.html">MacOS Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_windows.html">Windows Installation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic_examples.html">Basic Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compiling_linking_flashing.html">Compiling, Linking, Flashing</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Contributing Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Coding Style</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="reasoning.html">Why Having a Coding Style is Important</a></li>
+<li class="toctree-l3"><a class="reference internal" href="naming.html">Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indentation.html">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="horizontal_space.html">Horizontal Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertical_space.html">Vertical Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line_endings.html">Line Endings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="breaking_long_lines.html">Breaking Long Lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="braces.html">Braces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="static_and_const.html">Static and Const</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comments.html">Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pointers.html">Pointers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_definitions.html">Type Definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types.html">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structures.html">Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enums.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html">Assertions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macros.html">Macros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="centralized_exiting.html">Centralized Exiting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="globals.html">Globals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="register_transfer_level.html">Register Transfer Level (RTL)</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asm_inline_asm.html">ASM and Inline ASM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header_files.html">Header Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="include_statements.html">Include Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concurrency_and_parllelism.html">Concurrency and Parallelism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="memory_management.html">Memory Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project_structure.html">Project Structure</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing_validation.html">Testing and Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../future_work_improvements.html">Future Work and Improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contributing/code_style/logging.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Logging</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-format">Logging Format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-log">When to Log</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="logging">
+<h1>Logging<a class="headerlink" href="#logging" title="Link to this heading">#</a></h1>
+<p>In this project, logging is handled using the ESP-IDF logging macros for different verbosity levels. These macros provide structured and meaningful logging to ensure efficient debugging and runtime analysis.</p>
+<p>Several macros are available for different verbosity levels:</p>
+<ul class="simple">
+<li><p><strong>ESP_LOGE</strong> - Error (lowest)</p></li>
+<li><p><strong>ESP_LOGW</strong> - Warning</p></li>
+<li><p><strong>ESP_LOGI</strong> - Info</p></li>
+<li><p><strong>ESP_LOGD</strong> - Debug</p></li>
+<li><p><strong>ESP_LOGV</strong> - Verbose (highest)</p></li>
+</ul>
+<p>Use these macros in your code to provide relevant logging based on the severity of the message.</p>
+<section id="guidelines">
+<h2>Guidelines<a class="headerlink" href="#guidelines" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Use Descriptive Log Messages</strong>: Log messages should include relevant context (e.g., variable values, function names). Avoid vague log messages that lack useful information.</p>
+<p>Correct Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="s">&quot;network&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Connection established to server at %s:%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">server_address</span><span class="p">,</span><span class="w"> </span><span class="n">port</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Incorrect Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ESP_LOGI</span><span class="p">(</span><span class="s">&quot;network&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Connected&quot;</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Lacks essential context */</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Log at Appropriate Levels</strong>: Choose the correct logging level based on the importance of the message. The ESP logging macros support the following levels:</p>
+<ul class="simple">
+<li><p><strong>ESP_LOGE</strong>: Log errors that require immediate attention but do not stop the system.</p></li>
+<li><p><strong>ESP_LOGW</strong>: Log warnings indicating potential problems that might not immediately affect execution.</p></li>
+<li><p><strong>ESP_LOGI</strong>: Log informational messages about successful operations or system state.</p></li>
+<li><p><strong>ESP_LOGD</strong>: Log detailed debug information for development and debugging purposes.</p></li>
+<li><p><strong>ESP_LOGV</strong>: Log very detailed verbose messages, mainly for in-depth debugging.</p></li>
+</ul>
+<p>Example of Logging Levels:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ESP_LOGD</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Processing input data: %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">input_data</span><span class="p">);</span>
+<span class="n">ESP_LOGI</span><span class="p">(</span><span class="s">&quot;system&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Data processed successfully.&quot;</span><span class="p">);</span>
+<span class="n">ESP_LOGW</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Input value close to maximum limit: %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">input_value</span><span class="p">);</span>
+<span class="n">ESP_LOGE</span><span class="p">(</span><span class="s">&quot;memory&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Failed to allocate memory for buffer&quot;</span><span class="p">);</span>
+<span class="n">ESP_LOGV</span><span class="p">(</span><span class="s">&quot;system&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Detailed system log for verbose debugging&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Avoid Excessive Logging</strong>: Too many logs, especially at the <cite>DEBUG</cite> or <cite>VERBOSE</cite> level, can flood the log output and make important messages harder to find. Only log what’s necessary, and ensure that verbose logging can be disabled in production environments.</p>
+<p>Correct Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input_value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">THRESHOLD</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">ESP_LOGW</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Input value exceeded threshold: %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">input_value</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Incorrect Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">ESP_LOGD</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Checking input value...&quot;</span><span class="p">);</span>
+<span class="n">ESP_LOGD</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Comparing input value with threshold...&quot;</span><span class="p">);</span>
+<span class="n">ESP_LOGD</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Input value comparison done.&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Log Error Codes and Conditions</strong>: Always log error codes or relevant conditions when logging errors, so the source of the issue is clear.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ERROR_CODE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">ESP_LOGE</span><span class="p">(</span><span class="s">&quot;operation&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Operation failed with error code %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Include Timestamps in Logs</strong>: ESP logging macros automatically include timestamps, which helps track when events occurred and aids in understanding the sequence of events.</p></li>
+<li><p><strong>Use Conditional Logging for Performance</strong>: Avoid excessive logging in performance-critical sections of code. If logging is necessary, use conditional logging to reduce performance impact.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">LOG_LOCAL_LEVEL</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">ESP_LOG_DEBUG</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">ESP_LOGD</span><span class="p">(</span><span class="s">&quot;performance&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Processing data: %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="logging-format">
+<h2>Logging Format<a class="headerlink" href="#logging-format" title="Link to this heading">#</a></h2>
+<p>In ESP-IDF, the log format includes:</p>
+<ol class="arabic simple">
+<li><p><strong>Timestamp</strong>: The time the log message was generated.</p></li>
+<li><p><strong>Log Level</strong>: The severity of the message (e.g., ERROR, WARN, INFO).</p></li>
+<li><p><strong>Tag</strong>: The module or component generating the log (e.g., “network”, “system”).</p></li>
+<li><p><strong>Message</strong>: The log message itself, which should be clear and descriptive.</p></li>
+<li><p><strong>Context</strong>: Any relevant context, such as variable values or error codes.</p></li>
+</ol>
+<p>Example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[I][network:123] Connection established to server at 192.168.0.1:8080
+[E][memory:456] Operation failed with error code -2
+</pre></div>
+</div>
+</section>
+<section id="when-to-log">
+<h2>When to Log<a class="headerlink" href="#when-to-log" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Initialization</strong>: Log important initialization steps, such as starting modules or establishing connections.</p></li>
+<li><p><strong>State Changes</strong>: Log state transitions, such as when a system starts or stops a service.</p></li>
+<li><p><strong>Errors and Exceptions</strong>: Always log errors and exceptions, along with relevant context to aid debugging.</p></li>
+<li><p><strong>Warnings</strong>: Log conditions that may cause problems, even if they don’t immediately impact the system (e.g., near-limit conditions).</p></li>
+<li><p><strong>Critical Operations</strong>: Log significant operations like database transactions or external API calls.</p></li>
+<li><p><strong>Shutdown</strong>: Log when the system is shutting down or cleaning up resources.</p></li>
+</ul>
+</section>
+<section id="general-guidelines">
+<h2>General Guidelines<a class="headerlink" href="#general-guidelines" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use descriptive log messages that include relevant context (e.g., variable values, error codes).</p></li>
+<li><p>Log at appropriate levels using ESP_LOGE, ESP_LOGW, ESP_LOGI, ESP_LOGD, and ESP_LOGV.</p></li>
+<li><p>Avoid excessive logging, especially at the <cite>DEBUG</cite> and <cite>VERBOSE</cite> levels.</p></li>
+<li><p>Include error codes and conditions in error logs.</p></li>
+<li><p>Use conditional logging in performance-critical code.</p></li>
+<li><p>Leverage ESP logging macros, which automatically include timestamps and tags for easier log tracking.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="register_transfer_level.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Register Transfer Level (RTL)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="asm_inline_asm.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ASM and Inline ASM</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging-format">Logging Format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-log">When to Log</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brighton Sikarskie, Matthew Manginelli, Jeremie Hews, Cesar Magana De Leon
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Topographic-Robot.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

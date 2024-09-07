@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Header Files &#8212; Topographic-Robot 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=e1a75a79"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contributing/code_style/header_files';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Include Statements" href="include_statements.html" />
+    <link rel="prev" title="ASM and Inline ASM" href="asm_inline_asm.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Topographic-Robot 0.1 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../project_overview.html">Introduction</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../hardware_design/index.html">Hardware Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_design/why_esp32.html">Why the ESP32?</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_design.html">Software Design</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../installation/index.html">Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_linux.html">Linux Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_macos.html">MacOS Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation/install_windows.html">Windows Installation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../basic_examples.html">Basic Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compiling_linking_flashing.html">Compiling, Linking, Flashing</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Contributing Guide</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Coding Style</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="reasoning.html">Why Having a Coding Style is Important</a></li>
+<li class="toctree-l3"><a class="reference internal" href="naming.html">Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indentation.html">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="horizontal_space.html">Horizontal Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vertical_space.html">Vertical Space</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line_endings.html">Line Endings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="breaking_long_lines.html">Breaking Long Lines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="braces.html">Braces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="static_and_const.html">Static and Const</a></li>
+<li class="toctree-l3"><a class="reference internal" href="comments.html">Comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pointers.html">Pointers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type_definitions.html">Type Definitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="types.html">Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structures.html">Structures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enums.html">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="assertions.html">Assertions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macros.html">Macros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="centralized_exiting.html">Centralized Exiting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="globals.html">Globals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="register_transfer_level.html">Register Transfer Level (RTL)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="asm_inline_asm.html">ASM and Inline ASM</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Header Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="include_statements.html">Include Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concurrency_and_parllelism.html">Concurrency and Parallelism</a></li>
+<li class="toctree-l3"><a class="reference internal" href="memory_management.html">Memory Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project_structure.html">Project Structure</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing_validation.html">Testing and Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../future_work_improvements.html">Future Work and Improvements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributors.html">Contributors</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contributing/code_style/header_files.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Header Files</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines-for-header-files">General Guidelines for Header Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#header-guards">Header Guards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esp32-specific-header-guards">ESP32-Specific Header Guards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-header-guards">When to Use Header Guards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="header-files">
+<h1>Header Files<a class="headerlink" href="#header-files" title="Link to this heading">#</a></h1>
+<p>Header files play a crucial role in organizing and structuring a C project. They contain declarations of functions, constants, macros, and types that can be shared across multiple source files. This section provides guidelines for creating clear, maintainable, and reusable header files, along with the proper use of header guards.</p>
+<section id="general-guidelines-for-header-files">
+<h2>General Guidelines for Header Files<a class="headerlink" href="#general-guidelines-for-header-files" title="Link to this heading">#</a></h2>
+<ul>
+<li><p><strong>Header Files Should Only Contain Declarations</strong>: Header files should declare, but not define, functions, variables, and types. Function implementations, global variable definitions, and other logic should remain in the corresponding source files (<cite>.c</cite>).</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* header file: math_utils.h */</span>
+<span class="cp">#ifndef MATH_UTILS_H</span>
+<span class="cp">#define MATH_UTILS_H</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Declaration only */</span>
+
+<span class="cp">#endif </span><span class="cm">/* MATH_UTILS_H */</span>
+</pre></div>
+</div>
+<p>The implementation will go in the source file:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* source file: math_utils.c */</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;math_utils.h&quot;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Minimal Includes in Headers</strong>: Header files should include only the headers that are strictly necessary for their declarations. Avoid excessive includes to reduce dependency chains and compilation time. Use forward declarations where possible.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Avoid including unnecessary headers */</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">device_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Forward declaration instead of including device.h */</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">init_device</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">device_t</span><span class="w"> </span><span class="o">*</span><span class="n">device</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Self-Contained Headers</strong>: Ensure that each header file is self-contained, meaning it can be included independently without relying on the inclusion of other headers beforehand. Always include the necessary headers for types and constants used within the file.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef MY_HEADER_H</span>
+<span class="cp">#define MY_HEADER_H</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span><span class="c1">  /* Ensure the necessary headers are included */</span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">device_t</span><span class="p">;</span>
+
+<span class="cp">#endif </span><span class="cm">/* MY_HEADER_H */</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Use `extern` for Global Variables</strong>: If global variables need to be declared in a header file, they should be declared using <cite>extern</cite> to avoid multiple definition errors.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Declaration in header file: */</span>
+<span class="k">extern</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">global_counter</span><span class="p">;</span>
+
+<span class="cm">/* Definition in source file: */</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">global_counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Documentation in Headers</strong>: Use Doxygen-style comments for documenting functions, constants, and types in header files. This allows the automatic generation of documentation and makes the code more understandable to other developers.</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @brief  Adds two integers.</span>
+<span class="cm"> * @param  a First integer.</span>
+<span class="cm"> * @param  b Second integer.</span>
+<span class="cm"> * @return The sum of a and b.</span>
+<span class="cm"> */</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Consistency in Naming Conventions</strong>: Use consistent naming conventions for types, functions, and constants in headers. Follow the naming conventions specified in this project’s guidelines (e.g., <cite>snake_case</cite> for variables, <cite>PascalCase</cite> for structs, and <cite>_t</cite> for typedefs).</p>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="n">point_t</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="header-guards">
+<h2>Header Guards<a class="headerlink" href="#header-guards" title="Link to this heading">#</a></h2>
+<p>Header guards prevent multiple inclusions of the same header file and avoid issues like redefinition of types, constants, or functions. Proper use of header guards ensures that each header file is only included once during compilation.</p>
+<ul class="simple">
+<li><p><strong>Use Include Guards in Every Header File</strong>: All header files must use include guards to prevent multiple inclusions.</p></li>
+</ul>
+<p>Example of a Header Guard:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef MY_HEADER_H</span>
+<span class="cp">#define MY_HEADER_H</span>
+
+<span class="cm">/* Declarations and definitions */</span>
+
+<span class="cp">#endif </span><span class="cm">/* MY_HEADER_H */</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Naming Convention for Header Guards</strong>: The macro used for header guards should follow a consistent naming convention to avoid conflicts with other projects or libraries. It should be based on the file name, converted to uppercase, with words separated by underscores (<cite>_</cite>), and ending with <cite>_H</cite>.</p></li>
+</ul>
+<p>Example:</p>
+<p>For a file named <cite>device_manager.h</cite>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef DEVICE_MANAGER_H</span>
+<span class="cp">#define DEVICE_MANAGER_H</span>
+
+<span class="cm">/* Declarations for device manager module */</span>
+
+<span class="cp">#endif </span><span class="cm">/* DEVICE_MANAGER_H */</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Avoid Underscore Prefixes</strong>: Do not use leading underscores in the header guard macro name, as these are reserved for use by the C standard library.</p></li>
+</ul>
+<p>Bad Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef _DEVICE_MANAGER_H</span>
+<span class="cp">#define _DEVICE_MANAGER_H</span>
+<span class="cm">/* INCORRECT: Leading underscores are reserved by the standard */</span>
+
+<span class="cp">#endif </span><span class="cm">/* _DEVICE_MANAGER_H */</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Use Unique Names</strong>: Ensure that header guard names are unique to the project. In larger projects with many files, it is a good practice to prefix the header guard with the project or module name to avoid potential conflicts with other projects or libraries.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef PROJECT_NAME_DEVICE_MANAGER_H</span>
+<span class="cp">#define PROJECT_NAME_DEVICE_MANAGER_H</span>
+
+<span class="cm">/* Declarations for device manager module */</span>
+
+<span class="cp">#endif </span><span class="cm">/* PROJECT_NAME_DEVICE_MANAGER_H */</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Place Header Guards at the Very Beginning</strong>: The <cite>#ifndef</cite>, <cite>#define</cite>, and <cite>#endif</cite> should be the very first and last lines in the header file, ensuring that the entire file is protected from multiple inclusions.</p></li>
+</ul>
+<p>Bad Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Some comment or code */</span>
+
+<span class="cp">#ifndef DEVICE_MANAGER_H</span>
+<span class="cp">#define DEVICE_MANAGER_H</span>
+
+<span class="cm">/* Declarations for device manager module */</span>
+
+<span class="cp">#endif </span><span class="cm">/* DEVICE_MANAGER_H */</span>
+<span class="cm">/* INCORRECT: Code placed before the include guard */</span>
+</pre></div>
+</div>
+<p>Good Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef DEVICE_MANAGER_H</span>
+<span class="cp">#define DEVICE_MANAGER_H</span>
+
+<span class="cm">/* Declarations for device manager module */</span>
+
+<span class="cp">#endif </span><span class="cm">/* DEVICE_MANAGER_H */</span>
+<span class="cm">/* CORRECT: Include guard is the very first and last thing in the file */</span>
+</pre></div>
+</div>
+</section>
+<section id="esp32-specific-header-guards">
+<h2>ESP32-Specific Header Guards<a class="headerlink" href="#esp32-specific-header-guards" title="Link to this heading">#</a></h2>
+<p>When working with the ESP32 platform, follow the same conventions for header guards. However, to avoid conflicts with the ESP-IDF or other external libraries, it is recommended to include the project’s name or a module-specific prefix in the guard names.</p>
+<p>Example:</p>
+<p>For a file named <cite>wifi_manager.h</cite> in a project called <cite>my_project</cite>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef MY_PROJECT_WIFI_MANAGER_H</span>
+<span class="cp">#define MY_PROJECT_WIFI_MANAGER_H</span>
+
+<span class="cm">/* Declarations for Wi-Fi manager */</span>
+
+<span class="cp">#endif </span><span class="cm">/* MY_PROJECT_WIFI_MANAGER_H */</span>
+</pre></div>
+</div>
+</section>
+<section id="when-to-use-header-guards">
+<h2>When to Use Header Guards<a class="headerlink" href="#when-to-use-header-guards" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Every Header File</strong>: All header files must use header guards to prevent multiple inclusion issues.</p></li>
+<li><p><strong>Use Project/Module Prefixes</strong>: In larger projects, always use a unique prefix to avoid conflicts with third-party libraries.</p></li>
+</ul>
+</section>
+<section id="general-guidelines">
+<h2>General Guidelines<a class="headerlink" href="#general-guidelines" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Always use <cite>#ifndef</cite>, <cite>#define</cite>, and <cite>#endif</cite> for header guards.</p></li>
+<li><p>The header guard should be based on the file name, converted to uppercase with underscores separating words, and end with <cite>_H</cite>.</p></li>
+<li><p>Avoid leading underscores in header guard names.</p></li>
+<li><p>Use project or module-specific prefixes for large projects to avoid name conflicts.</p></li>
+<li><p>Place header guards at the very top and bottom of the file.</p></li>
+<li><p>Keep header files focused on declarations, not definitions.</p></li>
+<li><p>Include only necessary headers to avoid dependency chains and reduce compilation time.</p></li>
+<li><p>Use forward declarations where possible to minimize includes.</p></li>
+<li><p>Document all functions, constants, and types in header files using Doxygen-style comments.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="asm_inline_asm.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ASM and Inline ASM</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="include_statements.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Include Statements</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines-for-header-files">General Guidelines for Header Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#header-guards">Header Guards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esp32-specific-header-guards">ESP32-Specific Header Guards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-header-guards">When to Use Header Guards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Brighton Sikarskie, Matthew Manginelli, Jeremie Hews, Cesar Magana De Leon
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 Topographic-Robot.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
