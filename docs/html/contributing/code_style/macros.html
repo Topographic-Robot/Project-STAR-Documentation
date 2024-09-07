@@ -441,7 +441,7 @@ document.write(`
 <li><p><strong>Enclose Macro Definitions in Blocks</strong>: If the macro body contains more than one statement, enclose the macro body in a <cite>do { … } while(0)</cite> block to ensure it behaves like a single statement and can be used safely in conditional logic.</p>
 <p>Correct Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define SWAP(a, b) do {                \</span>
-<span class="cp">                     int temp = (a);   \</span>
+<span class="cp">                     int temp  = (a);  \</span>
 <span class="cp">                     (a)       = (b);  \</span>
 <span class="cp">                     (b)       = temp; \</span>
 <span class="cp">                   } while (0)</span>
@@ -458,7 +458,7 @@ document.write(`
 <p>Correct Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Macro to swap two integers */</span>
 <span class="cp">#define SWAP(a, b) do {                 \</span>
-<span class="cp">                      int temp = (a);   \</span>
+<span class="cp">                      int temp  = (a);  \</span>
 <span class="cp">                      (a)       = (b);  \</span>
 <span class="cp">                      (b)       = temp; \</span>
 <span class="cp">                    } while (0)</span>

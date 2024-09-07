@@ -19,7 +19,7 @@ General Guidelines for Error Handling
     int process_data(void *data)
     {
       if (!data) {
-        return -EINVAL;  /* Invalid argument */
+        return -EINVAL; /* Invalid argument */
       }
       /* Process the data */
       return 0;
@@ -43,7 +43,7 @@ General Guidelines for Error Handling
 
   .. code-block:: c
 
-    malloc(100);  /* No check if memory allocation succeeded */
+    malloc(100); /* No check if memory allocation succeeded */
 
   Good Example:
 
@@ -65,7 +65,7 @@ General Guidelines for Error Handling
     {
       void *buffer = malloc(size);
       if (!buffer) {
-        return NULL;  /* Return NULL on allocation failure */
+        return NULL; /* Return NULL on allocation failure */
       }
       return buffer;
     }

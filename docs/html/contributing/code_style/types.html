@@ -405,9 +405,9 @@ document.write(`
 <li><p><strong>Use Typedefs for Complex Data Structures</strong>: When dealing with structures, unions, or other complex data types, use <cite>typedef</cite> to give them meaningful names, making the code cleaner and easier to read.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w">  </span><span class="n">id</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="n">is_active</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">bool</span><span class="w">     </span><span class="n">is_active</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">user_info_t</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -417,33 +417,33 @@ document.write(`
 <section id="example-1">
 <h2>Example 1:<a class="headerlink" href="#example-1" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Use of &quot;int&quot; instead of fixed-width type */</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="cm">/* INCORRECT: Use of &quot;int&quot; instead of fixed-width type */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Fixed-width type used */</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="cm">/* CORRECT: Fixed-width type used */</span>
 </pre></div>
 </div>
 </section>
 <section id="example-2">
 <h2>Example 2:<a class="headerlink" href="#example-2" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span><span class="w"> </span><span class="n">buffer_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: &quot;long&quot; type is platform-dependent */</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span><span class="w"> </span><span class="n">buffer_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span><span class="w"> </span><span class="cm">/* INCORRECT: &quot;long&quot; type is platform-dependent */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span><span class="w"> </span><span class="n">buffer_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Using &quot;size_t&quot; for memory size */</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span><span class="w"> </span><span class="n">buffer_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1024</span><span class="p">;</span><span class="w"> </span><span class="cm">/* CORRECT: Using &quot;size_t&quot; for memory size */</span>
 </pre></div>
 </div>
 </section>
 <section id="example-3">
 <h2>Example 3:<a class="headerlink" href="#example-3" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">is_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Using &quot;int&quot; for a boolean value */</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">is_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="cm">/* INCORRECT: Using &quot;int&quot; for a boolean value */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">is_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Using &quot;bool&quot; for boolean values */</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">is_active</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="cm">/* CORRECT: Using &quot;bool&quot; for boolean values */</span>
 </pre></div>
 </div>
 </section>

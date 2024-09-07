@@ -85,17 +85,17 @@ Bad Example:
 
 .. code-block:: c
 
-    int arr[5];
+    int  arr[5];
     int *ptr = arr;
-    ptr += 10;  /* INCORRECT: Pointer out of bounds */
+    ptr     += 10;  /* INCORRECT: Pointer out of bounds */
 
 Good Example:
 
 .. code-block:: c
 
-    int arr[5];
+    int  arr[5];
     int *ptr = arr;
-    ptr += 2;  /* CORRECT: Pointer remains within bounds */
+    ptr     += 2;  /* CORRECT: Pointer remains within bounds */
 
 - **Dereferencing Pointers**: Always ensure a pointer is non-NULL before dereferencing it to avoid segmentation faults or undefined behavior.
 
@@ -107,7 +107,7 @@ Bad Example:
 .. code-block:: c
 
     int *ptr = NULL;
-    *ptr = 42;  /* INCORRECT: Dereferencing NULL pointer */
+    *ptr     = 42;  /* INCORRECT: Dereferencing NULL pointer */
 
 Good Example:
 

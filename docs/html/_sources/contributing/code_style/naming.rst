@@ -100,7 +100,7 @@ Good Example
     static void calculate_output(void)
     {  
       int result = 0;  /* Clear, descriptive variable usage */
-      result = s_threshold + 1;
+      result     = s_threshold + 1;
     }
 
 

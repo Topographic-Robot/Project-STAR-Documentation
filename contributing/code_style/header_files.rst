@@ -16,7 +16,7 @@ General Guidelines for Header Files
     #ifndef MATH_UTILS_H
     #define MATH_UTILS_H
 
-    int add(int a, int b);  /* Declaration only */
+    int add(int a, int b); /* Declaration only */
 
     #endif /* MATH_UTILS_H */
 
@@ -38,7 +38,7 @@ General Guidelines for Header Files
   .. code-block:: c
 
     /* Avoid including unnecessary headers */
-    struct device_t;  /* Forward declaration instead of including device.h */
+    struct device_t; /* Forward declaration instead of including device.h */
 
     void init_device(struct device_t *device);
 
@@ -51,11 +51,11 @@ General Guidelines for Header Files
     #ifndef MY_HEADER_H
     #define MY_HEADER_H
 
-    #include <stdint.h>  /* Ensure the necessary headers are included */
+    #include <stdint.h> /* Ensure the necessary headers are included */
 
     typedef struct {
       uint32_t id;
-      uint8_t status;
+      uint8_t  status;
     } device_t;
 
     #endif /* MY_HEADER_H */

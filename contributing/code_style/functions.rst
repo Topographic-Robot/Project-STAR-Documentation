@@ -41,8 +41,8 @@ If the function name is an action, return an error-code integer:
 
     int add_work(void)
     {
-      return 0;        /* Success */
-      return -EBUSY;   /* Failure */
+      return 0;      /* Success */
+      return -EBUSY; /* Failure */
     }
 
 If the function name is a predicate, return a succeeded boolean:
@@ -51,8 +51,8 @@ If the function name is a predicate, return a succeeded boolean:
 
     int pci_dev_present(void)
     {
-      return 1;        /* Success */
-      return 0;        /* Failure */
+      return 1; /* Success */
+      return 0; /* Failure */
     }
 
 All exported functions must respect this convention, and all public functions should as well. Private (static) functions are not required to follow this convention, but it is recommended.
@@ -114,7 +114,7 @@ Example:
     {
       void *buffer = malloc(1024);
       if (!buffer) {
-        return NULL;  /* Return NULL on failure */
+        return NULL; /* Return NULL on failure */
       }
       return buffer;
     }
@@ -128,7 +128,7 @@ Example:
     int process_input(int input_value)
     {
       if (input_value < 0) {
-        return -EINVAL;  /* Early exit on invalid input */
+        return -EINVAL; /* Early exit on invalid input */
       }
       /* Continue processing */
       return 0;
@@ -161,7 +161,7 @@ Bad Example:
 
     if (foo)
     {
-      bar();  /* INCORRECT: Braces on the next line */
+      bar(); /* INCORRECT: Braces on the next line */
     }
 
 Good Example:
@@ -169,7 +169,7 @@ Good Example:
 .. code-block:: c
 
     if (foo) {
-      bar();  /* CORRECT: Braces on the same line */
+      bar(); /* CORRECT: Braces on the same line */
     }
 
 **Exported Functions**

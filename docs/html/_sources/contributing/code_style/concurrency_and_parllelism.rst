@@ -57,12 +57,12 @@ A **semaphore** is a signaling mechanism and can be used to synchronize threads 
     void producer(void)
     {
       /* Produce data */
-      sem_post(&semaphore);  /* Signal consumer */
+      sem_post(&semaphore); /* Signal consumer */
     }
 
     void consumer(void)
     {
-      sem_wait(&semaphore);  /* Wait for producer */
+      sem_wait(&semaphore); /* Wait for producer */
       /* Consume data */
     }
 
@@ -124,7 +124,7 @@ In ESP32, FreeRTOS is the operating system that handles task scheduling, making 
     {
       while (1) {
         /* Task code */
-        vTaskDelay(1000 / portTICK_PERIOD_MS);  /* Delay for 1 second */
+        vTaskDelay(1000 / portTICK_PERIOD_MS); /* Delay for 1 second */
       }
     }
 

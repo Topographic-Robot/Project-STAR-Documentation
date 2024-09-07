@@ -14,7 +14,7 @@ Guidelines
 
   .. code-block:: c
 
-    static int s_counter = 0;    /* File-scope variable, limited to this file */
+    static int s_counter = 0; /* File-scope variable, limited to this file */
 
 - **Minimize Use of Global Constants**: If you need a constant across multiple files, prefer using `const` or `enum` values in a header file rather than using global variables.
 
@@ -51,8 +51,8 @@ Correct Example (Avoiding Globals)
     /* Prefer passing arguments or using static variables instead of global variables */
 
     void process_data(int input) {
-      static int s_data_count = 0;  /* Limited to this file */
-      s_data_count += input;
+      static int s_data_count = 0; /* Limited to this file */
+      s_data_count           += input;
       /* ... */
     }
 
@@ -61,10 +61,10 @@ Incorrect Example (Using Globals)
 
 .. code-block:: c
 
-    int g_data_count = 0;  /* Global variable, avoid this */
+    int g_data_count = 0; /* Global variable, avoid this */
 
     void process_data(int input) {
-      g_data_count += input;  /* Global access, can cause side effects */
+      g_data_count += input; /* Global access, can cause side effects */
     }
 
 General Guidelines

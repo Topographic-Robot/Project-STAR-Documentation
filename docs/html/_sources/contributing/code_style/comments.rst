@@ -29,8 +29,8 @@ General Commenting Guidelines
 
     .. code-block:: c
 
-      int x;    /* This is x */
-      int foo;  /* This is foo */
+      int x;   /* This is x */
+      int foo; /* This is foo */
 
     Incorrect:
 
@@ -53,8 +53,11 @@ Since we use Doxygen to generate documentation, **every function** must include 
 **Doxygen Comment Structure:**
 
 - **@brief**: A short summary of what the function does.
+
 - **@param**: A description of each parameter, including type and usage.
+
 - **@return**: What the function returns, or `void` if nothing is returned.
+
 - **@note**: (Optional) Any additional notes about the function, such as important edge cases or limitations.
 
 Doxygen Example
@@ -77,9 +80,9 @@ For private/static functions (in source file):
 .. code-block:: c
 
   /**
-   * @brief  Initializes the internal counter.
-   * @param  value Initial value for the counter.
-   * @note   This function is only used internally and is static.
+   * @brief Initializes the internal counter.
+   * @param value Initial value for the counter.
+   * @note  This function is only used internally and is static.
    */
   static void init_counter(int value);
 
@@ -87,10 +90,15 @@ Key Doxygen Tags
 ----------------
 
 - **@brief**: Provides a concise summary of the function.
+
 - **@param**: Describes the function parameters. List each parameter separately.
+
 - **@return**: Describes the return value. If the function does not return a value, you can omit this tag or specify `void`.
+
 - **@note**: Use this for any important additional information, such as side effects, limitations, or edge cases.
+
 - **@warning**: Used for warning the user about potential risks in the function’s use.
+
 - **@deprecated**: Marks a function as deprecated, with a note on what to use instead.
 
 Example with Additional Tags:
@@ -98,11 +106,11 @@ Example with Additional Tags:
 .. code-block:: c
 
   /**
-   * @brief  Opens a connection to the server.
-   * @param  server_address The address of the server.
-   * @param  port Port number to use for the connection.
-   * @return 0 on success, -1 on error.
-   * @warning Ensure that the server address is valid before calling this function.
+   * @brief      Opens a connection to the server.
+   * @param      server_address The address of the server.
+   * @param      port Port number to use for the connection.
+   * @return     0 on success, -1 on error.
+   * @warning    Ensure that the server address is valid before calling this function.
    * @deprecated Use `open_server_connection_v2()` instead.
    */
   int open_connection(const char *server_address, int port);

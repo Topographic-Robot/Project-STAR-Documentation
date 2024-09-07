@@ -75,7 +75,7 @@ Bad Example:
     typedef enum {
       SUCCESS,
       FAILURE
-    } STATUS;  /* INCORRECT: Not using snake_case, enum name not ending with _t */
+    } STATUS; /* INCORRECT: Not using snake_case, enum name not ending with _t */
 
 Good Example:
 
@@ -84,7 +84,7 @@ Good Example:
     typedef enum {
       status_success_e,
       status_failure_e
-    } status_t;  /* CORRECT: Using snake_case and _t suffix */
+    } status_t; /* CORRECT: Using snake_case and _t suffix */
 
 Example 2:
 ----------
@@ -96,7 +96,7 @@ Bad Example:
     typedef enum {
       SUCCESS,
       FAILURE
-    } result_t;  /* INCORRECT: Enum members not following snake_case */
+    } result_t; /* INCORRECT: Enum members not following snake_case */
 
 Good Example:
 
@@ -105,7 +105,7 @@ Good Example:
     typedef enum {
       result_success_e,
       result_failure_e
-    } result_t;  /* CORRECT: Enum members following snake_case and ending with _e */
+    } result_t; /* CORRECT: Enum members following snake_case and ending with _e */
 
 Example 3:
 ----------
@@ -117,7 +117,7 @@ Bad Example:
     typedef enum {
       OPEN,
       CLOSED
-    } door_state_t;  /* INCORRECT: Enum values not descriptive and not following snake_case */
+    } door_state_t; /* INCORRECT: Enum values not descriptive and not following snake_case */
 
 Good Example:
 
@@ -126,7 +126,7 @@ Good Example:
     typedef enum {
       door_open_e,
       door_closed_e
-    } door_state_t;  /* CORRECT: Enum members are descriptive, follow snake_case, and end with _e */
+    } door_state_t; /* CORRECT: Enum members are descriptive, follow snake_case, and end with _e */
 
 General Guidelines
 ------------------

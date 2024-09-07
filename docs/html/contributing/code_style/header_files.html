@@ -378,7 +378,7 @@ document.write(`
 <span class="cp">#ifndef MATH_UTILS_H</span>
 <span class="cp">#define MATH_UTILS_H</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Declaration only */</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Declaration only */</span>
 
 <span class="cp">#endif </span><span class="cm">/* MATH_UTILS_H */</span>
 </pre></div>
@@ -396,7 +396,7 @@ document.write(`
 <li><p><strong>Minimal Includes in Headers</strong>: Header files should include only the headers that are strictly necessary for their declarations. Avoid excessive includes to reduce dependency chains and compilation time. Use forward declarations where possible.</p>
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Avoid including unnecessary headers */</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">device_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Forward declaration instead of including device.h */</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">device_t</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Forward declaration instead of including device.h */</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">init_device</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">device_t</span><span class="w"> </span><span class="o">*</span><span class="n">device</span><span class="p">);</span>
 </pre></div>
@@ -407,11 +407,11 @@ document.write(`
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef MY_HEADER_H</span>
 <span class="cp">#define MY_HEADER_H</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span><span class="c1">  /* Ensure the necessary headers are included */</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span><span class="c1"> /* Ensure the necessary headers are included */</span>
 
 <span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">uint8_t</span><span class="w">  </span><span class="n">status</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">device_t</span><span class="p">;</span>
 
 <span class="cp">#endif </span><span class="cm">/* MY_HEADER_H */</span>

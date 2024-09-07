@@ -18,18 +18,18 @@ Bad Example
     do_one_thing();
     do_another_thing();
   
-  }  /* INCORRECT, do not place an empty line here */
+  } /* INCORRECT, do not place an empty line here */
 
   
   void function2(void)
   {
   
     int var = 0;
-    while (var < c_some_constant) {  /* Correct constant naming */
+    while (var < c_some_constant) { /* Correct constant naming */
       do_stuff(&var);
     }
   
-  }  /* INCORRECT, do not use an empty line here */
+  } /* INCORRECT, do not use an empty line here */
 
 ---
 
@@ -49,7 +49,7 @@ Good Example
   void function2(void)
   {
     int var = 0;
-    while (var < c_some_constant) {  /* Correct constant naming */
+    while (var < c_some_constant) { /* Correct constant naming */
       do_stuff(&var);
     }
   }

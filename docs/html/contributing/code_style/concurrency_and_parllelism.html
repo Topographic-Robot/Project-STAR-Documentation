@@ -412,12 +412,12 @@ A <strong>semaphore</strong> is a signaling mechanism and can be used to synchro
 <span class="kt">void</span><span class="w"> </span><span class="nf">producer</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="cm">/* Produce data */</span>
-<span class="w">  </span><span class="n">sem_post</span><span class="p">(</span><span class="o">&amp;</span><span class="n">semaphore</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Signal consumer */</span>
+<span class="w">  </span><span class="n">sem_post</span><span class="p">(</span><span class="o">&amp;</span><span class="n">semaphore</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Signal consumer */</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">consumer</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">  </span><span class="n">sem_wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">semaphore</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Wait for producer */</span>
+<span class="w">  </span><span class="n">sem_wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">semaphore</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Wait for producer */</span>
 <span class="w">  </span><span class="cm">/* Consume data */</span>
 <span class="p">}</span>
 </pre></div>
@@ -476,7 +476,7 @@ A <strong>semaphore</strong> is a signaling mechanism and can be used to synchro
 <span class="p">{</span>
 <span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="cm">/* Task code */</span>
-<span class="w">    </span><span class="n">vTaskDelay</span><span class="p">(</span><span class="mi">1000</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">portTICK_PERIOD_MS</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Delay for 1 second */</span>
+<span class="w">    </span><span class="n">vTaskDelay</span><span class="p">(</span><span class="mi">1000</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">portTICK_PERIOD_MS</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Delay for 1 second */</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 

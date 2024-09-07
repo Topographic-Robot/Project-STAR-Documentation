@@ -43,7 +43,7 @@ Good Example
   static void calculate_output(void)
   {  
     int result = 0;
-    result = s_threshold + 1;
+    result     = s_threshold + 1;
   }
 
 Notes:

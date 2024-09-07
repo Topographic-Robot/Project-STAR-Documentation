@@ -397,7 +397,7 @@ document.write(`
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Forward declare struct device_t instead of including its full header */</span>
 <span class="k">struct</span><span class="w"> </span><span class="nc">device_t</span><span class="p">;</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">init_device</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">device_t</span><span class="w"> </span><span class="o">*</span><span class="n">device</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Declaration without including &quot;device.h&quot; */</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">init_device</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">device_t</span><span class="w"> </span><span class="o">*</span><span class="n">device</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Declaration without including &quot;device.h&quot; */</span>
 </pre></div>
 </div>
 <p>By using forward declarations, you reduce the number of headers included in header files, improving compilation times and avoiding circular dependencies.</p>
@@ -471,9 +471,9 @@ document.write(`
 <li><p>Lastly, include any project-specific headers.</p></li>
 </ol>
 <p>Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;my_source.h&quot;</span><span class="c1">   /* Corresponding header file */</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">       /* Standard library headers */</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;device.h&quot;</span><span class="c1">      /* Project-specific headers */</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;my_source.h&quot;</span><span class="c1"> /* Corresponding header file */</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     /* Standard library headers */</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;device.h&quot;</span><span class="c1">    /* Project-specific headers */</span>
 </pre></div>
 </div>
 </section>

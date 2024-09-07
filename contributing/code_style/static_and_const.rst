@@ -25,13 +25,13 @@ Bad Example:
 
 .. code-block:: c
 
-    #define MAX_SIZE 100   /* INCORRECT, using a macro for a constant */
+    #define MAX_SIZE 100 /* INCORRECT, using a macro for a constant */
 
 Good Example:
 
 .. code-block:: c
 
-    const int c_max_size = 100;   /* Correct, using a const global */
+    const int c_max_size = 100; /* Correct, using a const global */
 
 Using `static` for Internal Linkage
 -----------------------------------
@@ -45,7 +45,7 @@ Bad Example:
 
 .. code-block:: c
 
-    int internal_counter = 0;   /* INCORRECT, lacks static for internal use */
+    int internal_counter = 0; /* INCORRECT, lacks static for internal use */
 
     void increment_counter(void) {
       internal_counter++;
@@ -55,7 +55,7 @@ Good Example:
 
 .. code-block:: c
 
-    static int s_internal_counter = 0;   /* Correct, using static for internal use */
+    static int s_internal_counter = 0; /* Correct, using static for internal use */
 
     static void increment_counter(void) {
       s_internal_counter++;

@@ -49,8 +49,8 @@ Good Example:
 
 .. code-block:: c
 
-    const int y = y0 + (x - x0) * (y1 - y0) / (x1 - x0);    /* correct */
-    int y_cur  = -y;                                        /* correct */
+    const int y = y0 + (x - x0) * (y1 - y0) / (x1 - x0); /* correct */
+    int y_cur  = -y;                                     /* correct */
 
 - **Alignment of Variables, Assignments, and Comments**: Align the `=` signs when declaring multiple variables, and line up the comments for consistency.
 
@@ -68,8 +68,8 @@ Good Example:
 
 .. code-block:: c
 
-    int foo       = 12;    /* This is foo */
-    int large_foo = 32;    /* This is large foo */
+    int foo       = 12; /* This is foo */
+    int large_foo = 32; /* This is large foo */
 
 - **Optional Alignment for Function Arguments**: Horizontal space can sometimes be used within a line to align function arguments, improving readability, but use this sparingly. Excessive alignment can cause issues if future lines need to be added or removed.
 

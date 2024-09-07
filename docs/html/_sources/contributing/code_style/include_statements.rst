@@ -33,7 +33,7 @@ General Guidelines for Include Statements
     /* Forward declare struct device_t instead of including its full header */
     struct device_t;
 
-    void init_device(struct device_t *device);  /* Declaration without including "device.h" */
+    void init_device(struct device_t *device); /* Declaration without including "device.h" */
 
   By using forward declarations, you reduce the number of headers included in header files, improving compilation times and avoiding circular dependencies.
 
@@ -119,9 +119,9 @@ Example:
 
 .. code-block:: c
 
-    #include "my_source.h"   /* Corresponding header file */
-    #include <stdio.h>       /* Standard library headers */
-    #include "device.h"      /* Project-specific headers */
+    #include "my_source.h" /* Corresponding header file */
+    #include <stdio.h>     /* Standard library headers */
+    #include "device.h"    /* Project-specific headers */
 
 Guard Against Redundant Includes
 --------------------------------

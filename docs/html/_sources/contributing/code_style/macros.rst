@@ -91,7 +91,7 @@ Incorrect Example:
   .. code-block:: c
 
     #define SWAP(a, b) do {                \
-                         int temp = (a);   \
+                         int temp  = (a);  \
                          (a)       = (b);  \
                          (b)       = temp; \
                        } while (0)
@@ -112,7 +112,7 @@ Correct Example:
 
     /* Macro to swap two integers */
     #define SWAP(a, b) do {                 \
-                          int temp = (a);   \
+                          int temp  = (a);  \
                           (a)       = (b);  \
                           (b)       = temp; \
                         } while (0)

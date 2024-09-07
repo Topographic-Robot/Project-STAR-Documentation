@@ -429,14 +429,14 @@ document.write(`
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">SUCCESS</span><span class="p">,</span>
 <span class="w">  </span><span class="n">FAILURE</span>
-<span class="p">}</span><span class="w"> </span><span class="n">STATUS</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Not using snake_case, enum name not ending with _t */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">STATUS</span><span class="p">;</span><span class="w"> </span><span class="cm">/* INCORRECT: Not using snake_case, enum name not ending with _t */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">status_success_e</span><span class="p">,</span>
 <span class="w">  </span><span class="n">status_failure_e</span>
-<span class="p">}</span><span class="w"> </span><span class="n">status_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Using snake_case and _t suffix */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">status_t</span><span class="p">;</span><span class="w"> </span><span class="cm">/* CORRECT: Using snake_case and _t suffix */</span>
 </pre></div>
 </div>
 </section>
@@ -446,14 +446,14 @@ document.write(`
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">SUCCESS</span><span class="p">,</span>
 <span class="w">  </span><span class="n">FAILURE</span>
-<span class="p">}</span><span class="w"> </span><span class="n">result_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Enum members not following snake_case */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">result_t</span><span class="p">;</span><span class="w"> </span><span class="cm">/* INCORRECT: Enum members not following snake_case */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">result_success_e</span><span class="p">,</span>
 <span class="w">  </span><span class="n">result_failure_e</span>
-<span class="p">}</span><span class="w"> </span><span class="n">result_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Enum members following snake_case and ending with _e */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">result_t</span><span class="p">;</span><span class="w"> </span><span class="cm">/* CORRECT: Enum members following snake_case and ending with _e */</span>
 </pre></div>
 </div>
 </section>
@@ -463,14 +463,14 @@ document.write(`
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">OPEN</span><span class="p">,</span>
 <span class="w">  </span><span class="n">CLOSED</span>
-<span class="p">}</span><span class="w"> </span><span class="n">door_state_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Enum values not descriptive and not following snake_case */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">door_state_t</span><span class="p">;</span><span class="w"> </span><span class="cm">/* INCORRECT: Enum values not descriptive and not following snake_case */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">door_open_e</span><span class="p">,</span>
 <span class="w">  </span><span class="n">door_closed_e</span>
-<span class="p">}</span><span class="w"> </span><span class="n">door_state_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Enum members are descriptive, follow snake_case, and end with _e */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">door_state_t</span><span class="p">;</span><span class="w"> </span><span class="cm">/* CORRECT: Enum members are descriptive, follow snake_case, and end with _e */</span>
 </pre></div>
 </div>
 </section>

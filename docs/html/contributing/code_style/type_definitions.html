@@ -384,14 +384,14 @@ document.write(`
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="n">Point</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Missing &#39;_t&#39; suffix */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">Point</span><span class="p">;</span><span class="w"> </span><span class="cm">/* INCORRECT: Missing &#39;_t&#39; suffix */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="n">point_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: &#39;_t&#39; suffix added */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">point_t</span><span class="p">;</span><span class="w"> </span><span class="cm">/* CORRECT: &#39;_t&#39; suffix added */</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -404,14 +404,14 @@ document.write(`
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="n">W_H</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Non-descriptive type name */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">W_H</span><span class="p">;</span><span class="w"> </span><span class="cm">/* INCORRECT: Non-descriptive type name */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">;</span>
 <span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">;</span>
-<span class="p">}</span><span class="w"> </span><span class="n">dimensions_t</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Descriptive type name */</span>
+<span class="p">}</span><span class="w"> </span><span class="n">dimensions_t</span><span class="p">;</span><span class="w"> </span><span class="cm">/* CORRECT: Descriptive type name */</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -421,11 +421,11 @@ document.write(`
 <section id="example-3">
 <h2>Example 3:<a class="headerlink" href="#example-3" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">compare</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w">  </span><span class="cm">/* INCORRECT: Hard to read */</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">compare</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w"> </span><span class="cm">/* INCORRECT: Hard to read */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">compare_fn_t</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w">  </span><span class="cm">/* CORRECT: Simplified with typedef */</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">compare_fn_t</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">);</span><span class="w"> </span><span class="cm">/* CORRECT: Simplified with typedef */</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -435,7 +435,7 @@ document.write(`
 <section id="example-4">
 <h2>Example 4:<a class="headerlink" href="#example-4" title="Link to this heading">#</a></h2>
 <p>Bad Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">my_int</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Overuse of typedef */</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">my_int</span><span class="p">;</span><span class="w"> </span><span class="cm">/* INCORRECT: Overuse of typedef */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
@@ -451,19 +451,19 @@ document.write(`
 <p>Bad Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w">   </span><span class="n">age</span><span class="p">;</span>
 <span class="p">};</span>
 
-<span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="n">john</span><span class="p">;</span><span class="w">  </span><span class="cm">/* INCORRECT: Repeated &#39;struct&#39; keyword */</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">person</span><span class="w"> </span><span class="n">john</span><span class="p">;</span><span class="w"> </span><span class="cm">/* INCORRECT: Repeated &#39;struct&#39; keyword */</span>
 </pre></div>
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w">   </span><span class="n">age</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="n">person_t</span><span class="p">;</span>
 
-<span class="n">person_t</span><span class="w"> </span><span class="n">john</span><span class="p">;</span><span class="w">  </span><span class="cm">/* CORRECT: Typedef used to avoid repeated &#39;struct&#39; keyword */</span>
+<span class="n">person_t</span><span class="w"> </span><span class="n">john</span><span class="p">;</span><span class="w"> </span><span class="cm">/* CORRECT: Typedef used to avoid repeated &#39;struct&#39; keyword */</span>
 </pre></div>
 </div>
 <ul class="simple">

@@ -53,9 +53,9 @@ General Guidelines for Types
   .. code-block:: c
 
     typedef struct {
-      uint8_t id;
+      uint8_t  id;
       uint16_t age;
-      bool is_active;
+      bool     is_active;
     } user_info_t;
 
 Example 1:
@@ -65,13 +65,13 @@ Bad Example:
 
 .. code-block:: c
 
-    int count = 0;  /* INCORRECT: Use of "int" instead of fixed-width type */
+    int count = 0; /* INCORRECT: Use of "int" instead of fixed-width type */
 
 Good Example:
 
 .. code-block:: c
 
-    uint8_t count = 0;  /* CORRECT: Fixed-width type used */
+    uint8_t count = 0; /* CORRECT: Fixed-width type used */
 
 Example 2:
 ----------
@@ -80,13 +80,13 @@ Bad Example:
 
 .. code-block:: c
 
-    long buffer_size = 1024;  /* INCORRECT: "long" type is platform-dependent */
+    long buffer_size = 1024; /* INCORRECT: "long" type is platform-dependent */
 
 Good Example:
 
 .. code-block:: c
 
-    size_t buffer_size = 1024;  /* CORRECT: Using "size_t" for memory size */
+    size_t buffer_size = 1024; /* CORRECT: Using "size_t" for memory size */
 
 Example 3:
 ----------
@@ -95,13 +95,13 @@ Bad Example:
 
 .. code-block:: c
 
-    int is_active = 1;  /* INCORRECT: Using "int" for a boolean value */
+    int is_active = 1; /* INCORRECT: Using "int" for a boolean value */
 
 Good Example:
 
 .. code-block:: c
 
-    bool is_active = true;  /* CORRECT: Using "bool" for boolean values */
+    bool is_active = true; /* CORRECT: Using "bool" for boolean values */
 
 General Guidelines
 ------------------

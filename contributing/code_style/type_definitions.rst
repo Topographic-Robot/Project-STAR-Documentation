@@ -18,7 +18,7 @@ Bad Example:
     typedef struct {
       int x;
       int y;
-    } Point;  /* INCORRECT: Missing '_t' suffix */
+    } Point; /* INCORRECT: Missing '_t' suffix */
 
 Good Example:
 
@@ -27,7 +27,7 @@ Good Example:
     typedef struct {
       int x;
       int y;
-    } point_t;  /* CORRECT: '_t' suffix added */
+    } point_t; /* CORRECT: '_t' suffix added */
 
 - **Use Meaningful Type Names**: Always use descriptive and meaningful names for `typedef` types to make the code more readable and easier to understand.
 
@@ -41,7 +41,7 @@ Bad Example:
     typedef struct {
       int width;
       int height;
-    } W_H;  /* INCORRECT: Non-descriptive type name */
+    } W_H; /* INCORRECT: Non-descriptive type name */
 
 Good Example:
 
@@ -50,7 +50,7 @@ Good Example:
     typedef struct {
       int width;
       int height;
-    } dimensions_t;  /* CORRECT: Descriptive type name */
+    } dimensions_t; /* CORRECT: Descriptive type name */
 
 - **Use `typedef` to Simplify Complex Types**: Use `typedef` to simplify the declaration of complex types, such as function pointers, or to make the code more consistent and readable.
 
@@ -61,13 +61,13 @@ Bad Example:
 
 .. code-block:: c
 
-    int (*compare)(const void *, const void *);  /* INCORRECT: Hard to read */
+    int (*compare)(const void *, const void *); /* INCORRECT: Hard to read */
 
 Good Example:
 
 .. code-block:: c
 
-    typedef int (*compare_fn_t)(const void *, const void *);  /* CORRECT: Simplified with typedef */
+    typedef int (*compare_fn_t)(const void *, const void *); /* CORRECT: Simplified with typedef */
 
 - **Do Not Overuse `typedef`**: Avoid using `typedef` for basic types like `int`, `char`, or `float`, as this can make the code harder to follow and debug. Use `typedef` only when it improves the clarity of the code.
 
@@ -78,7 +78,7 @@ Bad Example:
 
 .. code-block:: c
 
-    typedef int my_int;  /* INCORRECT: Overuse of typedef */
+    typedef int my_int; /* INCORRECT: Overuse of typedef */
 
 Good Example:
 
@@ -97,10 +97,10 @@ Bad Example:
 
     struct person {
       char *name;
-      int age;
+      int   age;
     };
 
-    struct person john;  /* INCORRECT: Repeated 'struct' keyword */
+    struct person john; /* INCORRECT: Repeated 'struct' keyword */
 
 Good Example:
 
@@ -108,10 +108,10 @@ Good Example:
 
     typedef struct {
       char *name;
-      int age;
+      int   age;
     } person_t;
 
-    person_t john;  /* CORRECT: Typedef used to avoid repeated 'struct' keyword */
+    person_t john; /* CORRECT: Typedef used to avoid repeated 'struct' keyword */
 
 - **Enum Type Definitions**: Always use `typedef` with enums, and follow the same convention of appending `_t` to the type name. Enum values should be in `snake_case` and end with `_e`.
 
