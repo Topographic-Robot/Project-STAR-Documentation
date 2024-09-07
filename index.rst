@@ -13,6 +13,7 @@ Welcome to the documentation for the Topographic Robot. Below you will find sect
    installation/index
    basic_examples
    compiling_linking_flashing
+   contributing/index
    testing_validation
    future_work_improvements
    contributors
