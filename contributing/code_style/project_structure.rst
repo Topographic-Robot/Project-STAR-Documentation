@@ -1,12 +1,12 @@
 Project Structure
 =================
 
-In this project, each module should reside in its own directory, containing both source and header files in dedicated subfolders. The build system will be managed using **CMake** with `CMakeLists.txt` files for defining how each module is built. This structure makes the project modular, scalable, and easy to maintain.
+In this project, each module should reside in its own directory, containing source files and a separate `include/` folder for header files. The build system will be managed using **CMake** with `CMakeLists.txt` files for defining how each module is built. This structure makes the project modular, scalable, and easy to maintain.
 
 General Guidelines for Project Structure
 ----------------------------------------
 
-- **Module-Based Structure**: Each module should have its own directory. Inside each module, there should be a separate directory for source files (`src/`) and a directory for header files (`include/`).
+- **Module-Based Structure**: Each module should have its own directory with source files and a dedicated `include/` folder for header files.
 
 - **CMake for Build Management**: The project should use **CMake** for the build process, with each module having its own `CMakeLists.txt` file to manage its build instructions.
 
@@ -23,24 +23,20 @@ The following is an example of a modular project structure:
     ├── module1/
     │   ├── include/          # Header files for module1
     │   │   └── module1.h
-    │   ├── src/              # Source files for module1
-    │   │   └── module1.c
+    │   ├── module1.c         # Source file for module1
     │   └── CMakeLists.txt    # CMake file for module1
     ├── module2/
     │   ├── include/          # Header files for module2
     │   │   └── module2.h
-    │   ├── src/              # Source files for module2
-    │   │   └── module2.c
+    │   ├── module2.c         # Source file for module2
     │   └── CMakeLists.txt    # CMake file for module2
     ├── common/               # Shared headers or utility files
     │   ├── include/
     │   │   └── common.h
-    │   ├── src/
-    │   │   └── common.c
+    │   ├── common.c
     │   └── CMakeLists.txt
     ├── main/
-    │   ├── src/              # Main entry point of the application
-    │   │   └── main.c
+    │   ├── main.c            # Main entry point of the application
     │   └── CMakeLists.txt    # CMake file for main module
     ├── build/                # Generated build files (excluded from version control)
     ├── CMakeLists.txt        # Top-level CMake file for the entire project
@@ -49,7 +45,7 @@ The following is an example of a modular project structure:
 Directory Breakdown
 -------------------
 
-- **Module Directories**: Each module has its own directory, with `src/` for source files and `include/` for header files. This structure keeps the code modular and allows each module to be built independently.
+- **Module Directories**: Each module has its own directory, with an `include/` folder for header files and the source files directly in the module directory. This structure keeps the code modular and allows each module to be built independently.
   
   Example:
   
@@ -63,7 +59,7 @@ Directory Breakdown
 
     #endif /* MODULE1_H */
 
-    /* module1/src/module1.c */
+    /* module1/module1.c */
     #include "module1.h"
 
     void module1_function(void)
@@ -71,7 +67,7 @@ Directory Breakdown
       /* Implementation */
     }
 
-- **Common Directory**: Shared utilities, functions, or constants that are used across multiple modules can reside in a `common/` directory. This directory should follow the same structure with `include/` and `src/` subdirectories.
+- **Common Directory**: Shared utilities, functions, or constants that are used across multiple modules can reside in a `common/` directory. This directory should follow the same structure with an `include/` folder for header files and source files directly in the directory.
 
 - **Main Directory**: This directory contains the entry point of the program (e.g., `main.c`), and it may depend on one or more modules.
 
@@ -104,7 +100,7 @@ Each module will have its own `CMakeLists.txt` file that defines the source file
 .. code-block:: cmake
 
     # module1/CMakeLists.txt
-    set(SOURCES src/module1.c)
+    set(SOURCES module1.c)
     set(HEADERS include/module1.h)
 
     add_library(module1 ${SOURCES} ${HEADERS})
@@ -119,7 +115,7 @@ The `main/` module should include the other modules it depends on.
 .. code-block:: cmake
 
     # main/CMakeLists.txt
-    set(SOURCES src/main.c)
+    set(SOURCES main.c)
 
     add_executable(MyProgram ${SOURCES})
 
@@ -165,7 +161,7 @@ Ensure that the `docs/` directory contains up-to-date documentation for the proj
 General Guidelines
 ------------------
 
-- **Modular Structure**: Keep each module self-contained, with source and header files in separate directories.
+- **Modular Structure**: Keep each module self-contained, with source files in the module directory and header files in `include/`.
 
 - **Consistent Naming**: Follow naming conventions for files and directories to maintain a consistent structure.
 
