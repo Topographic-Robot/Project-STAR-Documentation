@@ -33,7 +33,7 @@ Correct Example:
 .. code-block:: c
 
   my_function(first_argument, second_argument, third_argument,
-    fourth_argument);
+              fourth_argument);
 
 Incorrect Example:
 
