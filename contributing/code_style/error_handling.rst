@@ -139,7 +139,7 @@ In C, the `goto` statement can be useful for simplifying error handling when dea
 ESP32-Specific Error Handling
 -----------------------------
 
-When working with ESP32 and **ESP-IDF**, you should use ESP32’s built-in macros and functions for error handling:
+When working with ESP32 and **ESP-IDF**, you should use ESP32's built-in macros and functions for error handling:
 
 - **ESP_ERROR_CHECK()**: Use `ESP_ERROR_CHECK()` to check return values from ESP-IDF functions that return `esp_err_t`. This macro will terminate the program if an error occurs and log the error message.
 

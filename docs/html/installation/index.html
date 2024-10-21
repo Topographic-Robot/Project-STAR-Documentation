@@ -37,13 +37,13 @@
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=e1a75a79"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'installation/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linux Installation" href="install_linux.html" />
+    <link rel="next" title="MacOS Installation" href="install_macos.html" />
     <link rel="prev" title="Software Design" href="../software_design.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -152,17 +152,18 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../project_overview.html">Introduction</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../hardware_design/index.html">Hardware Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../hardware_design/why_esp32.html">Why the ESP32?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hardware_design/considered_microcontrollers.html">Considered Microcontrollers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hardware_design/why_ESP32.html">Why the ESP32?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hardware_design/why_MSP432.html">Why the MSP432</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../software_design.html">Software Design</a></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Installation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="install_linux.html">Linux Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install_macos.html">MacOS Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install_windows.html">Windows Installation</a></li>
+
+
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../basic_examples.html">Basic Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compiling_linking_flashing.html">Compiling, Linking, Flashing</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../contributing/index.html">Contributing Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../contributing/code_style/index.html">Coding Style</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -199,8 +200,6 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../testing_validation.html">Testing and Validation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../future_work_improvements.html">Future Work and Improvements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
 </ul>
 
@@ -357,21 +356,9 @@ document.write(`
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="install_linux.html">Linux Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install_linux.html#install-from-binary">Install from Binary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install_linux.html#install-from-source">Install from Source</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="install_macos.html">MacOS Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install_macos.html#install-from-binary">Install from Binary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install_macos.html#install-from-source">Install from Source</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="install_windows.html">Windows Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="install_windows.html#install-from-binary">Install from Binary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="install_windows.html#install-from-source">Install from Source</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="install_macos.html">MacOS Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_macos.html#esp32-s-idf-py">ESP32’s idf.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_macos.html#sphinx">Sphinx</a></li>
 </ul>
 </div>
 </section>
@@ -397,11 +384,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="install_linux.html"
+       href="install_macos.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linux Installation</p>
+        <p class="prev-next-title">MacOS Installation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -421,7 +408,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Brighton Sikarskie, Matthew Manginelli, Jeremie Hews, Cesar Magana De Leon
+By Topographic-Robot Team
 </p>
 
   </div>

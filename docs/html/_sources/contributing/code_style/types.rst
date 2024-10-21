@@ -1,7 +1,7 @@
 Types
 =====
 
-In C programming, it’s essential to choose the correct data types for variables and function parameters to ensure clarity, efficiency, and portability. Whenever possible, use fixed-width types from `stdint.h`, such as `uint8_t`, `uint32_t`, `int16_t`, and `int_fast8_t`. These types guarantee the size of the data and improve cross-platform compatibility.
+In C programming, it's essential to choose the correct data types for variables and function parameters to ensure clarity, efficiency, and portability. Whenever possible, use fixed-width types from `stdint.h`, such as `uint8_t`, `uint32_t`, `int16_t`, and `int_fast8_t`. These types guarantee the size of the data and improve cross-platform compatibility.
 
 General Guidelines for Types
 ----------------------------
@@ -108,7 +108,7 @@ General Guidelines
 
 - Always use fixed-width integer types (`uint8_t`, `int32_t`, etc.) for clarity and portability.
 
-- Use `int_fastN_t` for performance when a specific size isn’t required but speed is essential.
+- Use `int_fastN_t` for performance when a specific size isn't required but speed is essential.
 
 - Use `size_t` for variables related to memory sizes or object counts.
 

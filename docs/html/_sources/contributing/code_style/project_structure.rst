@@ -85,7 +85,7 @@ The `main/` module should include the `toporobo_hal` module using the `REQUIRES`
 Naming Conventions
 ------------------
 
-- **Source and Header Files**: Use `snake_case` for all source (`.c`) and header (`.h`) file names to keep consistent with the project’s naming conventions.
+- **Source and Header Files**: Use `snake_case` for all source (`.c`) and header (`.h`) file names to keep consistent with the project's naming conventions.
 
 - **Directory Names**: Use `snake_case` for directories and make sure that directory names describe the purpose of the module.
 

@@ -19,7 +19,7 @@
 
 project = 'Topographic-Robot'
 copyright = '2024 Topographic-Robot'
-author = 'Brighton Sikarskie, Matthew Manginelli, Jeremie Hews, Cesar Magana De Leon'
+author = 'Topographic-Robot Team'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1'

@@ -1,7 +1,7 @@
 Breaking Long Lines
 ===================
 
-To maintain readability and prevent horizontal scrolling, it’s important to break long lines of code when they exceed the maximum line length. For this project, the maximum line length is **80 characters**. Lines longer than this should be split in a consistent and readable way.
+To maintain readability and prevent horizontal scrolling, it's important to break long lines of code when they exceed the maximum line length. For this project, the maximum line length is **80 characters**. Lines longer than this should be split in a consistent and readable way.
 
 Guidelines
 ----------
