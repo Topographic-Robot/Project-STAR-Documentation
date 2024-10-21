@@ -37,14 +37,14 @@
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=e1a75a79"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'software_design';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Installation" href="installation/index.html" />
-    <link rel="prev" title="MSP432 (Replaced by ESP32)" href="hardware_design/why_MSP432.html" />
+    <link rel="prev" title="Why the MSP432" href="hardware_design/why_MSP432.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,20 +152,18 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="project_overview.html">Introduction</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="hardware_design/index.html">Hardware Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="hardware_design/considered_microcontrollers.html">Introduction</a></li>
-
-
-<li class="toctree-l2"><a class="reference internal" href="hardware_design/why_MSP432.html">MSP432 (Replaced by ESP32)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_design/considered_microcontrollers.html">Considered Microcontrollers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_design/why_ESP32.html">Why the ESP32?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_design/why_MSP432.html">Why the MSP432</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Software Design</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="installation/index.html">Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation/install_linux.html">Linux Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/install_macos.html">MacOS Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/install_windows.html">Windows Installation</a></li>
+
+
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_examples.html">Basic Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compiling_linking_flashing.html">Compiling, Linking, Flashing</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="contributing/index.html">Contributing Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="contributing/code_style/index.html">Coding Style</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -203,7 +201,6 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="testing_validation.html">Testing and Validation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="future_work_improvements.html">Future Work and Improvements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
 </ul>
 
@@ -357,7 +354,11 @@ document.write(`
                   
   <section id="software-design">
 <h1>Software Design<a class="headerlink" href="#software-design" title="Link to this heading">#</a></h1>
-<p>[to be written]</p>
+<p>For the software, we’re using ESP32s idf.py framework. Here are the related links:</p>
+<p><a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-py.html">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/tools/idf-py.html</a></p>
+<p><a class="reference external" href="https://docs.espressif.com/projects/esp-iot-solution/en/latest/index.html">https://docs.espressif.com/projects/esp-iot-solution/en/latest/index.html</a></p>
+<p><a class="github reference external" href="https://github.com/espressif/esp-idf/tree/master/examples">espressif/esp-idf</a></p>
+<p><a class="reference external" href="https://components.espressif.com/components">https://components.espressif.com/components</a></p>
 </section>
 
 
@@ -377,7 +378,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">MSP432 (Replaced by ESP32)</p>
+        <p class="prev-next-title">Why the MSP432</p>
       </div>
     </a>
     <a class="right-next"

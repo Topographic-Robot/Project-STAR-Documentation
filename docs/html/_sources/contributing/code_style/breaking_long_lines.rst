@@ -6,18 +6,18 @@ To maintain readability and prevent horizontal scrolling, it's important to brea
 Guidelines
 ----------
 
-- **Maximum Line Length**: Ensure that no line of code exceeds 80 characters. This includes comments, code, and declarations.
+- **Maximum Line Length**: Ensure that no line of code exceeds roughly 80 characters. This includes comments, code, and declarations.
   
 - **Break at Natural Points**: Break lines at natural points, such as after operators (`+`, `-`, `*`, `=`, etc.), commas, or logical groupings to improve readability.
 
-- **Indentation for Continuation Lines**: When breaking lines, ensure the continued line is indented properly for readability. Use **two spaces** for indentation after the line break to maintain visual alignment.
+- **Indentation for Continuation Lines**: When breaking lines, ensure the continued line is indented properly for readability. Line up indentation after the line break to maintain visual alignment.
 
 Correct Example:
 
 .. code-block:: c
 
   int sum = first_variable + second_variable + third_variable +
-    fourth_variable;  /* Continuation of line is indented by two spaces */
+            fourth_variable;
 
 Incorrect Example:
 

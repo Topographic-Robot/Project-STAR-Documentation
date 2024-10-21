@@ -13,11 +13,11 @@ Choosing clear and meaningful names for variables, functions, classes, and other
   
   - **Enum and Struct Typedefs**: All enums and structs should use snake_case and end with `_t` to indicate they are typedefs (e.g., `error_code_t`, `my_struct_t`).
 
-  - **Enum Values**: Enum values should end with `_e` to distinguish them from other identifiers (e.g., `success_e`, `failure_e`).
+  - **Enum Values**: Enum values should start with `k_` to distinguish them from other identifiers (e.g., `k_success`, `k_failure`).
 
   - **Variable and Function Naming**: Use snake_case for variable and function names (e.g., `my_function`, `my_variable`).
 
-  - **Constants**: Constants should always be used where applicable and start with `c_` (e.g., `c_max_length`).
+  - **Constants**: Constants should always be used where applicable (e.g., `max_length`).
 
   - **Avoid Abbreviations**: Avoid unnecessary abbreviations (e.g., shortening `data` to `dat`) unless the resulting name would be excessively long. This ensures that names remain clear and understandable.
 
@@ -81,8 +81,8 @@ Good Example
     static bool s_invert;  /* Static variable with s_ prefix to indicate file scope */
 
     typedef enum status_t {  /* Enum with snake_case and _t suffix */
-      success_e,
-      failure_e
+      k_success,
+      k_failure
     } status_t;
 
     static int s_threshold = 0;  /* Declare static threshold at file scope */
@@ -108,7 +108,7 @@ In the good example:
 
 - `s_invert` is declared static with a clear prefix.
 
-- The `status_t` enum uses snake_case and ends with `_t`, with enum values ending in `_e`.
+- The `status_t` enum uses snake_case and ends with `_t`, with enum values starting with `k_`.
 
 - The function name `process_input` clearly describes its purpose.
 

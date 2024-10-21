@@ -37,14 +37,14 @@
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=e1a75a79"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'compiling_linking_flashing';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Contributing Guide" href="contributing/index.html" />
-    <link rel="prev" title="Basic Examples" href="basic_examples.html" />
+    <link rel="prev" title="MacOS Installation" href="installation/install_macos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,20 +152,18 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="project_overview.html">Introduction</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="hardware_design/index.html">Hardware Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="hardware_design/considered_microcontrollers.html">Introduction</a></li>
-
-
-<li class="toctree-l2"><a class="reference internal" href="hardware_design/why_MSP432.html">MSP432 (Replaced by ESP32)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_design/considered_microcontrollers.html">Considered Microcontrollers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_design/why_ESP32.html">Why the ESP32?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware_design/why_MSP432.html">Why the MSP432</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="software_design.html">Software Design</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="installation/index.html">Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation/install_linux.html">Linux Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation/install_macos.html">MacOS Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/install_windows.html">Windows Installation</a></li>
+
+
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="basic_examples.html">Basic Examples</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Compiling, Linking, Flashing</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="contributing/index.html">Contributing Guide</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="contributing/code_style/index.html">Coding Style</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -202,8 +200,6 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="testing_validation.html">Testing and Validation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="future_work_improvements.html">Future Work and Improvements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
 </ul>
 
@@ -371,13 +367,6 @@ document.write(`
 <h2>Sphinx<a class="headerlink" href="#sphinx" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://github.com/sphinx-doc/sphinx">Sphinx GitHub</a></p>
 <ol class="arabic">
-<li><p><strong>Install Sphinx</strong></p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sphinx<span class="w"> </span>sphinx-book-theme
-</pre></div>
-</div>
-</div></blockquote>
-</li>
 <li><p><strong>Build the Documentation</strong></p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
@@ -408,12 +397,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="basic_examples.html"
+       href="installation/install_macos.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Basic Examples</p>
+        <p class="prev-next-title">MacOS Installation</p>
       </div>
     </a>
     <a class="right-next"

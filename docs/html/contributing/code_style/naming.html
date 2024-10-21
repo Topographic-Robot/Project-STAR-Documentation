@@ -37,7 +37,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=e1a75a79"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contributing/code_style/naming';</script>
@@ -152,7 +152,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../project_overview.html">Introduction</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../hardware_design/index.html">Hardware Design</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../hardware_design/considered_microcontrollers.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hardware_design/considered_microcontrollers.html">Considered Microcontrollers</a></li>
 
 
 <li class="toctree-l2"><a class="reference internal" href="../../hardware_design/why_MSP432.html">MSP432 (Replaced by ESP32)</a></li>
@@ -376,9 +376,9 @@ document.write(`
 <li><p><strong>Static Declarations</strong>: Any variable or function that is only used in a single source file should be declared <cite>static</cite>. Static variables should be prefixed with <cite>s_</cite> for easy identification (e.g., <cite>static bool s_invert</cite>).</p></li>
 <li><p><strong>Namespacing</strong>: Public names (non-static variables and functions) should be namespaced with a per-component or per-unit prefix to avoid naming collisions. For example, use <cite>mycomp_vfs_register()</cite> or <cite>mycomp_console_run()</cite> to clearly indicate the source of the function or variable. If a prefix like <cite>mycomp_</cite> is chosen, it should be consistent across all names within that component.</p></li>
 <li><p><strong>Enum and Struct Typedefs</strong>: All enums and structs should use snake_case and end with <cite>_t</cite> to indicate they are typedefs (e.g., <cite>error_code_t</cite>, <cite>my_struct_t</cite>).</p></li>
-<li><p><strong>Enum Values</strong>: Enum values should end with <cite>_e</cite> to distinguish them from other identifiers (e.g., <cite>success_e</cite>, <cite>failure_e</cite>).</p></li>
+<li><p><strong>Enum Values</strong>: Enum values should start with <cite>k_</cite> to distinguish them from other identifiers (e.g., <cite>k_success</cite>, <cite>k_failure</cite>).</p></li>
 <li><p><strong>Variable and Function Naming</strong>: Use snake_case for variable and function names (e.g., <cite>my_function</cite>, <cite>my_variable</cite>).</p></li>
-<li><p><strong>Constants</strong>: Constants should always be used where applicable and start with <cite>c_</cite> (e.g., <cite>c_max_length</cite>).</p></li>
+<li><p><strong>Constants</strong>: Constants should always be used where applicable (e.g., <cite>max_length</cite>).</p></li>
 <li><p><strong>Avoid Abbreviations</strong>: Avoid unnecessary abbreviations (e.g., shortening <cite>data</cite> to <cite>dat</cite>) unless the resulting name would be excessively long. This ensures that names remain clear and understandable.</p></li>
 </ul>
 </li>
@@ -429,8 +429,8 @@ document.write(`
 <span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">s_invert</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Static variable with s_ prefix to indicate file scope */</span>
 
 <span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">status_t</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="cm">/* Enum with snake_case and _t suffix */</span>
-<span class="w">  </span><span class="n">success_e</span><span class="p">,</span>
-<span class="w">  </span><span class="n">failure_e</span>
+<span class="w">  </span><span class="n">k_success</span><span class="p">,</span>
+<span class="w">  </span><span class="n">k_failure</span>
 <span class="p">}</span><span class="w"> </span><span class="n">status_t</span><span class="p">;</span>
 
 <span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">s_threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Declare static threshold at file scope */</span>
@@ -455,7 +455,7 @@ document.write(`
 <p>In the good example:</p>
 <ul class="simple">
 <li><p><cite>s_invert</cite> is declared static with a clear prefix.</p></li>
-<li><p>The <cite>status_t</cite> enum uses snake_case and ends with <cite>_t</cite>, with enum values ending in <cite>_e</cite>.</p></li>
+<li><p>The <cite>status_t</cite> enum uses snake_case and ends with <cite>_t</cite>, with enum values starting with <cite>k_</cite>.</p></li>
 <li><p>The function name <cite>process_input</cite> clearly describes its purpose.</p></li>
 <li><p>Variables like <cite>s_threshold</cite> and <cite>result</cite> have meaningful names, indicating their roles in the logic.</p></li>
 <li><p>No unnecessary global variables are used, and static variables are properly prefixed for clarity.</p></li>

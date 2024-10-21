@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>MSP432 (Replaced by ESP32) &#8212; Topographic-Robot 0.1 documentation</title>
+    <title>Why the MSP432 &#8212; Topographic-Robot 0.1 documentation</title>
   
   
   
@@ -37,14 +37,14 @@
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=e1a75a79"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'hardware_design/why_MSP432';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Software Design" href="../software_design.html" />
-    <link rel="prev" title="Introduction" href="considered_microcontrollers.html" />
+    <link rel="prev" title="Why the ESP32?" href="why_ESP32.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,10 +152,9 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../project_overview.html">Introduction</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Hardware Design</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="considered_microcontrollers.html">Introduction</a></li>
-
-
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">MSP432 (Replaced by ESP32)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="considered_microcontrollers.html">Considered Microcontrollers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why_ESP32.html">Why the ESP32?</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Why the MSP432</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../software_design.html">Software Design</a></li>
@@ -343,7 +342,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>MSP432 (Replaced by ESP32)</h1>
+    <h1>Why the MSP432</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,10 +353,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages">Disadvantages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-rationale">Decision Rationale</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages">Disadvantages</a></li>
 </ul>
             </nav>
         </div>
@@ -369,8 +365,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="msp432-replaced-by-esp32">
-<h1>MSP432 (Replaced by ESP32)<a class="headerlink" href="#msp432-replaced-by-esp32" title="Link to this heading">#</a></h1>
+  <section id="why-the-msp432">
+<h1>Why the MSP432<a class="headerlink" href="#why-the-msp432" title="Link to this heading">#</a></h1>
 <p>The MSP432, previously considered, is a microcontroller from Texas Instruments designed for low-power applications with a strong focus on energy efficiency and performance.</p>
 <section id="advantages">
 <h2>Advantages<a class="headerlink" href="#advantages" title="Link to this heading">#</a></h2>
@@ -387,17 +383,6 @@ document.write(`
 <li><p><strong>Cost</strong>: Slightly more expensive compared to the ESP32.</p></li>
 <li><p><strong>Community Support</strong>: Less extensive community support and fewer libraries compared to the ESP32.</p></li>
 </ul>
-<section id="decision-rationale">
-<h3>Decision Rationale<a class="headerlink" href="#decision-rationale" title="Link to this heading">#</a></h3>
-<p>The final decision to use the ESP32 was based on several key factors:</p>
-<ol class="arabic simple">
-<li><p><strong>Integrated Connectivity</strong>: The ESP32’s built-in Wi-Fi and Bluetooth are essential for the topographical mapping robot, allowing for seamless data transmission and remote control capabilities without needing additional hardware.</p></li>
-<li><p><strong>Community and Development Resources</strong>: The extensive libraries and community support available for the ESP32 will significantly speed up development and troubleshooting processes, ensuring a more efficient project timeline.</p></li>
-<li><p><strong>Cost Efficiency</strong>: The ESP32’s affordability makes it a cost-effective solution, allowing for budget allocation towards other critical components of the robot.</p></li>
-<li><p><strong>Performance Requirements</strong>: The dual-core processor and high clock speed of the ESP32 provide the necessary computational power to handle complex mapping algorithms and data processing tasks.</p></li>
-<li><p><strong>Flexibility and Scalability</strong>: The ESP32 offers flexibility in programming and the ability to scale the project with additional features without significant changes to the hardware platform.</p></li>
-</ol>
-</section>
 </section>
 </section>
 
@@ -413,12 +398,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="considered_microcontrollers.html"
+       href="why_ESP32.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-title">Why the ESP32?</p>
       </div>
     </a>
     <a class="right-next"
@@ -447,10 +432,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages">Advantages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages">Disadvantages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-rationale">Decision Rationale</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disadvantages">Disadvantages</a></li>
 </ul>
   </nav></div>
 

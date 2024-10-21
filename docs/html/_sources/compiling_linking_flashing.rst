@@ -6,19 +6,13 @@ Sphinx
 
 `Sphinx GitHub <https://github.com/sphinx-doc/sphinx>`_
 
-1. **Install Sphinx**
-
-    .. code-block:: bash
-
-        pip install sphinx sphinx-book-theme
-
-2. **Build the Documentation**
+1. **Build the Documentation**
 
     .. code-block:: bash
 
         make html
 
-3. **View Locally**
+2. **View Locally**
 
     .. code-block:: bash
 
