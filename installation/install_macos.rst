@@ -1,46 +1,97 @@
 MacOS Installation
 ==================
 
-For other operating systems such as Linux and Windows the process should be very similar.
+The installation process for other operating systems like Linux and Windows is similar to the steps provided for macOS below.
 
-ESP32's idf.py
-==============
+ESP32's ``idf.py``
+------------------
 
-MacOS Environment (tested on MacBook Air M1 2020 with Sonoma v14.5)
+MacOS Environment
+~~~~~~~~~~~~~~~~~
+Tested on MacBook Air M1 2020 with macOS Sonoma v14.5.
 
-You can install this through the terminal or Visual Studio Code, both ways are shown below. I recommend using the terminal way.
+You can install the ESP32 development environment using the terminal or Visual Studio Code. The terminal installation method is recommended and detailed below.
 
-1. Install esp-idf follow and run: `esp-idf MacOS Setup <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html>`__
+1. Install ESP-IDF
+~~~~~~~~~~~~~~~~~~
 
-    1. ``brew install cmake ninja dfu-util``
-    2. ``git clone --recursive https://github.com/espressif/esp-idf.git``
-    3. ``cd esp-idf``
-    4. ``./install.sh esp32``
-    5. ``echo "alias get_idf=\". $(pwd)/export.sh\"" >> ~/.zshrc``
-    6. ``source ~/.zshrc``
+To set up the ESP-IDF environment on macOS, follow these steps:
 
-Run this every time in a project to get idf.py: ``get_idf``
+For detailed instructions, see the official documentation: `ESP-IDF MacOS Setup <https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html>`__.
 
-2. Install more packages
+   a. Install required packages:
+   
+      .. code-block:: bash
 
-    ``brew install gcc make pkg-config arm-none-eabi-gcc openocd bear screen qemu``
+         brew install cmake ninja dfu-util
 
-    NOTE: ``gdb`` cant be installed so ``lldb`` must be used instead
+   b. Clone the ESP-IDF repository:
+   
+      .. code-block:: bash
 
-    *Keep in mind:*
+         git clone --recursive https://github.com/espressif/esp-idf.git
 
-    GNU "make" has been installed as "gmake". If you need to use it as "make", you can add a "gnubin" directory to your PATH from your zshrc like:
+   c. Navigate to the ESP-IDF directory:
+   
+      .. code-block:: bash
 
-    ``export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"``
+         cd esp-idf
+
+   d. Run the installation script for ESP32:
+   
+      .. code-block:: bash
+
+         ./install.sh esp32
+
+   e. Add an alias to your ``.zshrc`` file for easy access to ``idf.py``:
+   
+      .. code-block:: bash
+
+         echo "alias get_idf='. $(pwd)/export.sh'" >> ~/.zshrc
+
+   f. Source the updated profile:
+   
+      .. code-block:: bash
+
+         source ~/.zshrc
+
+**Note:**  
+After the setup, run the following command in each project to activate ``idf.py``:
+   
+   .. code-block:: bash
+
+      get_idf
+
+2. Install Additional Packages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You may also need the following packages to work with ESP-IDF:
+   
+   .. code-block:: bash
+
+      brew install gcc make pkg-config arm-none-eabi-gcc openocd bear screen qemu
+
+**Important:**  
+``gdb`` cannot be installed on macOS, so you'll need to use ``lldb`` as an alternative.
+
+- **GNU Make Utility:**  
+  GNU ``make`` is installed as ``gmake``. If you need to use it as ``make``, add the following line to your ``.zshrc`` to update your PATH:
+   
+   .. code-block:: bash
+
+      export PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 Sphinx
-======
+------
 
-Sphinx is used to generate HTML for the docs you are currently viewing, this is not doxygen, but rather rst to html.
-You don't need to install this unless you want to work on documentation.
+Sphinx is used to generate HTML documentation (not Doxygen). You don't need to install Sphinx unless you're contributing to the documentation.
 
-1. **Install Sphinx**
+1. Install Sphinx
+~~~~~~~~~~~~~~~~~
 
-    .. code-block:: bash
+To install Sphinx and the required theme:
 
-        pip install sphinx sphinx-book-theme
+   .. code-block:: bash
+
+      pip install sphinx sphinx-book-theme
+

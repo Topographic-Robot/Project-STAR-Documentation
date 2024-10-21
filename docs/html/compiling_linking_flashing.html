@@ -37,7 +37,7 @@
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=e1a75a79"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'compiling_linking_flashing';</script>
@@ -160,8 +160,6 @@
 <li class="toctree-l1"><a class="reference internal" href="software_design.html">Software Design</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="installation/index.html">Installation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation/install_macos.html">MacOS Installation</a></li>
-
-
 </ul>
 </details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Compiling, Linking, Flashing</a></li>
@@ -349,6 +347,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esp32-s-idf-py">ESP32’s <code class="docutils literal notranslate"><span class="pre">idf.py</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx">Sphinx</a></li>
 </ul>
             </nav>
@@ -363,23 +362,68 @@ document.write(`
                   
   <section id="compiling-linking-flashing">
 <h1>Compiling, Linking, Flashing<a class="headerlink" href="#compiling-linking-flashing" title="Link to this heading">#</a></h1>
+<section id="esp32-s-idf-py">
+<h2>ESP32’s <code class="docutils literal notranslate"><span class="pre">idf.py</span></code><a class="headerlink" href="#esp32-s-idf-py" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Set up the ESP32 environment</strong></p>
+<p>First, make sure the ESP32 environment is set up by running the following command (after installation):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>get_idf
+</pre></div>
+</div>
+</li>
+<li><p><strong>Build the project</strong></p>
+<p>To compile your ESP32 project, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>idf.py<span class="w"> </span>build
+</pre></div>
+</div>
+</li>
+<li><p><strong>Flash the project</strong></p>
+<p>Once the project is built, you can flash it to the ESP32 by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>idf.py<span class="w"> </span>flash
+</pre></div>
+</div>
+</li>
+<li><p><strong>Monitor the serial output</strong></p>
+<p>To monitor the serial output from the ESP32 after flashing, use the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>idf.py<span class="w"> </span>monitor
+</pre></div>
+</div>
+</li>
+<li><p><strong>Clean the build directory</strong></p>
+<p>If you need to clean up the build directory before building again, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>idf.py<span class="w"> </span>clean
+</pre></div>
+</div>
+</li>
+<li><p><strong>Full clean of the build directory</strong></p>
+<p>If you want to completely remove the entire build directory (for a more thorough clean), run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>idf.py<span class="w"> </span>fullclean
+</pre></div>
+</div>
+</li>
+<li><p><strong>Check ROM usage (flash memory)</strong></p>
+<p>After building your project, you can check how much of the ESP32’s flash memory is used by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>idf.py<span class="w"> </span>size
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
 <section id="sphinx">
 <h2>Sphinx<a class="headerlink" href="#sphinx" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://github.com/sphinx-doc/sphinx">Sphinx GitHub</a></p>
 <ol class="arabic">
 <li><p><strong>Build the Documentation</strong></p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
+<p>To build the documentation using Sphinx, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
 </pre></div>
 </div>
-</div></blockquote>
 </li>
 <li><p><strong>View Locally</strong></p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8080</span><span class="w"> </span>--directory<span class="w"> </span>docs/html
+<p>You can view the generated documentation locally by running a simple HTTP server:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8080</span><span class="w"> </span>--directory<span class="w"> </span>docs/html
 </pre></div>
 </div>
-</div></blockquote>
 </li>
 </ol>
 </section>
@@ -430,6 +474,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esp32-s-idf-py">ESP32’s <code class="docutils literal notranslate"><span class="pre">idf.py</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx">Sphinx</a></li>
 </ul>
   </nav></div>

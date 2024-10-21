@@ -37,7 +37,7 @@
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=e1a75a79"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'installation/install_macos';</script>
@@ -160,8 +160,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../software_design.html">Software Design</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Installation</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">MacOS Installation</a></li>
-
-
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../compiling_linking_flashing.html">Compiling, Linking, Flashing</a></li>
@@ -349,11 +347,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MacOS Installation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#esp32-s-idf-py">ESP32’s idf.py</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx">Sphinx</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esp32-s-idf-py">ESP32’s <code class="docutils literal notranslate"><span class="pre">idf.py</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-environment">MacOS Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-esp-idf">1. Install ESP-IDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-additional-packages">2. Install Additional Packages</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx">Sphinx</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-sphinx">1. Install Sphinx</a></li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -366,52 +370,95 @@ document.write(`
                   
   <section id="macos-installation">
 <h1>MacOS Installation<a class="headerlink" href="#macos-installation" title="Link to this heading">#</a></h1>
-<p>For other operating systems such as Linux and Windows the process should be very similar.</p>
-</section>
+<p>The installation process for other operating systems like Linux and Windows is similar to the steps provided for macOS below.</p>
 <section id="esp32-s-idf-py">
-<h1>ESP32’s idf.py<a class="headerlink" href="#esp32-s-idf-py" title="Link to this heading">#</a></h1>
-<p>MacOS Environment (tested on MacBook Air M1 2020 with Sonoma v14.5)</p>
-<p>You can install this through the terminal or Visual Studio Code, both ways are shown below. I recommend using the terminal way.</p>
-<ol class="arabic">
-<li><p>Install esp-idf follow and run: <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html">esp-idf MacOS Setup</a></p>
+<h2>ESP32’s <code class="docutils literal notranslate"><span class="pre">idf.py</span></code><a class="headerlink" href="#esp32-s-idf-py" title="Link to this heading">#</a></h2>
+<section id="macos-environment">
+<h3>MacOS Environment<a class="headerlink" href="#macos-environment" title="Link to this heading">#</a></h3>
+<p>Tested on MacBook Air M1 2020 with macOS Sonoma v14.5.</p>
+<p>You can install the ESP32 development environment using the terminal or Visual Studio Code. The terminal installation method is recommended and detailed below.</p>
+</section>
+<section id="install-esp-idf">
+<h3>1. Install ESP-IDF<a class="headerlink" href="#install-esp-idf" title="Link to this heading">#</a></h3>
+<p>To set up the ESP-IDF environment on macOS, follow these steps:</p>
+<p>For detailed instructions, see the official documentation: <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html">ESP-IDF MacOS Setup</a>.</p>
 <blockquote>
-<div><ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">cmake</span> <span class="pre">ninja</span> <span class="pre">dfu-util</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recursive</span> <span class="pre">https://github.com/espressif/esp-idf.git</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">esp-idf</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">./install.sh</span> <span class="pre">esp32</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&quot;alias</span> <span class="pre">get_idf=\&quot;.</span> <span class="pre">$(pwd)/export.sh\&quot;&quot;</span> <span class="pre">&gt;&gt;</span> <span class="pre">~/.zshrc</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">~/.zshrc</span></code></p></li>
-</ol>
-</div></blockquote>
+<div><ol class="loweralpha">
+<li><p>Install required packages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>cmake<span class="w"> </span>ninja<span class="w"> </span>dfu-util
+</pre></div>
+</div>
+</li>
+<li><p>Clone the ESP-IDF repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/espressif/esp-idf.git
+</pre></div>
+</div>
+</li>
+<li><p>Navigate to the ESP-IDF directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>esp-idf
+</pre></div>
+</div>
+</li>
+<li><p>Run the installation script for ESP32:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./install.sh<span class="w"> </span>esp32
+</pre></div>
+</div>
+</li>
+<li><p>Add an alias to your <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file for easy access to <code class="docutils literal notranslate"><span class="pre">idf.py</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;alias get_idf=&#39;. </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/export.sh&#39;&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+</pre></div>
+</div>
+</li>
+<li><p>Source the updated profile:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/.zshrc
+</pre></div>
+</div>
 </li>
 </ol>
-<p>Run this every time in a project to get idf.py: <cite>get_idf</cite></p>
-<ol class="arabic" start="2">
-<li><p>Install more packages</p>
+</div></blockquote>
+<p><strong>Note:</strong>
+After the setup, run the following command in each project to activate <code class="docutils literal notranslate"><span class="pre">idf.py</span></code>:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">gcc</span> <span class="pre">make</span> <span class="pre">pkg-config</span> <span class="pre">arm-none-eabi-gcc</span> <span class="pre">openocd</span> <span class="pre">bear</span> <span class="pre">screen</span> <span class="pre">qemu</span></code></p>
-<p>NOTE: <cite>gdb</cite> cant be installed so <cite>lldb</cite> must be used instead</p>
-<p><em>Keep in mind</em></p>
-<p>GNU "make" has been installed as "gmake". If you need to use it as "make", you can add a "gnubin" directory to your PATH from your zshrc like:</p>
-<p><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;/opt/homebrew/opt/make/libexec/gnubin:$PATH&quot;</span></code></p>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>get_idf
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="install-additional-packages">
+<h3>2. Install Additional Packages<a class="headerlink" href="#install-additional-packages" title="Link to this heading">#</a></h3>
+<p>You may also need the following packages to work with ESP-IDF:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>gcc<span class="w"> </span>make<span class="w"> </span>pkg-config<span class="w"> </span>arm-none-eabi-gcc<span class="w"> </span>openocd<span class="w"> </span>bear<span class="w"> </span>screen<span class="w"> </span>qemu
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Important:</strong>
+<code class="docutils literal notranslate"><span class="pre">gdb</span></code> cannot be installed on macOS, so you’ll need to use <code class="docutils literal notranslate"><span class="pre">lldb</span></code> as an alternative.</p>
+<ul>
+<li><p><strong>GNU Make Utility:</strong>
+GNU <code class="docutils literal notranslate"><span class="pre">make</span></code> is installed as <code class="docutils literal notranslate"><span class="pre">gmake</span></code>. If you need to use it as <code class="docutils literal notranslate"><span class="pre">make</span></code>, add the following line to your <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> to update your PATH:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/homebrew/opt/make/libexec/gnubin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
 </div></blockquote>
 </li>
-</ol>
+</ul>
+</section>
 </section>
 <section id="sphinx">
-<h1>Sphinx<a class="headerlink" href="#sphinx" title="Link to this heading">#</a></h1>
-<p>Sphinx is used to generate HTML for the docs you are currently viewing, this is not doxygen, but rather rst to html.
-You don’t need to install this unless you want to work on documentation.</p>
-<ol class="arabic">
-<li><p><strong>Install Sphinx</strong></p>
+<h2>Sphinx<a class="headerlink" href="#sphinx" title="Link to this heading">#</a></h2>
+<p>Sphinx is used to generate HTML documentation (not Doxygen). You don’t need to install Sphinx unless you’re contributing to the documentation.</p>
+<section id="install-sphinx">
+<h3>1. Install Sphinx<a class="headerlink" href="#install-sphinx" title="Link to this heading">#</a></h3>
+<p>To install Sphinx and the required theme:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sphinx<span class="w"> </span>sphinx-book-theme
 </pre></div>
 </div>
 </div></blockquote>
-</li>
-</ol>
+</section>
+</section>
 </section>
 
 
@@ -459,11 +506,17 @@ You don’t need to install this unless you want to work on documentation.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MacOS Installation</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#esp32-s-idf-py">ESP32’s idf.py</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx">Sphinx</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esp32-s-idf-py">ESP32’s <code class="docutils literal notranslate"><span class="pre">idf.py</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-environment">MacOS Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-esp-idf">1. Install ESP-IDF</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-additional-packages">2. Install Additional Packages</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx">Sphinx</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-sphinx">1. Install Sphinx</a></li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>
