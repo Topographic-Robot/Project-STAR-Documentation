@@ -381,7 +381,7 @@ document.write(`
 
 <span class="w">  </span><span class="cm">/* Check for errors early */</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Early exit for error handling */</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Early exit for error handling */</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="cm">/* Process input */</span>
@@ -389,7 +389,7 @@ document.write(`
 
 <span class="w">  </span><span class="cm">/* Perform any necessary cleanup */</span>
 
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Single, centralized return point */</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Single, centralized return point */</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -400,12 +400,12 @@ document.write(`
 
 <span class="w">  </span><span class="cm">/* Check for errors */</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Return too early without cleanup */</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Return too early without cleanup */</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="cm">/* Process input */</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">input</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Multiple return points */</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Multiple return points */</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
@@ -426,13 +426,13 @@ document.write(`
 <span class="p">{</span>
 <span class="w">  </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">);</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">file</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Early exit if file can&#39;t be opened */</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Early exit if file can&#39;t be opened */</span>
 <span class="w">  </span><span class="p">}</span>
 
 <span class="w">  </span><span class="cm">/* Process the file here */</span>
 
-<span class="w">  </span><span class="n">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Cleanup resource */</span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Single exit point after resource cleanup */</span>
+<span class="w">  </span><span class="n">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Cleanup resource */</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Single exit point after resource cleanup */</span>
 <span class="p">}</span>
 </pre></div>
 </div>

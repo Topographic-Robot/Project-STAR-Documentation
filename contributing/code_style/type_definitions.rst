@@ -113,7 +113,7 @@ Good Example:
 
     person_t john; /* CORRECT: Typedef used to avoid repeated 'struct' keyword */
 
-- **Enum Type Definitions**: Always use `typedef` with enums, and follow the same convention of appending `_t` to the type name. Enum values should be in `snake_case` and end with `_e`.
+- **Enum Type Definitions**: Always use `typedef` with enums, and follow the same convention of appending `_t` to the type name. Enum values should be in `snake_case` and starting with `k_`.
 
 Example 6:
 ----------
@@ -133,9 +133,9 @@ Good Example:
 .. code-block:: c
 
     typedef enum {
-      red_e,
-      blue_e,
-      green_e
+      k_red,
+      k_blue,
+      k_green
     } color_t;
 
 General Guidelines

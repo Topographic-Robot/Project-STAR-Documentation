@@ -28,8 +28,7 @@ General Guidelines for Header Files
     #include "math_utils.h"
 
     int add(int a, int b) {
-      return a + b;
-    }
+      return a + b; }
 
 - **Minimal Includes in Headers**: Header files should include only the headers that are strictly necessary for their declarations. Avoid excessive includes to reduce dependency chains and compilation time. Use forward declarations where possible.
 

@@ -369,13 +369,13 @@ document.write(`
 <section id="guidelines">
 <h2>Guidelines<a class="headerlink" href="#guidelines" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Maximum Line Length</strong>: Ensure that no line of code exceeds 80 characters. This includes comments, code, and declarations.</p></li>
+<li><p><strong>Maximum Line Length</strong>: Ensure that no line of code exceeds roughly 80 characters. This includes comments, code, and declarations.</p></li>
 <li><p><strong>Break at Natural Points</strong>: Break lines at natural points, such as after operators (<cite>+</cite>, <cite>-</cite>, <cite>*</cite>, <cite>=</cite>, etc.), commas, or logical groupings to improve readability.</p></li>
-<li><p><strong>Indentation for Continuation Lines</strong>: When breaking lines, ensure the continued line is indented properly for readability. Use <strong>two spaces</strong> for indentation after the line break to maintain visual alignment.</p></li>
+<li><p><strong>Indentation for Continuation Lines</strong>: When breaking lines, ensure the continued line is indented properly for readability. Line up indentation after the line break to maintain visual alignment.</p></li>
 </ul>
 <p>Correct Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">first_variable</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">second_variable</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">third_variable</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="n">fourth_variable</span><span class="p">;</span><span class="w">  </span><span class="cm">/* Continuation of line is indented by two spaces */</span>
+<span class="w">          </span><span class="n">fourth_variable</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Incorrect Example:</p>
@@ -388,7 +388,7 @@ document.write(`
 </ul>
 <p>Correct Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">my_function</span><span class="p">(</span><span class="n">first_argument</span><span class="p">,</span><span class="w"> </span><span class="n">second_argument</span><span class="p">,</span><span class="w"> </span><span class="n">third_argument</span><span class="p">,</span>
-<span class="w">  </span><span class="n">fourth_argument</span><span class="p">);</span>
+<span class="w">            </span><span class="n">fourth_argument</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Incorrect Example:</p>
