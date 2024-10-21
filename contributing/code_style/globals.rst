@@ -23,12 +23,12 @@ Guidelines
   .. code-block:: c
 
     /* In a header file, declare the constant */
-    extern const int c_max_connections;
+    extern const int max_connections;
 
   .. code-block:: c
 
     /* In the source file, define the constant */
-    const int c_max_connections = 100;
+    const int max_connections = 100;
 
 - **Document Global Variables Clearly**: If a global variable is absolutely necessary, document its purpose clearly and describe how it interacts with other parts of the code. This includes comments explaining why the global is used and any important constraints.
 

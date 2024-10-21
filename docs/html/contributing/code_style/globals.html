@@ -382,11 +382,11 @@ document.write(`
 <li><p><strong>Minimize Use of Global Constants</strong>: If you need a constant across multiple files, prefer using <cite>const</cite> or <cite>enum</cite> values in a header file rather than using global variables.</p>
 <p>Example of Using <cite>const</cite> in a Header File:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* In a header file, declare the constant */</span>
-<span class="k">extern</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c_max_connections</span><span class="p">;</span>
+<span class="k">extern</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">max_connections</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* In the source file, define the constant */</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c_max_connections</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">max_connections</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>

@@ -22,7 +22,7 @@ Correct Example:
     
     /* Check for errors early */
     if (input < 0) {
-      return -1;  /* Early exit for error handling */
+      return -1; /* Early exit for error handling */
     }
 
     /* Process input */
@@ -30,7 +30,7 @@ Correct Example:
 
     /* Perform any necessary cleanup */
     
-    return result;  /* Single, centralized return point */
+    return result; /* Single, centralized return point */
   }
 
 Incorrect Example:
@@ -43,12 +43,12 @@ Incorrect Example:
 
     /* Check for errors */
     if (input < 0) {
-      return -1;  /* Return too early without cleanup */
+      return -1; /* Return too early without cleanup */
     }
 
     /* Process input */
     if (input == 0) {
-      return 0;  /* Multiple return points */
+      return 0; /* Multiple return points */
     }
 
     result = input * 2;
@@ -71,13 +71,13 @@ Correct Example with Resource Cleanup:
   {
     FILE *file = fopen(file_name, "r");
     if (!file) {
-      return -1;  /* Early exit if file can't be opened */
+      return -1; /* Early exit if file can't be opened */
     }
 
     /* Process the file here */
 
-    fclose(file);  /* Cleanup resource */
-    return 0;  /* Single exit point after resource cleanup */
+    fclose(file); /* Cleanup resource */
+    return 0; /* Single exit point after resource cleanup */
   }
 
 General Guidelines

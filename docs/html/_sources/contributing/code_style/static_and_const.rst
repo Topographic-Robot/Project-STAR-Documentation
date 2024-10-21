@@ -31,7 +31,7 @@ Good Example:
 
 .. code-block:: c
 
-    const int c_max_size = 100; /* Correct, using a const global */
+    const int max_size = 100; /* Correct, using a const global */
 
 Using `static` for Internal Linkage
 -----------------------------------

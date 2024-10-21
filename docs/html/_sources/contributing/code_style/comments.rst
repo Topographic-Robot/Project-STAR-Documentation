@@ -179,11 +179,6 @@ Example:
     /* ... */
   }
 
-Avoid Over-commenting
----------------------
-
-Too many comments can clutter the code and make it harder to read. It’s better to write the code in such a way that it’s self-explanatory rather than relying on comments. Use comments sparingly and effectively.
-
 General Guidelines
 ------------------
 

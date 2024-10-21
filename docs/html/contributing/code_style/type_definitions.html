@@ -467,7 +467,7 @@ document.write(`
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><strong>Enum Type Definitions</strong>: Always use <cite>typedef</cite> with enums, and follow the same convention of appending <cite>_t</cite> to the type name. Enum values should be in <cite>snake_case</cite> and end with <cite>_e</cite>.</p></li>
+<li><p><strong>Enum Type Definitions</strong>: Always use <cite>typedef</cite> with enums, and follow the same convention of appending <cite>_t</cite> to the type name. Enum values should be in <cite>snake_case</cite> and starting with <cite>k_</cite>.</p></li>
 </ul>
 </section>
 <section id="example-6">
@@ -482,9 +482,9 @@ document.write(`
 </div>
 <p>Good Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">red_e</span><span class="p">,</span>
-<span class="w">  </span><span class="n">blue_e</span><span class="p">,</span>
-<span class="w">  </span><span class="n">green_e</span>
+<span class="w">  </span><span class="n">k_red</span><span class="p">,</span>
+<span class="w">  </span><span class="n">k_blue</span><span class="p">,</span>
+<span class="w">  </span><span class="n">k_green</span>
 <span class="p">}</span><span class="w"> </span><span class="n">color_t</span><span class="p">;</span>
 </pre></div>
 </div>
