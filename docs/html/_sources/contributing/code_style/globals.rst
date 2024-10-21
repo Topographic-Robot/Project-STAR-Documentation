@@ -41,7 +41,7 @@ Global variables should be used **only in the rarest cases** where there is a le
 
 - The variable is used across multiple files and cannot be scoped to a single file or function.
 
-- The variable’s behavior is well-documented, with clear usage patterns to prevent side effects.
+- The variable's behavior is well-documented, with clear usage patterns to prevent side effects.
 
 Correct Example (Avoiding Globals)
 ----------------------------------
@@ -72,7 +72,7 @@ General Guidelines
 
 - **Minimize global variable usage**: Avoid using global variables unless absolutely necessary.
 
-- **Use `static` for file-scoped variables**: To prevent other files from accessing variables that don’t need global visibility.
+- **Use `static` for file-scoped variables**: To prevent other files from accessing variables that don't need global visibility.
 
 - **Use `const` globals** when constants need to be shared across files, as they are safer and provide better control than mutable globals.
 

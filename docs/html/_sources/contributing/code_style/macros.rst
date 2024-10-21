@@ -166,7 +166,7 @@ General Guidelines
 
 - Always enclose macro arguments in parentheses and use blocks for multi-statement macros.
 
-- Keep macros’ scope limited and document their purpose clearly.
+- Keep macros' scope limited and document their purpose clearly.
 
 - Use macros for conditional compilation and header guards where necessary.
 

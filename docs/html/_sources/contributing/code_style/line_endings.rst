@@ -6,7 +6,7 @@ In this project, **Unix-style line endings** (`LF`, represented as ``\n``) are m
 Guidelines
 ----------
 
-- **Always use Unix-style (`LF`) endings**: Ensure that every file in the project, whether it’s source code, header files, scripts, or configuration files, uses Unix-style line endings.
+- **Always use Unix-style (`LF`) endings**: Ensure that every file in the project, whether it's source code, header files, scripts, or configuration files, uses Unix-style line endings.
 
 - **Avoid Windows-style (`CRLF`) endings**: Windows uses `CRLF` (``\r\n``) line endings, which should be avoided to prevent inconsistencies. Many version control systems and code editors can introduce unwanted `CRLF` line endings, so make sure to configure your tools appropriately.
 

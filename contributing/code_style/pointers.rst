@@ -76,7 +76,7 @@ Example 4:
 
     char *const ptr = some_buffer;  /* The pointer can't be reassigned */
 
-- **Pointer Arithmetic**: Be cautious with pointer arithmetic. It’s only valid for pointers to elements in an array. Misuse of pointer arithmetic can lead to out-of-bounds access and undefined behavior.
+- **Pointer Arithmetic**: Be cautious with pointer arithmetic. It's only valid for pointers to elements in an array. Misuse of pointer arithmetic can lead to out-of-bounds access and undefined behavior.
 
 Example 5:
 ----------

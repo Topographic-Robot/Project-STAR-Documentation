@@ -112,7 +112,7 @@ FreeRTOS provides flexible memory management for tasks, queues, and semaphores. 
       xTaskCreateStatic(task1, "Task 1", 1024, NULL, 5, task_stack, &task_buffer);
     }
 
-- **Use Heap Memory Efficiently**: FreeRTOS has multiple heap allocation schemes (e.g., heap_1, heap_2, heap_3, heap_4). Choose the heap memory management scheme that best fits your project’s needs. For projects with long runtimes, consider using `heap_4` for its ability to handle fragmentation better.
+- **Use Heap Memory Efficiently**: FreeRTOS has multiple heap allocation schemes (e.g., heap_1, heap_2, heap_3, heap_4). Choose the heap memory management scheme that best fits your project's needs. For projects with long runtimes, consider using `heap_4` for its ability to handle fragmentation better.
 
 Memory Leaks and Debugging
 --------------------------

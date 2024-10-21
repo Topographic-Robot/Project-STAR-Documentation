@@ -56,7 +56,7 @@ Guidelines
     ESP_LOGE("memory", "Failed to allocate memory for buffer");
     ESP_LOGV("system", "Detailed system log for verbose debugging");
 
-- **Avoid Excessive Logging**: Too many logs, especially at the `DEBUG` or `VERBOSE` level, can flood the log output and make important messages harder to find. Only log what’s necessary, and ensure that verbose logging can be disabled in production environments.
+- **Avoid Excessive Logging**: Too many logs, especially at the `DEBUG` or `VERBOSE` level, can flood the log output and make important messages harder to find. Only log what's necessary, and ensure that verbose logging can be disabled in production environments.
 
   Correct Example:
 

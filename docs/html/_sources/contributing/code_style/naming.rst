@@ -23,7 +23,7 @@ Choosing clear and meaningful names for variables, functions, classes, and other
 
 - **Avoiding Conflicts**: Clear and distinct names reduce the likelihood of naming conflicts, which can lead to bugs or confusion. Names should avoid being too generic (e.g., `temp` or `data`) and instead reflect the specific role of the entity.
 
-- **Contextual Meaning**: Names should reflect the context in which they are used. For instance, a variable holding a user’s first name should be called `first_name` instead of something vague like `str1`. This helps other developers quickly grasp the intent of the code.
+- **Contextual Meaning**: Names should reflect the context in which they are used. For instance, a variable holding a user's first name should be called `first_name` instead of something vague like `str1`. This helps other developers quickly grasp the intent of the code.
 
 - **Searchability**: Meaningful names make the codebase easier to search through. Contributors can quickly locate relevant code by searching for terms related to the functionality they are working on.
 
@@ -61,11 +61,11 @@ Issues in the bad example:
 
 - The variable `temp` is too vague, giving no context about what it represents.
 
-- `invert` should be declared as `static` because it’s only used in this file.
+- `invert` should be declared as `static` because it's only used in this file.
 
 - Enum values `OK` and `ERROR` lack proper suffixes and are too generic.
 
-- Function name `doSomething` doesn’t describe its action.
+- Function name `doSomething` doesn't describe its action.
 
 - The global variable `foo` has no clear purpose or prefix to indicate its scope or function.
 

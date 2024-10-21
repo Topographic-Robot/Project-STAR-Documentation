@@ -97,7 +97,7 @@ Key Doxygen Tags
 
 - **@note**: Use this for any important additional information, such as side effects, limitations, or edge cases.
 
-- **@warning**: Used for warning the user about potential risks in the function’s use.
+- **@warning**: Used for warning the user about potential risks in the function's use.
 
 - **@deprecated**: Marks a function as deprecated, with a note on what to use instead.
 
@@ -165,7 +165,7 @@ Good Example
 Placing Comments Outside Functions
 ----------------------------------
 
-- **Head of the Function**: Place comments at the start of functions to describe **what** the function does and, if necessary, **why** it does it. Avoid putting comments inside the function body unless there’s something specific that needs a note or a warning.
+- **Head of the Function**: Place comments at the start of functions to describe **what** the function does and, if necessary, **why** it does it. Avoid putting comments inside the function body unless there's something specific that needs a note or a warning.
 
 Example:
 
@@ -182,7 +182,7 @@ Example:
 Avoid Over-commenting
 ---------------------
 
-Too many comments can clutter the code and make it harder to read. It’s better to write the code in such a way that it’s self-explanatory rather than relying on comments. Use comments sparingly and effectively.
+Too many comments can clutter the code and make it harder to read. It's better to write the code in such a way that it's self-explanatory rather than relying on comments. Use comments sparingly and effectively.
 
 General Guidelines
 ------------------
