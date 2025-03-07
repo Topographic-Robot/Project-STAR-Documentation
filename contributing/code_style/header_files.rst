@@ -39,7 +39,7 @@ General Guidelines for Header Files
     /* Avoid including unnecessary headers */
     struct device_t; /* Forward declaration instead of including device.h */
 
-    void init_device(struct device_t *device);
+    void init_device(struct device_t* device);
 
 - **Self-Contained Headers**: Ensure that each header file is self-contained, meaning it can be included independently without relying on the inclusion of other headers beforehand. Always include the necessary headers for types and constants used within the file.
 

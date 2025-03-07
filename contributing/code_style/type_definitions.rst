@@ -96,7 +96,7 @@ Bad Example:
 .. code-block:: c
 
     struct person {
-      char *name;
+      char* name;
       int   age;
     };
 
@@ -107,7 +107,7 @@ Good Example:
 .. code-block:: c
 
     typedef struct {
-      char *name;
+      char* name;
       int   age;
     } person_t;
 

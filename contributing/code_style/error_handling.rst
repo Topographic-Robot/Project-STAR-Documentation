@@ -16,7 +16,7 @@ General Guidelines for Error Handling
 
     #include <errno.h>
 
-    int process_data(void *data)
+    int process_data(void* data)
     {
       if (!data) {
         return -EINVAL; /* Invalid argument */
@@ -107,10 +107,10 @@ In C, the `goto` statement can be useful for simplifying error handling when dea
 
   .. code-block:: c
 
-    int read_file(const char *path)
+    int read_file(const char* path)
     {
-      FILE *file   = NULL;
-      char *buffer = NULL;
+      FILE* file   = NULL;
+      char* buffer = NULL;
 
       file = fopen(path, "r");
       if (!file) {

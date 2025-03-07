@@ -22,7 +22,7 @@ General Guidelines
 
   .. code-block:: c
 
-    int *buffer = malloc(1024 * sizeof(int));
+    int* buffer = malloc(1024 * sizeof(int));
     if (!buffer) {
       /* Handle allocation failure */
     }
@@ -38,7 +38,7 @@ General Guidelines
 
   .. code-block:: c
 
-    int *buffer = malloc(1024 * sizeof(int));
+    int* buffer = malloc(1024 * sizeof(int));
     if (!buffer) {
       /* Handle allocation failure */
       return -ENOMEM;
@@ -79,7 +79,7 @@ In embedded systems, memory is divided into the **stack** and the **heap**. Unde
 
   .. code-block:: c
 
-    int *buffer = malloc(100 * sizeof(int));  /* Stored on the heap */
+    int* buffer = malloc(100 * sizeof(int));  /* Stored on the heap */
     if (buffer) {
       free(buffer);  /* Free the memory when no longer needed */
     }
@@ -100,7 +100,7 @@ FreeRTOS provides flexible memory management for tasks, queues, and semaphores. 
     static StackType_t  task_stack[1024];
     static StaticTask_t task_buffer;
 
-    void task1(void *pvParameters)
+    void task1(void* pvParameters)
     {
       while (1) {
         /* Task code */

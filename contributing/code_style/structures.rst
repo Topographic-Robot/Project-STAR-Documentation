@@ -59,7 +59,7 @@ General Guidelines for Structures
 
   .. code-block:: c
 
-    void move_point(point_t *p) {
+    void move_point(point_t* p) {
       p->x_position += 1;
       p->y_position += 1;
     }
@@ -84,7 +84,7 @@ General Guidelines for Structures
 
   .. code-block:: c
 
-    void print_point(const point_t *p) {
+    void print_point(const point_t* p) {
       printf("X: %d, Y: %d\n", p->x_position, p->y_position);
     }
 
@@ -122,11 +122,11 @@ Encapsulation and Struct Access
 
   .. code-block:: c
 
-    void set_point_x(point_t *p, int x) {
+    void set_point_x(point_t* p, int x) {
       p->x_position = x;
     }
 
-    int get_point_x(const point_t *p) {
+    int get_point_x(const point_t* p) {
       return p->x_position;
     }
 
@@ -140,9 +140,9 @@ Encapsulation and Struct Access
     typedef struct point_t point_t;
 
     /* Accessor functions */
-    point_t *create_point(int x, int y);
-    void destroy_point(point_t *p);
-    int get_point_x(const point_t *p);
+    point_t* create_point(int x, int y);
+    void destroy_point(point_t* p);
+    int get_point_x(const point_t* p);
 
 Naming Conventions
 ------------------

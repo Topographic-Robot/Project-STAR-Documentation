@@ -25,13 +25,13 @@ Good Example:
 
 .. code-block:: c
 
-    if (condition) {  /* correct */
+    if (condition) { /* correct */
       /* ... */
     }
 
     switch (n) {
-    case 0:
-      /* ... */
+      case 0:
+        /* ... */
     }
 
 - **Binary Operators**: Add a single space around binary operators like `+`, `-`, `=`, and `&&`. For multiplication (`*`) and division (`/`) operators, spaces should always be used for clarity.
@@ -49,8 +49,8 @@ Good Example:
 
 .. code-block:: c
 
-    const int y = y0 + (x - x0) * (y1 - y0) / (x1 - x0); /* correct */
-    int y_cur  = -y;                                     /* correct */
+    const int y     = y0 + (x - x0) * (y1 - y0) / (x1 - x0); /* correct */
+    int       y_cur = -y;                                    /* correct */
 
 - **Alignment of Variables, Assignments, and Comments**: Align the `=` signs when declaring multiple variables, and line up the comments for consistency.
 

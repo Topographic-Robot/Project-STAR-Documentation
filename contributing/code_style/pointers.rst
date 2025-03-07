@@ -6,7 +6,7 @@ Pointers are a powerful tool in C programming, but they can lead to bugs or unde
 Guidelines
 ----------
 
-- **Pointer Declaration and Placement**: Always place the asterisk (`*`) adjacent to the variable name, not the type. This improves readability and consistency in the code.
+- **Pointer Declaration and Placement**: Always place the asterisk (`*`) adjacent to the type, not the variable name. This improves readability and consistency in the code.
 
 Example 1:
 ----------
@@ -15,15 +15,15 @@ Bad Example:
 
 .. code-block:: c
 
-    int* ptr;  /* INCORRECT */
-    char* str;
+    int *ptr;  /* INCORRECT */
+    char *str;
 
 Good Example:
 
 .. code-block:: c
 
-    int  *ptr;  /* CORRECT */
-    char *str;
+    int*  ptr;  /* CORRECT */
+    char* str;
 
 - **Initialize Pointers**: Always initialize pointers, either to `NULL` or a valid memory location, to avoid using uninitialized pointers, which can lead to undefined behavior.
 
@@ -41,7 +41,7 @@ Good Example:
 
 .. code-block:: c
 
-    int *ptr = NULL;  /* Correct initialization */
+    int* ptr = NULL;  /* Correct initialization */
     ptr      = malloc(sizeof(int));  /* Or allocate memory */
 
 - **Avoid Dangling Pointers**: A dangling pointer refers to a pointer that continues to reference a memory location after that memory has been freed. Always set a pointer to `NULL` after freeing the allocated memory.
@@ -61,7 +61,7 @@ Good Example:
 
 .. code-block:: c
 
-    int *ptr = malloc(sizeof(int));
+    int* ptr = malloc(sizeof(int));
     free(ptr);
     ptr = NULL;  /* CORRECT: Pointer set to NULL after free */
 
@@ -72,9 +72,9 @@ Example 4:
 
 .. code-block:: c
 
-    const char *message = "Hello";  /* CORRECT: The pointer data can't be changed */
+    const char* message = "Hello";  /* CORRECT: The pointer data can't be changed */
 
-    char *const ptr = some_buffer;  /* The pointer can't be reassigned */
+    char* const ptr = some_buffer;  /* The pointer can't be reassigned */
 
 - **Pointer Arithmetic**: Be cautious with pointer arithmetic. It's only valid for pointers to elements in an array. Misuse of pointer arithmetic can lead to out-of-bounds access and undefined behavior.
 
@@ -94,7 +94,7 @@ Good Example:
 .. code-block:: c
 
     int  arr[5];
-    int *ptr = arr;
+    int* ptr = arr;
     ptr     += 2;  /* CORRECT: Pointer remains within bounds */
 
 - **Dereferencing Pointers**: Always ensure a pointer is non-NULL before dereferencing it to avoid segmentation faults or undefined behavior.

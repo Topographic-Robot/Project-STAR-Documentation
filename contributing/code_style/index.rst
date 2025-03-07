@@ -25,7 +25,6 @@ This section covers the coding style for building the topographical robot.
    functions
    assertions
    macros
-   centralized_exiting
    globals
    register_transfer_level
    logging

@@ -14,7 +14,7 @@ Example of Using `assert`:
 
     #include <assert.h>
 
-    void process_data(int *data)
+    void process_data(int* data)
     {
       assert(data != NULL);  /* Assert that data is not NULL */
       /* Continue processing */
@@ -26,7 +26,7 @@ Bad Example:
 
 .. code-block:: c
 
-    void read_file(FILE *fp)
+    void read_file(FILE* fp)
     {
       assert(fp != NULL);  /* INCORRECT: This could be a valid runtime error */
       /* Reading file logic */
@@ -36,7 +36,7 @@ Good Example:
 
 .. code-block:: c
 
-    void read_file(FILE *fp)
+    void read_file(FILE* fp)
     {
       if (fp == NULL) {
         /* Handle the error, perhaps by returning an error code */
