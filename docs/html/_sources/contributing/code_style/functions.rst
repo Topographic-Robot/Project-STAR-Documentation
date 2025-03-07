@@ -11,7 +11,7 @@ Example of `const` and Pass-by-Reference:
 
 .. code-block:: c
 
-    void process_data(const int *data)
+    void process_data(const int* data)
     {
       /* Function logic */
     }
@@ -93,7 +93,7 @@ Example of `const` and Passing by Reference:
 
 .. code-block:: c
 
-    void update_values(const int *values)
+    void update_values(const int* values)
     {
       /* Function logic */
     }
@@ -106,70 +106,21 @@ Example of `const` and Passing by Reference:
 
 - **Return NULL for Failed Pointer Functions**: For functions that return pointers, use `NULL` to indicate failure.
 
-Example:
-
-.. code-block:: c
-
-    void *get_buffer(void)
-    {
-      void *buffer = malloc(1024);
-      if (!buffer) {
-        return NULL; /* Return NULL on failure */
-      }
-      return buffer;
-    }
-
 - **Prefer Early Exits**: Use early `return` statements to handle errors and avoid deeply nested control structures.
-
-Example:
-
-.. code-block:: c
-
-    int process_input(int input_value)
-    {
-      if (input_value < 0) {
-        return -EINVAL; /* Early exit on invalid input */
-      }
-      /* Continue processing */
-      return 0;
-    }
 
 - **Always Use Braces for Functions on New Line**: For all function definitions, the opening brace must be on the next line.
 
-Bad Example:
+- **When you have multiple parameters, put each parameter on a new line and align parameter names**: This makes the function more readable and easier to understand.
+
+Example:
 
 .. code-block:: c
 
-    static void my_function(void) {
-      /* INCORRECT: Function braces on the same line */
-    }
-
-Good Example:
-
-.. code-block:: c
-
-    static void my_function(void)
+    int my_function(int*              param1, 
+                    const int** const param2, 
+                    int               param3)
     {
-      /* CORRECT: Function braces on the next line */
-    }
-
-- **Always Use Braces for Control Structures on Same Line**: For control structures like `if`, `for`, and `while`, the opening brace should be on the same line as the statement.
-
-Bad Example:
-
-.. code-block:: c
-
-    if (foo)
-    {
-      bar(); /* INCORRECT: Braces on the next line */
-    }
-
-Good Example:
-
-.. code-block:: c
-
-    if (foo) {
-      bar(); /* CORRECT: Braces on the same line */
+      /* Function logic */
     }
 
 **Exported Functions**

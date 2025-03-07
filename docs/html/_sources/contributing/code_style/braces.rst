@@ -73,7 +73,7 @@ Good Example:
 
 .. code-block:: c
 
-    static void my_function(void)
+    static void priv_my_function(void)
     {
       /* Function logic */
     }
@@ -87,3 +87,40 @@ General Guidelines
 
 - Functions are the only structures that have the brace on a new line. All other blocks, including structs and control structures, should keep the brace on the same line.
 
+Switch Statements
+=================
+
+- **Same Line for Switch and Opening Brace**: The opening brace `{` for a `switch` statement should be on the same line as the `switch` keyword.
+
+Example:
+
+.. code-block:: c
+
+    switch (x) {
+      case 1: {
+        /* Code for case 1 */
+        break;
+      }
+      case 2: {
+        /* Code for case 2 */
+        break;
+      }
+      case 3: return 0;
+      case 4: return 1;
+      case 5: return 2;
+      default: {
+        /* Code for default case */
+        break;
+      }
+    }
+
+- **Braces for Case Blocks**: Each `case` should have its own block of code enclosed in braces `{}`. This ensures clarity and prevents errors when adding new statements to a case.
+
+General Guidelines
+------------------
+
+- Keep the opening brace `{` on the same line as the `switch` keyword.
+- Enclose each `case` block in braces `{}`.
+* ** */* */case 3: return 0
+
+      

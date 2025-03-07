@@ -174,6 +174,7 @@
 <li class="toctree-l3"><a class="reference internal" href="line_endings.html">Line Endings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="breaking_long_lines.html">Breaking Long Lines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="braces.html">Braces</a></li>
+
 <li class="toctree-l3"><a class="reference internal" href="static_and_const.html">Static and Const</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comments.html">Comments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pointers.html">Pointers</a></li>
@@ -184,7 +185,6 @@
 <li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assertions.html">Assertions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="macros.html">Macros</a></li>
-<li class="toctree-l3"><a class="reference internal" href="centralized_exiting.html">Centralized Exiting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="globals.html">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="register_transfer_level.html">Register Transfer Level (RTL)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging</a></li>
@@ -364,8 +364,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mutexes-semaphores-and-atomic-operations">Mutexes, Semaphores, and Atomic Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-mutexes-semaphores-or-atomic-operations">When to Use Mutexes, Semaphores, or Atomic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rtos-types-mutexes-semaphores-and-atomic-operations">RTOS Types, Mutexes, Semaphores, and Atomic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-rtos-types-mutexes-semaphores-or-atomic-operations">When to Use RTOS Types, Mutexes, Semaphores, or Atomic Operations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-management-in-esp32">Task Management in ESP32</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concurrency-best-practices">Concurrency Best Practices</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">General Guidelines</a></li>
@@ -382,18 +382,41 @@ document.write(`
                   
   <section id="concurrency-and-parallelism">
 <h1>Concurrency and Parallelism<a class="headerlink" href="#concurrency-and-parallelism" title="Link to this heading">#</a></h1>
-<p>Concurrency and parallelism allow a program to perform multiple tasks simultaneously or overlap I/O-bound tasks with computation. In embedded systems like ESP32, efficient use of concurrency is crucial to manage tasks such as networking, sensors, or interrupt handling. This section outlines the best practices for ensuring thread-safe and efficient concurrent programming, along with an explanation of when to use <strong>mutexes</strong>, <strong>semaphores</strong>, and <strong>atomic operations</strong>.</p>
+<p>Concurrency and parallelism allow a program to perform multiple tasks simultaneously or overlap I/O-bound tasks with computation. In embedded systems like ESP32, efficient use of concurrency is crucial to manage tasks such as networking, sensors, or interrupt handling. This section outlines the best practices for ensuring thread-safe and efficient concurrent programming, along with an explanation of when to use <strong>RTOS types</strong>, <strong>mutexes</strong>, <strong>semaphores</strong>, and <strong>atomic operations</strong>.</p>
 <section id="general-guidelines">
 <h2>General Guidelines<a class="headerlink" href="#general-guidelines" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Avoid Global State</strong>: Global variables should be avoided, especially in multi-threaded environments, to prevent race conditions. Use thread-local storage or pass variables explicitly to functions.</p></li>
-<li><p><strong>Thread Safety</strong>: Ensure that shared resources (e.g., data structures, hardware peripherals) are properly synchronized when accessed by multiple threads or tasks. This can be done using mutexes, semaphores, or atomic operations.</p></li>
+<li><p><strong>Thread Safety</strong>: Ensure that shared resources (e.g., data structures, hardware peripherals) are properly synchronized when accessed by multiple threads or tasks. This can be done using RTOS types, mutexes, semaphores, or atomic operations.</p></li>
 <li><p><strong>Minimize Lock Contention</strong>: When using synchronization primitives like mutexes, hold locks for the shortest time possible to avoid contention between threads. Design critical sections carefully to reduce lock duration.</p></li>
 </ul>
 </section>
-<section id="mutexes-semaphores-and-atomic-operations">
-<h2>Mutexes, Semaphores, and Atomic Operations<a class="headerlink" href="#mutexes-semaphores-and-atomic-operations" title="Link to this heading">#</a></h2>
-<p>When dealing with concurrency, choosing the right synchronization mechanism is key. Each has its strengths, limitations, and specific use cases.</p>
+<section id="rtos-types-mutexes-semaphores-and-atomic-operations">
+<h2>RTOS Types, Mutexes, Semaphores, and Atomic Operations<a class="headerlink" href="#rtos-types-mutexes-semaphores-and-atomic-operations" title="Link to this heading">#</a></h2>
+<p>When dealing with concurrency, choosing the right synchronization mechanism is key. In embedded systems like ESP32, using RTOS types is often more efficient and suitable than traditional methods. Each has its strengths, limitations, and specific use cases.</p>
+<p><strong>RTOS Types</strong>
+RTOS types, such as FreeRTOS tasks, queues, and semaphores, are specifically designed for embedded systems, providing efficient task management and synchronization.</p>
+<ul>
+<li><p><strong>What They Do</strong>: RTOS types manage task scheduling, communication, and synchronization in a way that is optimized for embedded environments.</p></li>
+<li><p><strong>How They Work</strong>: RTOS types leverage the real-time operating system’s capabilities to ensure efficient and predictable task execution and resource management.</p></li>
+<li><p><strong>When to Use</strong>: Use RTOS types when developing for embedded systems like ESP32, where efficient task management and low overhead are crucial.</p>
+<p><strong>Example</strong>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">task1</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">pvParameters</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Task code */</span>
+<span class="w">    </span><span class="n">vTaskDelay</span><span class="p">(</span><span class="mi">1000</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">portTICK_PERIOD_MS</span><span class="p">);</span><span class="w"> </span><span class="cm">/* Delay for 1 second */</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">app_main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">xTaskCreate</span><span class="p">(</span><span class="n">task1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Task 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2048</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
 <p><strong>Mutexes</strong>
 A <strong>mutex</strong> (mutual exclusion) is a synchronization primitive used to protect shared resources by ensuring that only one thread or task can access the resource at any given time. Mutexes are ideal for ensuring <strong>exclusive access</strong> to a critical section of code.</p>
 <ul>
@@ -455,9 +478,15 @@ A <strong>semaphore</strong> is a signaling mechanism and can be used to synchro
 </li>
 </ul>
 </section>
-<section id="when-to-use-mutexes-semaphores-or-atomic-operations">
-<h2>When to Use Mutexes, Semaphores, or Atomic Operations<a class="headerlink" href="#when-to-use-mutexes-semaphores-or-atomic-operations" title="Link to this heading">#</a></h2>
+<section id="when-to-use-rtos-types-mutexes-semaphores-or-atomic-operations">
+<h2>When to Use RTOS Types, Mutexes, Semaphores, or Atomic Operations<a class="headerlink" href="#when-to-use-rtos-types-mutexes-semaphores-or-atomic-operations" title="Link to this heading">#</a></h2>
 <ul class="simple">
+<li><p><strong>Use RTOS Types</strong> when:</p>
+<ul>
+<li><p>Developing for embedded systems like ESP32, where efficient task management and low overhead are crucial.</p></li>
+<li><p>You need to leverage the real-time operating system’s capabilities for task scheduling and synchronization.</p></li>
+</ul>
+</li>
 <li><p><strong>Use Mutexes</strong> when:</p>
 <ul>
 <li><p>You need <strong>exclusive access</strong> to a shared resource (e.g., modifying a shared data structure).</p></li>
@@ -537,6 +566,7 @@ A <strong>semaphore</strong> is a signaling mechanism and can be used to synchro
 <section id="concurrency-best-practices">
 <h2>Concurrency Best Practices<a class="headerlink" href="#concurrency-best-practices" title="Link to this heading">#</a></h2>
 <ul class="simple">
+<li><p><strong>Use RTOS Types for Embedded Systems</strong>: Leverage RTOS types like tasks, queues, and semaphores for efficient task management and synchronization in embedded systems.</p></li>
 <li><p><strong>Use Mutexes for Shared Resources</strong>: Protect access to shared resources with mutexes or semaphores to avoid race conditions.</p></li>
 <li><p><strong>Minimize Critical Section Length</strong>: Keep the duration of critical sections short to reduce lock contention between threads.</p></li>
 <li><p><strong>Use Atomic Operations for Simple Data</strong>: When possible, use atomic operations for simple shared variables instead of mutexes to avoid the overhead of locking.</p></li>
@@ -604,8 +634,8 @@ A <strong>semaphore</strong> is a signaling mechanism and can be used to synchro
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mutexes-semaphores-and-atomic-operations">Mutexes, Semaphores, and Atomic Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-mutexes-semaphores-or-atomic-operations">When to Use Mutexes, Semaphores, or Atomic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rtos-types-mutexes-semaphores-and-atomic-operations">RTOS Types, Mutexes, Semaphores, and Atomic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-rtos-types-mutexes-semaphores-or-atomic-operations">When to Use RTOS Types, Mutexes, Semaphores, or Atomic Operations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-management-in-esp32">Task Management in ESP32</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concurrency-best-practices">Concurrency Best Practices</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">General Guidelines</a></li>

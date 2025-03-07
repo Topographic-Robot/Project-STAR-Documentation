@@ -1,7 +1,7 @@
-Topographic Robot Documentation
+Project STAR Documentation
 ================================
 
-Welcome to the documentation for the Topographic Robot. Below you will find sections covering all aspects of the project.
+Welcome to the documentation for Project STAR. Below you will find sections covering all aspects of the project.
 
 .. toctree::
    :maxdepth: 2

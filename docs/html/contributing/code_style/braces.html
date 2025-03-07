@@ -174,6 +174,7 @@
 <li class="toctree-l3"><a class="reference internal" href="line_endings.html">Line Endings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="breaking_long_lines.html">Breaking Long Lines</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">Braces</a></li>
+
 <li class="toctree-l3"><a class="reference internal" href="static_and_const.html">Static and Const</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comments.html">Comments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pointers.html">Pointers</a></li>
@@ -184,7 +185,6 @@
 <li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assertions.html">Assertions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="macros.html">Macros</a></li>
-<li class="toctree-l3"><a class="reference internal" href="centralized_exiting.html">Centralized Exiting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="globals.html">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="register_transfer_level.html">Register Transfer Level (RTL)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging</a></li>
@@ -363,10 +363,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Braces</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-statements">Switch Statements</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">General Guidelines</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -438,7 +446,7 @@ document.write(`
 </pre></div>
 </div>
 <p>Good Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">priv_my_function</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="cm">/* Function logic */</span>
 <span class="p">}</span>
@@ -451,6 +459,45 @@ document.write(`
 <li><p>Always use braces, even for single statements.</p></li>
 <li><p>Keep braces next to the ending parenthesis when splitting long statements.</p></li>
 <li><p>Functions are the only structures that have the brace on a new line. All other blocks, including structs and control structures, should keep the brace on the same line.</p></li>
+</ul>
+</section>
+</section>
+<section id="switch-statements">
+<h1>Switch Statements<a class="headerlink" href="#switch-statements" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Same Line for Switch and Opening Brace</strong>: The opening brace <cite>{</cite> for a <cite>switch</cite> statement should be on the same line as the <cite>switch</cite> keyword.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Code for case 1 */</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Code for case 2 */</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span><span class="p">:</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Code for default case */</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Braces for Case Blocks</strong>: Each <cite>case</cite> should have its own block of code enclosed in braces <cite>{}</cite>. This ensures clarity and prevents errors when adding new statements to a case.</p></li>
+</ul>
+<section id="id1">
+<h2>General Guidelines<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Keep the opening brace <cite>{</cite> on the same line as the <cite>switch</cite> keyword.</p></li>
+<li><p>Enclose each <cite>case</cite> block in braces <cite>{}</cite>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>** <em>/</em> <a href="#id2"><span class="problematic" id="id3">*</span></a>/case 3: return 0</p></li>
 </ul>
 </section>
 </section>
@@ -500,10 +547,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Braces</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">Example 1:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">Example 2:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-guidelines">General Guidelines</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-statements">Switch Statements</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">General Guidelines</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

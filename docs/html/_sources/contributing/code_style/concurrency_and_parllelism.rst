@@ -1,23 +1,49 @@
 Concurrency and Parallelism
 ===========================
 
-Concurrency and parallelism allow a program to perform multiple tasks simultaneously or overlap I/O-bound tasks with computation. In embedded systems like ESP32, efficient use of concurrency is crucial to manage tasks such as networking, sensors, or interrupt handling. This section outlines the best practices for ensuring thread-safe and efficient concurrent programming, along with an explanation of when to use **mutexes**, **semaphores**, and **atomic operations**.
+Concurrency and parallelism allow a program to perform multiple tasks simultaneously or overlap I/O-bound tasks with computation. In embedded systems like ESP32, efficient use of concurrency is crucial to manage tasks such as networking, sensors, or interrupt handling. This section outlines the best practices for ensuring thread-safe and efficient concurrent programming, along with an explanation of when to use **RTOS types**, **mutexes**, **semaphores**, and **atomic operations**.
 
 General Guidelines
 ------------------
 
 - **Avoid Global State**: Global variables should be avoided, especially in multi-threaded environments, to prevent race conditions. Use thread-local storage or pass variables explicitly to functions.
 
-- **Thread Safety**: Ensure that shared resources (e.g., data structures, hardware peripherals) are properly synchronized when accessed by multiple threads or tasks. This can be done using mutexes, semaphores, or atomic operations.
+- **Thread Safety**: Ensure that shared resources (e.g., data structures, hardware peripherals) are properly synchronized when accessed by multiple threads or tasks. This can be done using RTOS types, mutexes, semaphores, or atomic operations.
 
 - **Minimize Lock Contention**: When using synchronization primitives like mutexes, hold locks for the shortest time possible to avoid contention between threads. Design critical sections carefully to reduce lock duration.
 
-Mutexes, Semaphores, and Atomic Operations
-------------------------------------------
+RTOS Types, Mutexes, Semaphores, and Atomic Operations
+------------------------------------------------------
 
-When dealing with concurrency, choosing the right synchronization mechanism is key. Each has its strengths, limitations, and specific use cases.
+When dealing with concurrency, choosing the right synchronization mechanism is key. In embedded systems like ESP32, using RTOS types is often more efficient and suitable than traditional methods. Each has its strengths, limitations, and specific use cases.
 
-**Mutexes**  
+**RTOS Types**
+RTOS types, such as FreeRTOS tasks, queues, and semaphores, are specifically designed for embedded systems, providing efficient task management and synchronization.
+
+- **What They Do**: RTOS types manage task scheduling, communication, and synchronization in a way that is optimized for embedded environments.
+
+- **How They Work**: RTOS types leverage the real-time operating system's capabilities to ensure efficient and predictable task execution and resource management.
+
+- **When to Use**: Use RTOS types when developing for embedded systems like ESP32, where efficient task management and low overhead are crucial.
+
+  **Example**:
+
+  .. code-block:: c
+
+    void task1(void *pvParameters)
+    {
+      while (1) {
+        /* Task code */
+        vTaskDelay(1000 / portTICK_PERIOD_MS); /* Delay for 1 second */
+      }
+    }
+
+    void app_main(void)
+    {
+      xTaskCreate(task1, "Task 1", 2048, NULL, 5, NULL);
+    }
+
+**Mutexes**
 A **mutex** (mutual exclusion) is a synchronization primitive used to protect shared resources by ensuring that only one thread or task can access the resource at any given time. Mutexes are ideal for ensuring **exclusive access** to a critical section of code.
 
 - **What It Does**: A mutex locks access to a resource. When one thread locks a mutex, other threads attempting to lock it must wait until the mutex is unlocked by the original thread.
@@ -39,8 +65,8 @@ A **mutex** (mutual exclusion) is a synchronization primitive used to protect sh
       pthread_mutex_unlock(&lock);
     }
 
-**Semaphores**  
-A **semaphore** is a signaling mechanism and can be used to synchronize threads or tasks. Unlike mutexes, semaphores allow multiple threads or tasks to access a resource concurrently, depending on the semaphore count. 
+**Semaphores**
+A **semaphore** is a signaling mechanism and can be used to synchronize threads or tasks. Unlike mutexes, semaphores allow multiple threads or tasks to access a resource concurrently, depending on the semaphore count.
 
 - **What It Does**: A semaphore has a counter that allows it to manage access to a pool of resources. Threads can increment or decrement the counter to signal that a resource is available or has been used.
 
@@ -66,10 +92,10 @@ A **semaphore** is a signaling mechanism and can be used to synchronize threads 
       /* Consume data */
     }
 
-**Atomic Operations**  
+**Atomic Operations**
 **Atomic operations** are a low-level synchronization mechanism that allows certain operations (such as incrementing a counter) to be performed without interference from other threads, without the overhead of using mutexes or semaphores. Atomic operations work directly on the memory in a thread-safe manner.
 
-- **What It Does**: An atomic operation ensures that a specific operation (such as incrementing or comparing) happens **atomically**, meaning without interruption. 
+- **What It Does**: An atomic operation ensures that a specific operation (such as incrementing or comparing) happens **atomically**, meaning without interruption.
 
 - **How It Works**: Atomic operations leverage hardware support to ensure that the operation completes in a single step, without the risk of being interrupted by another thread.
 
@@ -86,8 +112,14 @@ A **semaphore** is a signaling mechanism and can be used to synchronize threads 
       atomic_fetch_add(&counter, 1);
     }
 
-When to Use Mutexes, Semaphores, or Atomic Operations
------------------------------------------------------
+When to Use RTOS Types, Mutexes, Semaphores, or Atomic Operations
+-----------------------------------------------------------------
+
+- **Use RTOS Types** when:
+  
+  - Developing for embedded systems like ESP32, where efficient task management and low overhead are crucial.
+  
+  - You need to leverage the real-time operating system's capabilities for task scheduling and synchronization.
 
 - **Use Mutexes** when:
   
@@ -170,6 +202,8 @@ In ESP32, FreeRTOS is the operating system that handles task scheduling, making 
 
 Concurrency Best Practices
 --------------------------
+
+- **Use RTOS Types for Embedded Systems**: Leverage RTOS types like tasks, queues, and semaphores for efficient task management and synchronization in embedded systems.
 
 - **Use Mutexes for Shared Resources**: Protect access to shared resources with mutexes or semaphores to avoid race conditions.
 

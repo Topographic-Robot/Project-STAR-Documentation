@@ -174,6 +174,7 @@
 <li class="toctree-l3"><a class="reference internal" href="line_endings.html">Line Endings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="breaking_long_lines.html">Breaking Long Lines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="braces.html">Braces</a></li>
+
 <li class="toctree-l3"><a class="reference internal" href="static_and_const.html">Static and Const</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comments.html">Comments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pointers.html">Pointers</a></li>
@@ -184,7 +185,6 @@
 <li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assertions.html">Assertions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="macros.html">Macros</a></li>
-<li class="toctree-l3"><a class="reference internal" href="centralized_exiting.html">Centralized Exiting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="globals.html">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="register_transfer_level.html">Register Transfer Level (RTL)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging</a></li>
@@ -410,7 +410,7 @@ document.write(`
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Avoid including unnecessary headers */</span>
 <span class="k">struct</span><span class="w"> </span><span class="nc">device_t</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Forward declaration instead of including device.h */</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">init_device</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">device_t</span><span class="w"> </span><span class="o">*</span><span class="n">device</span><span class="p">);</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">init_device</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">device_t</span><span class="o">*</span><span class="w"> </span><span class="n">device</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>

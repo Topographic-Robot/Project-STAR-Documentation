@@ -113,7 +113,7 @@ Example with Additional Tags:
    * @warning    Ensure that the server address is valid before calling this function.
    * @deprecated Use `open_server_connection_v2()` instead.
    */
-  int open_connection(const char *server_address, int port);
+  int open_connection(const char* server_address, int port);
 
 Block Diagrams at the Start of Files
 ------------------------------------

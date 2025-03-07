@@ -174,6 +174,7 @@
 <li class="toctree-l3"><a class="reference internal" href="line_endings.html">Line Endings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="breaking_long_lines.html">Breaking Long Lines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="braces.html">Braces</a></li>
+
 <li class="toctree-l3"><a class="reference internal" href="static_and_const.html">Static and Const</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comments.html">Comments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pointers.html">Pointers</a></li>
@@ -184,7 +185,6 @@
 <li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assertions.html">Assertions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="macros.html">Macros</a></li>
-<li class="toctree-l3"><a class="reference internal" href="centralized_exiting.html">Centralized Exiting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="globals.html">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="register_transfer_level.html">Register Transfer Level (RTL)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging</a></li>
@@ -390,7 +390,7 @@ document.write(`
 <p>Example:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;errno.h&gt;</span>
 
-<span class="kt">int</span><span class="w"> </span><span class="nf">process_data</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">)</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">process_data</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">EINVAL</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Invalid argument */</span>
@@ -470,10 +470,10 @@ document.write(`
 <p>In C, the <cite>goto</cite> statement can be useful for simplifying error handling when dealing with resource cleanup. Use <cite>goto</cite> to jump to a clean-up section at the end of the function where all allocated resources are safely released.</p>
 <blockquote>
 <div><p>Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">read_file</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">path</span><span class="p">)</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">read_file</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">path</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">  </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">file</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
-<span class="w">  </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">FILE</span><span class="o">*</span><span class="w"> </span><span class="n">file</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
 
 <span class="w">  </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fopen</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">);</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">file</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>

@@ -174,6 +174,7 @@
 <li class="toctree-l3"><a class="reference internal" href="line_endings.html">Line Endings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="breaking_long_lines.html">Breaking Long Lines</a></li>
 <li class="toctree-l3"><a class="reference internal" href="braces.html">Braces</a></li>
+
 <li class="toctree-l3"><a class="reference internal" href="static_and_const.html">Static and Const</a></li>
 <li class="toctree-l3"><a class="reference internal" href="comments.html">Comments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pointers.html">Pointers</a></li>
@@ -184,7 +185,6 @@
 <li class="toctree-l3"><a class="reference internal" href="functions.html">Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="assertions.html">Assertions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="macros.html">Macros</a></li>
-<li class="toctree-l3"><a class="reference internal" href="centralized_exiting.html">Centralized Exiting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="globals.html">Globals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="register_transfer_level.html">Register Transfer Level (RTL)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging</a></li>
@@ -397,7 +397,7 @@ document.write(`
 <li><p><strong>Dynamic Memory</strong>: This memory is allocated at runtime using functions like <cite>malloc</cite> and <cite>free</cite>. While flexible, dynamic memory can lead to fragmentation over time, particularly in long-running applications.</p></li>
 </ul>
 <p>Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">buffer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="cm">/* Handle allocation failure */</span>
 <span class="p">}</span>
@@ -409,7 +409,7 @@ document.write(`
 <li><p><strong>Avoid Heap Fragmentation</strong>: Fragmentation occurs when free memory is divided into small, non-contiguous blocks, making it difficult to allocate larger blocks of memory. Use dynamic memory only for objects with well-defined lifetimes, and consider static allocation for long-lived data.</p></li>
 <li><p><strong>Check for Memory Allocation Failures</strong>: Always check the return value of <cite>malloc</cite>, <cite>calloc</cite>, or <cite>realloc</cite> to ensure that memory was successfully allocated. If memory allocation fails, handle the failure gracefully.</p>
 <p>Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">buffer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="cm">/* Handle allocation failure */</span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">ENOMEM</span><span class="p">;</span>
@@ -446,7 +446,7 @@ document.write(`
 <li><p>Use the heap for large or variable-sized data that needs to persist across function calls.</p></li>
 </ul>
 <p>Example:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w">  </span><span class="cm">/* Stored on the heap */</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span><span class="w">  </span><span class="cm">/* Stored on the heap */</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">free</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span><span class="w">  </span><span class="cm">/* Free the memory when no longer needed */</span>
 <span class="p">}</span>
@@ -465,7 +465,7 @@ document.write(`
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span><span class="w"> </span><span class="n">StackType_t</span><span class="w">  </span><span class="n">task_stack</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
 <span class="k">static</span><span class="w"> </span><span class="n">StaticTask_t</span><span class="w"> </span><span class="n">task_buffer</span><span class="p">;</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">task1</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">pvParameters</span><span class="p">)</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">task1</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pvParameters</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">  </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="cm">/* Task code */</span>
